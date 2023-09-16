@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tauri App</title>
+    <script type="module" src="/src/main.ts" defer></script>
+    <style>
+      .logo.vite:hover {
+        filter: drop-shadow(0 0 2em #747bff);
+      }
+
+      .logo.typescript:hover {
+        filter: drop-shadow(0 0 2em #2d79c7);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="hide-on-files">Gene Forge Compiler</h1>
+      <p class="hide-on-files">A companion for your gene forge norn output</p>
+      <div class="row">
+        <h1 class="hide-on-no-files">Gene Forge Compiler</h1>
+        <img
+                src="/src/assets/geneforge.svg"
+                class="logo gene-forge"
+                alt="Gene Forge"
+        />
+      </div>
+
+      <p>Click on the Tauri logo to learn more about the framework</p>
+
+      <div class="row">
+        <div>
+          <input id="greet-input" placeholder="Enter a name..." />
+          <button id="greet-button" type="button">Greet</button>
+        </div>
+      </div>
+
+      <p id="greet-msg"></p>
+    </div>
+  </body>
+</html>
