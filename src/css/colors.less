@@ -1,0 +1,15 @@
+@background: #f6f6f6;
+@color: #0f0f0f;
+@background-dark: #3a1154;
+@color-dark: rgba(255, 255, 255, 0.7);
+html {
+  --background: @background;
+  --color: @color;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --background: @background-dark;
+    --color: @color-dark;
+  }
+}
