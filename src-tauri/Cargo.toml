@@ -1,8 +1,8 @@
 [package]
 name = "egg-forge"
 version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "A Creatures 3 egg agent compiler"
+authors = ["bedalton"]
 license = ""
 repository = ""
 edition = "2021"
@@ -16,7 +16,7 @@ tauri-build = { version = "1.2", features = [] }
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.2", features = [ "dialog-save", "dialog-open", "shell-open"] }
+tauri = { version = "1.2", features = [ "fs-create-dir", "path-all", "dialog-message", "fs-write-file", "fs-read-dir", "fs-exists", "fs-read-file", "dialog-save", "dialog-open", "shell-open"] }
 
 [features]
 # by default Tauri runs in production mode

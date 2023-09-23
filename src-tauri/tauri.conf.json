@@ -7,8 +7,8 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "egg-forge",
-    "version": "0.0.0"
+    "productName": "EggForge",
+    "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
@@ -19,7 +19,21 @@
       },
       "dialog": {
         "open": true,
-        "save": true
+        "save": true,
+        "message": true
+      },
+      "fs": {
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "exists": true,
+        "createDir": true,
+        "scope": [
+          "$RESOURCE/**"
+        ]
+      },
+      "path": {
+        "all": true
       }
     },
     "bundle": {
@@ -37,8 +51,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
-      "longDescription": "",
+      "identifier": "com.creaturesforge.egg-forge",
+      "longDescription": "A Creatures 3/Docking Station egg agent compiler",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -46,8 +60,10 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [],
-      "shortDescription": "",
+      "resources": [
+        "genomes/*"
+      ],
+      "shortDescription": "A C3DS egg compiler",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -64,10 +80,10 @@
     "windows": [
       {
         "fullscreen": false,
+        "width": 960,
         "height": 600,
-        "resizable": true,
-        "title": "egg-forge",
-        "width": 800
+        "resizable": false,
+        "title": "EggForge"
       }
     ]
   }
