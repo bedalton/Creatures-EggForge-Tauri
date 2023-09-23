@@ -1,0 +1,32 @@
+@import "_flex.less";
+
+.header {
+  height: 4.5rem;
+  .flex-row();
+  .flex-row-align-middle();
+
+  & > .header-right {
+    .flex-row;
+    .flex-row-flex-fill();
+    .flex-row-align-right();
+    .flex-row-align-middle();
+  }
+
+}
+header {
+  .flex-row();
+  .flex-row-align-middle;
+  .flex-row-flex-fill();
+  height: 6.6rem;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  & > img {
+    height: 4.5rem;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    transform: translateZ(0);
+  }
+}

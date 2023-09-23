@@ -1,0 +1,56 @@
+@import "_constants.less";
+@import "_flex.less";
+
+.glyph {
+  margin:0;
+  padding: 0;
+  .flex-column();
+  & > h3 {
+    margin: 0;
+    padding: 0;
+    .font();
+    .flex-fill();
+  }
+  & .glyph-main {
+    .flex-row();
+    .flex-fill();
+
+    & .glyph-preview-container {
+      cursor: pointer;
+      .flex-column();
+      .flex-column-align-middle();
+      .flex-column-align-center();
+      border-radius: @border-radius;
+      border-radius: var(--border-radius);
+      width: 5.1rem;
+      height: 5.1rem;
+      background: @glyph-image-border-dark;
+      background: var(--glyph-image-border);
+
+
+      & > img {
+        pointer-events: none;
+        @glyph-size-in-rem: (60 / @base-font-size-without-px);
+        width: ~"@{glyph-size-in-rem}rem";
+        background: @glyph-image-background-dark;
+        background: var(--glyph-image-background);
+        border-radius: @border-radius;
+        &.placeholder {
+          opacity: 70%;
+          width: 34px;
+          background: transparent;
+        }
+      }
+    }
+
+    & > .glyph-inputs-container {
+      .flex-column();
+      .flex-fill();
+      margin-left: 1em;
+
+      & > .glyph-filename-input {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

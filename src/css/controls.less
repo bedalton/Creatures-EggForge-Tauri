@@ -1,0 +1,42 @@
+@import "_constants.less";
+@import "_flex.less";
+@import "_colors.less";
+
+input,
+button,
+select
+{
+  border-radius: @border-radius;
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  padding: @input-padding 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: @input-color-dark;
+  color: var(--input-color);
+  height: @input-height;
+  background-color: @input-background-dark;
+  background: var(--input-background);
+  transition: border-color 0.25s;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+input,
+button,
+select {
+  outline: none;
+}
+
+.invisible-input-button {
+  pointer-events: none;
+}
+
+@import "_controls_input_fields.less";
+@import "_controls_input_button.less";
+@import "_controls_refresh.less";
+@import "_controls_buttons.less";
+@import "_controls_inputs.less";
+@import "_controls_selects.less";
+@import "_compile_controls.less";
+@import "_glyph.less";

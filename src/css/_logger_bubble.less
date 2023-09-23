@@ -1,0 +1,66 @@
+@import "_constants.less";
+@import "_colors.less";
+
+.logger-bubble {
+  display: block;
+  background: @logger-bubble-background-color-dark;
+  background: var(--logger-bubble-background-color);
+  color: @logger-bubble-text-color-dark;
+  color: var(--logger-bubble-text-color);
+  word-wrap: break-word;
+  max-height: @input-height;
+  overflow-y: hidden;
+  z-index:1;
+  //width: 20rem;
+  padding: 0.2rem 1rem;
+  text-align: left;
+  max-width: 28.5rem;
+  margin: 0;
+}
+
+
+#compile-egg-form > .logger-bubble-container {
+  position: fixed;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  .flex-row();
+  .flex-row-align-center();
+  .flex-row-align-middle();
+  .flex-row-align-top();
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  .logger-bubble {
+    margin: 0;
+    border-radius: 0;
+    border-bottom-right-radius: @border-radius;
+    border-bottom-right-radius: var(--border-radius);
+
+    border-bottom-left-radius: @border-radius;
+    border-bottom-left-radius: var(--border-radius);
+  }
+}
+
+@logger-bubble-height: 2rem;
+.header-right > .logger-bubble {
+  height: (@logger-bubble-height * 0.9);
+  overflow: hidden;
+  white-space: nowrap;
+  line-height:(@logger-bubble-height * 0.74);
+  border-top-left-radius: @border-radius;
+  border-top-left-radius: var(--border-radius);
+
+  border-bottom-left-radius: @border-radius;
+  border-bottom-left-radius: var(--border-radius);
+}
+
+
+#logger-bubble {
+
+}
+
+.hide-logger {
+  visibility: hidden !important;
+}

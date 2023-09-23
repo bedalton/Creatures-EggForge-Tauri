@@ -1,0 +1,65 @@
+
+.placeholder(@prefix) {
+  @{prefix} {
+    color: @input-placeholder-color-dark;
+    color: var(--input-placeholder-color);
+  }
+}
+
+
+// FIREFOX
+.placeholder(~"::-moz-placeholder");
+.placeholder(~":-moz-placeholder");
+
+// WEBKIT
+.placeholder(~"::-webkit-input-placeholder");
+.placeholder(~":-webkit-input-placeholder");
+
+// IE/Edge
+.placeholder(~":-ms-placeholder");
+.placeholder(~":-ms-input-placeholder");
+.placeholder(~"::-ms-input-placeholder");
+
+
+.placeholder(~".input-placeholder");
+
+.input-with-prefix-label {
+  height: @input-height;
+  padding: 0;
+  .flex-row();
+  .flex-row-align-middle();
+  & > * {
+    margin:0;
+    height: 100%;
+  }
+  & > label {
+    border-top-left-radius: @border-radius;
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: @border-radius;
+    border-bottom-left-radius: var(--border-radius);
+    margin:0;
+    height:100%;
+    background: @button-background-dark;
+    background: var(--button-background);
+    padding: 0.4rem 1rem;
+  }
+  & > input {
+    .flex-fill();
+    height: 100%;
+    border-radius: 0;
+    border-top-right-radius: @border-radius;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: @border-radius;
+    border-bottom-right-radius: var(--border-radius);
+  }
+}
+
+input[data-placeholder] {
+  position:relative;
+}
+input[data-placeholder]:not(:focus)::after {
+  content:attr(data-placeholder);
+  position: absolute;
+  left: 0;
+  top:0;
+}

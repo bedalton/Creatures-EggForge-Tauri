@@ -1,0 +1,99 @@
+@import "_flex.less";
+
+@windowWidth: 60em;
+@windowHeight: 33em;
+
+html, body {
+  width: 100vw;
+  min-width: @windowWidth;
+  //max-width: @windowWidth;
+
+  height: 100vh;
+  min-height: @windowHeight;
+  //max-height: @windowHeight;
+
+}
+
+#compile-egg-form {
+  max-width: @windowWidth;
+  max-height: @windowHeight;
+  min-width: @windowWidth;
+  min-height: @windowHeight;
+}
+
+#compile-egg-form {
+  position: relative;
+  padding: 0.5em 1rem 1rem;
+  overflow: hidden;
+  background: transparent;
+  background: @background-dark;
+  background: var(--background);
+}
+
+@import "_header.less";
+
+.main-panel {
+  .flex-column();
+  .flex-fill();
+
+  padding: 1em;
+  margin-top: 1rem;
+
+  border: 1px solid @color-dark;
+  border: 1px solid var(--color);
+
+  border-radius: @border-radius;
+  border-radius: var(--border-radius);
+
+  &.no-outline {
+    border:none !important;
+  }
+
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+  &:not(:first-child) {
+    margin-left: 0.5rem;
+  }
+  & > * {
+    margin-bottom: 0.7em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.root-row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.root-row {
+  & .main-panel {
+    width: 50%;
+  }
+}
+
+#genome-inputs {
+  .flex-row();
+  .flex-fill();
+  .flex-row-align-top();
+  & > .genome-input-group {
+    width:50%;
+    padding: 0 1rem;
+    .flex-column();
+  }
+}
+
+@media screen and (min-width: @windowWidth) {
+  body {
+    .flex-column();
+    .flex-column-align-center();
+  }
+}
+@media screen and (min-height: @windowHeight) {
+  body {
+    .flex-column();
+    .flex-column-align-middle();
+  }
+}

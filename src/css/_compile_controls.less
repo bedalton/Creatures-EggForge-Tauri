@@ -1,0 +1,47 @@
+@import "_flex.less";
+@import "_colors.less";
+
+#compile {
+  .flex-row();
+  .flex-row-align-middle();
+  position: relative;
+
+  width: 10rem;
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.7;
+    background: @button-disabled-background-dark;
+    background: var(--button-disabled-background);
+  }
+
+  & span {
+    text-align: center;
+    .flex-fill();
+  }
+
+
+  & img#compiling-spinner {
+    position: absolute;
+    right: -0.5rem;
+    display: inline;
+    width: 60px;
+    height: 60px;
+    //transform: translateX(50%);
+  }
+}
+
+
+body[data-compiling='true'] {
+  & .hide-on-compile {
+    display: none !important;
+  }
+}
+
+body:not([data-compiling='true']) {
+  & .hide-on-not-compiling {
+    display: none !important;
+  }
+}
+
+@import "_logger_bubble.less";

@@ -1,0 +1,27 @@
+@import "_constants.less";
+@import "_flex.less";
+
+.refresh-button {
+  .flex-row();
+  .flex-row-align-middle();
+  .flex-row-align-center();
+  transform: translateX(calc (-100% - 1rem));
+  width: @input-height;
+  height: @input-height;
+  background: transparent;
+  position: absolute;
+  right: @button-tail-width;
+  z-index: 2;
+  border: none !important;
+  opacity: 0.8;
+  & img {
+    max-height: 100%;
+  }
+}
+
+
+body:not([data-has-project-root="true"]) {
+  & #refresh-project-folders-button {
+    display: none;
+  }
+}

@@ -1,0 +1,72 @@
+@import "_flex.less";
+@import "_constants.less";
+@import "_colors.less";
+
+.input-field {
+  margin: 0;
+  padding: 0;
+  .flex-row-flex-fill();
+  .flex-column();
+
+  & input, & button, & select {
+    height: @input-height;
+  }
+
+  & input[disabled] {
+    color: @color-dark !important;
+    color: var(--color) !important;
+
+  }
+
+  & input {
+    .flex-fill();
+    width: 100%;
+  }
+
+  &.short {
+    & input, & button, & select {
+      height: @input-height-short;
+    }
+  }
+}
+
+.input-group {
+  position: relative;
+
+  & > * {
+    margin: 0;
+    border-radius: 0;
+
+    &:first-child {
+      border-bottom-left-radius: @border-radius;
+      border-bottom-left-radius: var(--border-radius);
+      border-top-left-radius: @border-radius;
+      border-top-left-radius: var(--border-radius);
+    }
+
+    &:last-child {
+      border-bottom-right-radius: @border-radius;
+      border-bottom-right-radius: var(--border-radius);
+      border-top-right-radius: @border-radius;
+      border-top-right-radius: var(--border-radius);
+    }
+  }
+}
+
+.input-field img, img.button-icon, svg.button-icon {
+  fill: #FFFFFF;
+  filter: brightness(100%);
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.input-field.short img {
+  margin-top: -0.6rem;
+}
+
+input[type="text"].path-display {
+  &, &[disabled] {
+    color: @color-dark !important;
+    color: var(--color) !important;
+  }
+}

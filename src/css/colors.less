@@ -1,15 +1,75 @@
-@background: #f6f6f6;
-@color: #0f0f0f;
-@background-dark: #3a1154;
-@color-dark: rgba(255, 255, 255, 0.7);
-html {
-  --background: @background;
-  --color: @color;
+@import "_constants.less";
+@import "_colors.less";
+
+// Dark mode selector
+.color-scheme-dark() {
+  --background: @background-dark;
+  --color: @color-dark;
+  --accent-color-bold: @accent-color-bold-dark;
+  --accent-color-light: @accent-color-light-dark;
+
+  // Input
+  --input-background: @input-background-dark;
+  --input-color: @input-color-dark;
+  --input-placeholder-color: @input-placeholder-color-dark;
+
+  // Button
+  --button-color: @button-color-dark;
+  --button-background: @button-background-dark;
+  --button-hover-color: @button-hover-color-dark;
+  --button-disabled-background: @button-disabled-background-dark;
+
+  // Glyph
+  --glyph-image-background: @glyph-image-background-dark;
+  --glyph-image-border: @glyph-image-border-dark;
+
+  // Logger Bubble
+  --logger-bubble-text-color: @logger-bubble-text-color-dark;
+  --logger-bubble-background-color: @logger-bubble-background-color-dark;
 }
 
-@media (prefers-color-scheme: dark) {
+.color-scheme-light() {
   html {
-    --background: @background-dark;
-    --color: @color-dark;
+    --background: @background-light;
+    --color: @color-light;
+    --accent-color-bold: @accent-color-bold-light;
+    --accent-color-light: @accent-color-light-light;
+
+    // Input
+    --input-background: @input-background-light;
+    --input-color: @input-color-light;
+    --input-placeholder-color: @input-placeholder-color-light;
+
+    // Button
+    --button-color: @button-color-light;
+    --button-background: @button-background-light;
+    --button-hover-color: @button-hover-color-light;
+    --button-disabled-background: @button-disabled-background-light;
+
+    // Glyph
+    --glyph-image-background: @glyph-image-background-light;
+    --glyph-image-border: @glyph-image-border-light;
+
+    // Logger bubble
+    --logger-bubble-text-color: @logger-bubble-text-color-light;
+    --logger-bubble-background-color: @logger-bubble-background-color-light;
   }
+}
+
+body[data-theme='dark'] {
+  .color-scheme-dark();
+}
+
+html {
+  .color-scheme-dark();
+  --border-radius: @border-radius;
+}
+
+
+//@media (prefers-color-scheme: light) {
+//  .color-scheme-light();
+//}
+
+body[data-theme='light'] {
+  .color-scheme-light();
 }

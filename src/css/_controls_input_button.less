@@ -1,0 +1,15 @@
+@import "_flex.less";
+@import "_constants.less";
+@import "_colors.less";
+
+.input-button {
+  width: @button-tail-width;
+  min-width: @button-tail-width;
+  background: @button-background-dark;
+  background: var(--button-background);
+  color: @button-color-dark;
+  color: var(--button-color);
+  .flex-column();
+  .flex-column-align-center();
+  .flex-column-align-middle();
+}

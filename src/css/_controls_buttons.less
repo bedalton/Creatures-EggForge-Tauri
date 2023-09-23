@@ -1,0 +1,14 @@
+@import "_colors.less";
+button {
+  cursor: pointer;
+  color: @button-color-dark;
+  color: var(--button-color);
+  background: @button-background-dark;
+  background: var(--button-background);
+  transition: background-color 200ms;
+}
+
+button:hover {
+  background: @button-hover-color-dark;
+  background: var(--button-hover-color);
+}
