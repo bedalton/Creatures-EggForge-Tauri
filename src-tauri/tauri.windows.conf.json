@@ -1,0 +1,17 @@
+{
+  "build": {
+    "beforeBuildCommand": "npm run build"
+  },
+  "tauri":{
+    "bundle": {
+      "windows": {
+        "nsis": {
+          "template": "nsis\\installer.nsi",
+          "headerImage": "nsis\\nsis_header_image.bmp",
+          "sidebarImage": "nsis\\nsis_sidebar_image.bmp",
+          "installerIcon": "icons\\icon.ico"
+        }
+      }
+    }
+  }
+}
