@@ -67,6 +67,7 @@
         "signingIdentity": null
       },
       "resources": [
+        "genomes/*"
       ],
       "shortDescription": "A C3DS egg compiler",
       "targets": "all",
