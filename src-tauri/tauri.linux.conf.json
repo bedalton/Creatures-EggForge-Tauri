@@ -1,0 +1,14 @@
+{
+  "tauri": {
+    "bundles": {
+      "linux": {
+        "deb": {
+
+        },
+        "appimage": {
+
+        }
+      }
+    }
+  }
+}
