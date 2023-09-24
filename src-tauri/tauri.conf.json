@@ -27,10 +27,16 @@
         "writeFile": true,
         "readDir": true,
         "exists": true,
-        "createDir": true,
+        "createDir":  true,
         "scope": [
-          "$RESOURCE/**"
+          "$RESOURCE/**",
+          "$APPCONFIG/**/*",
+          "$APPCONFIG/*",
+          "$APPCONFIG/"
         ]
+      },
+      "os": {
+        "all": true
       },
       "path": {
         "all": true
@@ -61,7 +67,6 @@
         "signingIdentity": null
       },
       "resources": [
-        "genomes/*"
       ],
       "shortDescription": "A C3DS egg compiler",
       "targets": "all",
