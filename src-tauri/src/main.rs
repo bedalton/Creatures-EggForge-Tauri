@@ -24,6 +24,23 @@ fn is_dir(path: &str) -> bool {
     }
 }
 
+#[tauri::command]
+async fn add_gno(app_handle: tauri::AppHandle, path: &str) -> Result<bool, String> {
+    let mut the_path = path.to_string();
+    if !the_path.to_lowercase().ends_with(".gno") {
+        the_path = format!("{:?}.gno", the_path);
+    }
+    let result = app_handle.fs_scope().allow_file(the_path);
+    match result {
+        Ok(_) => Ok(true.into()),
+        Err(e) => {
+            println!("Failed to add gno path {:?}", e);
+            Ok(false.into())
+        }
+    }
+}
+
+
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 
 fn main() {
