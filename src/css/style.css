@@ -778,6 +778,50 @@ body:not([data-compiling='true']) .hide-on-not-compiling {
 .glyph .glyph-main > .glyph-inputs-container > .glyph-filename-input {
   margin-top: 0.5rem;
 }
+#debug-logger-panel,
+.logging-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #2F2555;
+  background: var(--background);
+  z-index: 8000;
+  overflow: auto;
+}
+#debug-logger-panel > .log-entry,
+.logging-panel > .log-entry {
+  color: #EEE;
+}
+#debug-logger-panel > .log-error,
+.logging-panel > .log-error {
+  background: #a23838;
+}
+#debug-logger-panel > .log-warn,
+.logging-panel > .log-warn,
+#debug-logger-panel > .log-warning,
+.logging-panel > .log-warning {
+  background: #ab6e10;
+}
+.show-log-button-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+.show-log-button-container > #show-log-button {
+  transition: background 400ms, box-shadow 400ms;
+  padding: 0.1rem;
+  width: auto;
+  height: 1.5rem;
+  text-align: right;
+}
+.show-log-button-container > #show-log-button:not(:hover) {
+  background: transparent;
+  box-shadow: none;
+}
 html,
 body {
   width: 100vw;
