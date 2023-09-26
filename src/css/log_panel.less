@@ -1,0 +1,41 @@
+@import "_colors.less";
+#debug-logger-panel, .logging-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: @background-dark;
+  background: var(--background);
+  z-index: 8000;
+  overflow: auto;
+
+  & > .log-entry {
+    color: #EEE;
+  }
+  & > .log-error {
+    background: #a23838;
+  }
+  & > .log-warn, & > .log-warning {
+    background: #ab6e10;
+  }
+}
+
+.show-log-button-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  & > #show-log-button {
+    transition: background 400ms, box-shadow 400ms;
+    padding: 0.1rem;
+    &:not(:hover) {
+      background: transparent;
+      box-shadow: none;
+    }
+    width: auto;
+    height: 1.5rem;
+    text-align: right;
+  }
+}
