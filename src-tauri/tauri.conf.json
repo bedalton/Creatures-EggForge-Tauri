@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "EggForge",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "tauri": {
     "allowlist": {
@@ -32,7 +32,9 @@
           "$RESOURCE/**",
           "$APPCONFIG/**/*",
           "$APPCONFIG/*",
-          "$APPCONFIG/"
+          "$APPCONFIG/",
+          "$APPLOG/*",
+          "$APPLOG"
         ]
       },
       "os": {
@@ -40,6 +42,9 @@
       },
       "path": {
         "all": true
+      },
+      "window": {
+        "setTitle": true
       }
     },
     "bundle": {
