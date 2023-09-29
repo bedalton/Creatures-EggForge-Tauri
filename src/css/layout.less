@@ -32,9 +32,11 @@ html, body {
 
 @import "_header.less";
 
+
+//noinspection CssOverwrittenProperties
 .main-panel {
-  .flex-column();
-  .flex-fill();
+  ._flex-column();
+  .flex-column-flex-fill();
 
   padding: 1em;
   margin-top: 1rem;
@@ -75,25 +77,25 @@ html, body {
 }
 
 #genome-inputs {
-  .flex-row();
-  .flex-fill();
+  ._flex-row();
+  .flex-column-flex-fill();
   .flex-row-align-top();
   & > .genome-input-group {
     width:50%;
     padding: 0 1rem;
-    .flex-column();
+    ._flex-column();
   }
 }
 
 @media screen and (min-width: @windowWidth) {
   body {
-    .flex-column();
+    ._flex-column();
     .flex-column-align-center();
   }
 }
 @media screen and (min-height: @windowHeight) {
   body {
-    .flex-column();
+    ._flex-column();
     .flex-column-align-middle();
   }
 }

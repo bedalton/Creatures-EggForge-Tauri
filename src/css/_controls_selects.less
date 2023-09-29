@@ -1,11 +1,13 @@
 @import "_constants.less";
 @import "_flex.less";
+@import "_placeholders.less";
 
 select {
   text-decoration: none;
   -webkit-appearance: none;
 }
 
+//noinspection CssOverwrittenProperties
 .select-container {
   position: relative;
   .flex-column-flex-fill();
@@ -24,7 +26,7 @@ select {
   }
 
   select ~ .dropdown-icon {
-    .flex-row();
+    ._flex-row();
     .flex-row-align-center();
     .flex-row-align-middle();
     width: @button-tail-width;

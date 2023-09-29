@@ -1,14 +1,65 @@
 @import "_colors.less";
+@import "_flex.less";
+
+//noinspection CssOverwrittenProperties
 button {
   cursor: pointer;
   color: @button-color-dark;
   color: var(--button-color);
   background: @button-background-dark;
   background: var(--button-background);
-  transition: background-color 200ms;
+  transition: background-color 200ms, color 200ms;
 }
 
 button:hover {
   background: @button-hover-color-dark;
   background: var(--button-hover-color);
+}
+
+.font-icon-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  ._flex-column();
+  .flex-column-align-center();
+  .flex-column-align-middle();
+  background: @button-background-dark;
+  background: var(--button-background);
+
+  //noinspection ALL
+  & > span {
+    color: @button-color-dark;
+    color: var(--button-color);
+    text-align: center;
+  }
+}
+
+//noinspection ALL
+.cancel-button {
+  background: @cancel-button-background-color-dark;
+  background: var(--cancel-button-background-color);
+  color: @cancel-button-text-color-dark;
+  color: var(--cancel-button-text-color);
+
+  &:hover {
+    background: @cancel-button-hover-background-color-dark;
+    background: var(--cancel-button-hover-background-color);
+    color: @cancel-button-hover-text-color-dark;
+    color: var(--cancel-button-text-hover-color);
+  }
+}
+
+//noinspection ALL
+.go-button {
+  background: @go-button-background-color-dark;
+  background: var(--go-button-background-color);
+  color: @go-button-text-color-dark;
+  color: var(--go-button-text-color);
+
+  &:hover {
+    background: @go-button-hover-background-color-dark;
+    background: var(--go-button-hover-background-color);
+    color: @go-button-hover-text-color-dark;
+    color: var(--go-button-text-hover-color);
+  }
 }
