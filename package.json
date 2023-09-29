@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "./prepare_dist.cjs",
+    "build": "./copyVersionToTauri.cjs && ./prepare_dist.cjs",
     "build_windows": "node prepare_dist.cjs",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "./copyVersionToTauri.cjs && tauri"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",

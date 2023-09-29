@@ -194,7 +194,11 @@
 		</div>
 	</main>
 	<div class="show-log-button-container">
-		<button id="show-log-button" aria-label="v0.1.1 - Debug Log">v0.1.1</button>
+		<button id="show-log-button"
+				data-id="show-log-button"
+				aria-label="v{{ _version_ }} - Debug Log"
+		>{{ _version_ }}
+		</button>
 	</div>
 </form>
 <script>
