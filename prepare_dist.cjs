@@ -110,10 +110,31 @@ const copyExtensions = (src, extensions) => {
     });
 }
 
+/**
+ * Copies index.html while replacing the version placeholder with the current version described in the Package.JSON
+ * Placeholder is `{{ _version_ }}`
+ * @param originalHTMLPath
+ * @param copyHTMLPath
+ */
+const copyIndexHTMLUpdatingVersion = () => {
+    const version = fs.readFileSync(path.join(__dirname, 'version.txt'), 'utf-8')
+        .trim();
+
+    const originalIndexHTMLPath = path.join(__dirname, 'index.html');
+    const copyIndexHTMLPath = path.join(dist, 'index.html');
+
+    let contents = fs.readFileSync(originalHTMLPath, 'utf-8');
+    const versionRegex = /\{\{\s*_version_\s*}}/gi;
+    contents = contents.replaceAll(versionRegex, version);
+    fs.writeFileSync(copyHTMLPath, contents);
+}
+
 // Ensure ./src directory
 ensureDirectory('src');
 // Copy index.html
-_fs.copySync(path.join(__dirname, 'index.html'), path.join(dist, 'index.html'));
+
+copyIndexHTMLUpdatingVersion(originalIndexHTMLPath, copyIndexHTMLPath)
+
 // Copy JS
 copyExtensions('src', ['js', 'js\.map']);
 // Copy Images
