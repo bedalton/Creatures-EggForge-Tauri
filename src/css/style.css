@@ -22,6 +22,8 @@ body[data-theme='dark'] {
   --cancel-button-background-color: #724f98;
   --cancel-button-hover-text-color: #FFF;
   --cancel-button-hover-background-color: #8C69B1;
+  --warning-text-color: var(#FFF);
+  --warning-background-color: #b68105;
 }
 html {
   --background: #2F2555;
@@ -47,6 +49,8 @@ html {
   --cancel-button-background-color: #724f98;
   --cancel-button-hover-text-color: #FFF;
   --cancel-button-hover-background-color: #8C69B1;
+  --warning-text-color: var(#FFF);
+  --warning-background-color: #b68105;
   --border-radius: 4px;
 }
 body[data-theme='light'] html {
@@ -73,6 +77,8 @@ body[data-theme='light'] html {
   --cancel-button-background-color: #724f98;
   --cancel-button-hover-text-color: #FFF;
   --cancel-button-hover-background-color: accent-color-light-light;
+  --warning-text-color: var(#FFF);
+  --warning-background-color: orange;
 }
 html,
 body {
@@ -202,11 +208,11 @@ dialog.compilation-report.compilation-report-floating {
   position: absolute;
   appearance: none;
   -webkit-appearance: none;
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   width: 70%;
-  height: 60%;
+  height: 80vh;
   z-index: 100;
   color: #f8f7f7;
   color: var(--color);
@@ -243,8 +249,133 @@ dialog.compilation-report.compilation-report-floating .compilation-report {
   overflow-y: auto;
   overflow-x: hidden;
 }
+.compilation-report .compilation-report-items .compilation-data-item > * {
+  margin: 0;
+  padding: 0;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-gender='male'] + [data-gender='female'] {
+  margin-top: 1rem;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-gender='male'] + [data-gender='female']:before {
+  display: block;
+  content: 'Female:';
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-status='skipped'] {
+  opacity: 0.7;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-gender=male]:before,
+.compilation-report .compilation-report-items .compilation-data-item[data-gender=female]:before {
+  display: block;
+  font-weight: bold;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-gender="male"]:first-of-type:before {
+  display: block;
+  content: 'Male:';
+}
+.compilation-report .compilation-report-items .compilation-data-item .compilation-item-head {
+  display: inline-block;
+}
+.compilation-report .compilation-report-items .compilation-data-item .compilation-item-head > [data-item="gender"] {
+  display: inline-block;
+  width: 4rem;
+}
+.compilation-report .compilation-report-items .compilation-data-item .compilation-item-head > [data-item="percent"] {
+  display: inline-block;
+  width: 3rem;
+  text-align: right;
+}
 .compilation-report .compilation-report-items .compilation-data-item .data-item:not(:last-child):after {
   content: ':';
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-no-atts="true"] .show-on-no-atts {
+  display: none !important;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-no-atts="true"] .hide-on-no-atts {
+  display: none !important;
+}
+.compilation-report .compilation-report-items .compilation-data-item:not([data-no-atts="shared"]) .show-on-shared-atts {
+  display: none !important;
+}
+.compilation-report .compilation-report-items .compilation-data-item:not([data-no-atts="true"]) .show-on-no-atts,
+.compilation-report .compilation-report-items .compilation-data-item:not([data-no-atts="shared"]) .show-on-no-atts {
+  display: none !important;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container-header,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container-header {
+  background: #b68105;
+  background: var(--warning-background-color);
+  color: #FFF;
+  color: var(--warning-text-color);
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container {
+  display: inline-block;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container:before,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container:before {
+  content: '- ';
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container h4,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container h4 {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container [data-missing],
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container [data-missing] {
+  display: inline-block;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container [data-missing] h5,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container [data-missing] h5 {
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container [data-missing] .missing-list,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container [data-missing] .missing-list {
+  margin: 0;
+  display: inline-block;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container [data-missing] .missing-list > .missing-item,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container [data-missing] .missing-list > .missing-item {
+  padding-right: 0.2rem;
+  display: inline-block;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container [data-missing] .missing-list > .missing-item:not(.missing-item-last):after,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container [data-missing] .missing-list > .missing-item:not(.missing-item-last):after {
+  content: ',';
+  padding-left: 0;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container [data-missing] .missing-list:before,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container [data-missing] .missing-list:before {
+  margin: 0;
+  padding: 0;
+  content: '[';
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container [data-missing] .missing-list:after,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container [data-missing] .missing-list:after {
+  margin: 0;
+  padding: 0;
+  content: ']';
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container [data-missing].no-atts,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container [data-missing].no-atts {
+  font-weight: bold;
+}
+.compilation-report .compilation-report-items .compilation-data-item[data-att-status="partial"] .missing-container [data-missing].shared-atts,
+.compilation-report .compilation-report-items .compilation-data-item[data-sprite-status="partial"] .missing-container [data-missing].shared-atts {
+  font-style: italic;
+  opacity: 0.7;
+}
+.compilation-report .compilation-report-items .compilation-data-item:not([data-att-status="partial"]) [data-missing="atts"] {
+  display: none !important;
+}
+.compilation-report .compilation-report-items .compilation-data-item:not([data-sprite-status="partial"]) [data-missing="sprites"] {
+  display: none !important;
+}
+.compilation-report .compilation-report-items .compilation-data-item:not([data-att-status="partial"]):not([data-sprite-status="partial"]) .missing-container {
+  display: none !important;
 }
 .compilation-report footer {
   position: absolute;

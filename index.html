@@ -3,27 +3,35 @@
 <head>
 	<meta charset="UTF-8"/>
 	<link rel="stylesheet" href="./src/css/style.css"/>
+	<link href="src/fonts/material-icons/material-icons.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Egg-Forge</title>
 </head>
 
 <body data-compiling="false">
-<form id="compile-egg-form" onsubmit="return false;">
+<form id="compile-egg-form"
+	  data-id="compile-egg-form" onsubmit="return false;">
 	<header class="header">
 		<img src="src/images/logo/logo.png" alt="egg-forge logo" class="logo">
 
 		<div class="header-right">
-			<p class="logger-bubble" id="logger-bubble-header">Loading...</p>
-			<button id="compile" disabled="disabled">
-				<span id="compile-text" class="hide-on-compile">Compile Egg</span>
-				<span id="cancel-compile-text" class="hide-on-not-compiling">Cancel</span>
+			<p class="logger-bubble" id="logger-bubble-header"
+			   data-id="logger-bubble-header">Loading...</p>
+			<button id="compile"
+					data-id="compile" disabled="disabled">
+				<span id="compile-text"
+					  data-id="compile-text" class="hide-on-compile">Compile Egg</span>
+				<span id="cancel-compile-text"
+					  data-id="cancel-compile-text" class="hide-on-not-compiling">Cancel</span>
 				<img src="./src/images/loading.svg" class="hide-on-not-compiling" id="compiling-spinner"
+					 data-id="compiling-spinner"
 					 alt="loading spinner">
 			</button>
 		</div>
 	</header>
 
-	<div id="debug-logger-panel" class="hidden">
+	<div id="debug-logger-panel"
+		 data-id="debug-logger-panel" class="hidden">
 	</div>
 	<main class="flex-column">
 		<div class="flex-row flex-fill root-row">
@@ -35,18 +43,21 @@
 					<div class="flex-row flex-fill input-group">
 						<input type="text"
 							   id="project-root-path"
+							   data-id="project-root-path"
 							   aria-readonly="true"
 							   readonly="readonly"
 							   class="flex-fill path-display"
 							   placeholder="select input folder"
 						>
 						<button id="refresh-project-folders-button"
+								data-id="refresh-project-folders-button"
 								aria-label="refresh project"
 								class="refresh-button"
 						>
 							<img src="src/images/icons/refresh.svg" alt="refresh">
 						</button>
 						<button id="root-project-open"
+								data-id="root-project-open"
 								aria-label="select project root"
 								class="input-button"
 						>
@@ -59,7 +70,8 @@
 				<div class="input-field flex-column flex-fill">
 					<label for="breed-slot-select" class="flex-fill flex-row">Breed Slot</label>
 					<div class="flex-row flex-fill select-container">
-						<select id="breed-slot-select" class="flex-fill" data-has-selection="false">
+						<select id="breed-slot-select"
+								data-id="breed-slot-select" class="flex-fill" data-has-selection="false">
 						</select>
 						<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
 							<img class="button-icon"
@@ -74,7 +86,8 @@
 				<div class="input-field flex-column flex-fill input-group">
 					<label for="egg-name-input" class="flex-row">Egg Name (for Mucco):</label>
 					<div class="flex-row flex-fill">
-						<input type="text" id="egg-name-input" class="flex-fill" placeholder="Egg display name..">
+						<input type="text" id="egg-name-input"
+							   data-id="egg-name-input" class="flex-fill" placeholder="Egg display name..">
 					</div>
 				</div>
 			</div>
@@ -87,21 +100,24 @@
 							<img src="src/images/icons/folder_open.svg"
 								 class="placeholder"
 								 alt="male glyph preview image">
-							<button class="screen-reader-only" id="male-glyph-select-button">Select male glyph file
+							<button class="screen-reader-only" id="male-glyph-select-button"
+									data-id="male-glyph-select-button">Select male glyph file
 							</button>
 						</div>
 						<div class="glyph-inputs-container">
 							<div class="input-with-prefix-label">
 								<label for="glyph-male-frame-select">Frame</label>
-								<input type="number" id="glyph-male-frame-select" class="flex-fill"
-								       disabled="disabled"
-								       min="0"
+								<input type="number" id="glyph-male-frame-select"
+									   data-id="glyph-male-frame-select" class="flex-fill"
+									   disabled="disabled"
+									   min="0"
 									   data-has-selection="false">
 							</div>
 							<div class="input-field glyph-filename-input">
 								<label for="glyph-male-filename-input" class="screen-reader-only">Output name</label>
 								<input type="text"
 									   id="glyph-male-filename-input"
+									   data-id="glyph-male-filename-input"
 									   class="flex-fill"
 									   data-has-selection="false"
 									   placeholder="Glyph output filename..."
@@ -119,22 +135,25 @@
 									class="placeholder"
 									alt="male glyph image preview"
 							>
-							<button class="screen-reader-only" id="female-glyph-select-button">Select female glyph
+							<button class="screen-reader-only" id="female-glyph-select-button"
+									data-id="female-glyph-select-button">Select female glyph
 								file
 							</button>
 						</div>
 						<div class="glyph-inputs-container">
 							<div class="input-with-prefix-label">
 								<label for="glyph-female-frame-select">Frame</label>
-								<input type="number" id="glyph-female-frame-select" class="flex-fill"
+								<input type="number" id="glyph-female-frame-select"
+									   data-id="glyph-female-frame-select" class="flex-fill"
 									   disabled="disabled"
-								       min="0"
+									   min="0"
 									   data-has-selection="false">
 							</div>
 							<div class="input-field glyph-filename-input">
 								<label for="glyph-female-filename-input" class="screen-reader-only">Output name</label>
 								<input type="text"
 									   id="glyph-female-filename-input"
+									   data-id="glyph-female-filename-input"
 									   class="flex-fill"
 									   data-has-selection="false"
 									   placeholder="Glyph output filename..."
@@ -148,13 +167,15 @@
 
 
 		<!-- GENOME -->
-		<div class="flex-row flex-fill root-row main-panel" id="genome-inputs">
+		<div class="flex-row flex-fill root-row main-panel" id="genome-inputs"
+			 data-id="genome-inputs">
 			<div class="genome-input-group">
 				<!-- Genome Select -->
 				<div class="input-field flex-column flex-fill">
 					<label for="base-genome-select" class="flex-fill flex-row">Base Genome: </label>
 					<div class="flex-row flex-fill select-container">
-						<select id="base-genome-select" class="flex-fill" data-has-selection="false">
+						<select id="base-genome-select"
+								data-id="base-genome-select" class="flex-fill" data-has-selection="false">
 						</select>
 						<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
 							<img class="button-icon"
@@ -171,7 +192,8 @@
 				<div class="input-field">
 					<label for="genome-genus-select" class="flex-fill flex-row">Genome Genus: </label>
 					<div class="flex-row flex-fill select-container">
-						<select id="genome-genus-select" class="flex-fill" data-has-selection="false">
+						<select id="genome-genus-select"
+								data-id="genome-genus-select" class="flex-fill" data-has-selection="false">
 							<option value="" disabled selected="selected" hidden>Select Genome Genus...</option>
 						</select>
 						<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
@@ -186,7 +208,8 @@
 				<div class="input-field flex-column flex-fill input-group">
 					<label for="output-genome-name-input" class="flex-row">Output Genome Name:</label>
 					<div class="flex-row flex-fill">
-						<input type="text" id="output-genome-name-input" class="flex-fill"
+						<input type="text" id="output-genome-name-input"
+							   data-id="output-genome-name-input" class="flex-fill"
 							   placeholder="Output genome file name..">
 					</div>
 				</div>
@@ -200,12 +223,302 @@
 		>{{ _version_ }}
 		</button>
 	</div>
+	<dialog class="compilation-report compilation-report-floating" id="compilation-report-modal">
+		<h2>Verify for Compilation</h2>
+		<section class="compilation-report-items">
+		</section>
+		<footer>
+			<form method="dialog" class="input-group">
+				<button id="close-compilation-report"
+						data-id="close-compilation-report"
+						class="cancel-button"
+						aria-label="Cancel Compilation"
+				>Cancel
+				</button>
+				<button class="go-button confirm-compile">Compile</button>
+			</form>
+		</footer>
+	</dialog>
 </form>
+<dialog class="load-failed" id="load-failed">
+	<h2>Load failed!</h2>
+	<p>Contact us on the EggForge channel on the EemFoo discord</p>
+</dialog>
+<template id="compilation-item-template">
+	<section class="compilation-data-item" data-att-status="partial" data-sprite-status="partial" data-no-atts="true">
+		<p class="compilation-item-head">
+			<span data-item="gender" class="data-item">??</span>
+			Age: <span data-item="age" class="data-item">??</span>
+			<span class="data-item" data-item="percent">??</span>
+		</p>
+		<output for="compilation-item-male-2">
+			<span class="missing-container">
+			<span class="missing-container-header">Missing:</span>
+			<span class="missing-lists">
+				<span data-missing="sprites">
+					<span class="missing-sub-head">Sprites</span>
+					<span class="missing-list">
+					</span>
+				</span>
+				<span data-missing="atts" class="no-atts log-warning show-on-no-atts">No ATTS!</span>
+				<span data-missing="atts" class="hide-on-no-atts">
+					<span class="missing-sub-head">Atts</span>
+					<span class="missing-list">
+					</span>
+				</span>
+			</span>
+			</span>
+			<span class="shared-atts log-warning show-on-shared-atts">(Shared ATTs)</span>
+		</output>
+	</section>
+</template>
 <script>
     function __private__failed() {
-        document.getElementById("splash-message").innerHTML = "Load failed!; Contact author on discord"
+        document.getElementById("load-failed").showModal();
     }
+
+    function __private__okay() {
+        document.getElementById("load-failed").remove();
+    }
+
+
+    (function ($doc) {
+        const modal = $doc.getElementById('compilation-report-modal');
+        if (modal == null) {
+            alert("compilation report modal is null")
+            return;
+        }
+        modal.showModal();
+
+        const statusItemsTemplate = $doc.getElementById('compilation-item-template');
+
+
+        /**
+         *
+         * @param {HTMLElement|Document} element
+         * @param {string} selector
+         * @param { (HTMLElement) => void }work
+         */
+        const applyToAll = (element, selector, work) => {
+            const items = element.querySelectorAll(selector);
+            items.forEach(work);
+        }
+
+
+        // noinspection SpellCheckingInspection
+        const allParts = 'abcdefghijklmn'.split('');
+        const SKIPPED_ATTR = "Skipped";
+        const COMPLETE_ATTR = "Complete";
+        const PARTIAL_ATTR = "Partial";
+        const INDETERMINATE_ATTR = "Indeterminate";
+        const report = $doc.querySelector(".compilation-report-items");
+
+        /**
+         * Calculate missing parts
+         * @param {string|string[]} partString
+         * @return string[]
+         */
+        function getMissing(partString) {
+            let parts = Array.isArray(partString) ? partString : partString.split('');
+            return allParts.filter(p => {
+                console.log(p, parts.indexOf(p) < 0)
+                return parts.indexOf(p) < 0
+            });
+        }
+
+
+        /**
+         *
+         * @param {string[]|null|undefined} missing
+         */
+        function getPartsStatus(missing) {
+            if (missing == null) {
+                return SKIPPED_ATTR;
+            }
+            if (missing.length === 0) {
+                return COMPLETE_ATTR;
+            }
+            return PARTIAL_ATTR;
+        }
+
+        function formatRun(start, end) {
+            if (typeof end === 'number') {
+                end = String.fromCharCode(end);
+            }
+            start = start.toUpperCase();
+            end = end.toUpperCase()
+            if (start === end) {
+                return start;
+            }
+            return `${start}-${end}`;
+        }
+
+        /**
+		 *
+         * @param {string[]} missing
+		 * @return string[]
+         */
+        function getRuns(missing) {
+            if (missing.length === 0) {
+                return [];
+            }
+            missing = missing.map(p => p.toUpperCase()).sort( (a, b) => a.localeCompare(b))
+            if (missing.length === 1) {
+                return missing;
+            }
+            const out = [];
+            let start = null;
+            let last = null;
+			for (let partString of missing) {
+                let partCode = partString.charCodeAt(0);
+                if (last == null) {
+                    start = partString;
+                } else if (partCode !== last + 1) {
+                    const run = formatRun(start, last)
+                    out.push(run.toUpperCase());
+                    start = partString;
+                } else {
+                    console.log("In run: " + start + '-' + partString);
+                }
+                last = partCode;
+            }
+            const lastChar = String.fromCharCode(last).toUpperCase();
+            if (lastChar === start) {
+                out.push(lastChar.toUpperCase());
+            } else if (last != null) {
+                out.push (formatRun(start, last));
+            }
+            return out;
+        }
+
+        const addMissing = (item, kind, missingParts) => {
+            const parent = item.querySelector("[data-missing='" + kind + "'] .missing-list");
+            const missingRuns = getRuns(missingParts);
+            console.log(missingRuns);
+            for (let i=0; i < missingRuns.length; i++) {
+                const run = missingRuns[i];
+                const span = $doc.createElement("span");
+                span.classList.add("missing-item");
+                if (i === missingRuns.length - 1) {
+                    span.classList.add("missing-item-last");
+                }
+                span.innerHTML = run;
+                parent.appendChild(span);
+            }
+        }
+
+        // /**
+        //  *
+        //  * @param {{ gender: string, age: number, atts:string|null|undefined, sprites: string|null|undefined }}data
+        //  */
+        // function makeStatusItem(data) {
+        /**
+         *
+         * @param {string} gender
+         * @param {int} age
+         * @param {string|string[]} sprites
+         * @param {string|string[]} atts
+         */
+        function makeStatusItem(gender, age, sprites, atts) {
+            /**
+             * @type {HTMLElement}
+             */
+            const item = statusItemsTemplate.content.cloneNode(true).querySelector("section");
+            item.setAttribute('data-gender', gender.toLowerCase());
+            console.log(item);
+            const headerId = '' + gender + '-age-' + age;
+            item.querySelector(".compilation-item-head").id = headerId;
+            item.querySelector("output").setAttribute('for', headerId);
+            applyToAll(item, '[data-item="gender"]', (el) => {
+                el.innerText = gender;
+            });
+            applyToAll(item, '[data-item="age"]', (el) => {
+                el.innerText = '' + age;
+            });
+            const missingSprites = (sprites) ? getMissing(sprites) : null;
+            const spriteStatus = getPartsStatus(missingSprites);
+            item.setAttribute('data-sprite-status', '' + spriteStatus.toLowerCase());
+
+            const missingAtts = atts && atts.toLowerCase() !== 'shared' ? getMissing(atts ?? '') : null;
+			console.log({
+				missingAtts,
+				missingSprites
+            });
+
+            const noAtts = missingAtts != null ? missingAtts.length === 14 : null;
+            item.setAttribute('data-no-atts', atts?.toLowerCase() === 'shared' ? 'shared' : (''+ (noAtts  ?? 'skipped')));
+            const attStatus = atts?.toLowerCase() === 'shared' ? 'shared' : getPartsStatus(missingAtts);
+            item.setAttribute('data-att-status', attStatus?.toLowerCase());
+
+            let fullStatus;
+            if (spriteStatus === attStatus) {
+                fullStatus = spriteStatus;
+            } else if (spriteStatus === PARTIAL_ATTR || spriteStatus === PARTIAL_ATTR) {
+                fullStatus = PARTIAL_ATTR
+            } else if (spriteStatus === SKIPPED_ATTR) {
+                fullStatus = attStatus
+            } else if (attStatus === SKIPPED_ATTR) {
+                fullStatus = spriteStatus;
+            } else {
+                fullStatus = INDETERMINATE_ATTR;
+            }
+
+            if (missingSprites == null) {
+                fullStatus = "Skipped";
+            }
+
+            item.setAttribute('data-status', fullStatus.toLowerCase());
+
+            if (missingSprites) {
+                addMissing(item, 'sprites', missingSprites);
+            }
+
+            if (missingAtts) {
+                addMissing(item, 'atts', missingAtts);
+            }
+
+            let percent;
+            const partCount = 14;
+            const totalFiles  = partCount * 2;
+			if (missingSprites != null) {
+                if (missingAtts != null) {
+                    const totalMissing = missingSprites.length + missingAtts.length;
+                    percent = (100 * (totalFiles - totalMissing)) / totalFiles;
+                } else {
+                    percent = (100 * (partCount - missingSprites.length)) / partCount;
+                }
+			} else if (missingAtts != null) {
+				percent = (100 * (totalFiles - missingAtts.length)) / totalFiles;
+			} else {
+                percent = null;
+            }
+
+            applyToAll(item, '[data-item="percent"]', (el) => {
+                if (percent != null) {
+                    el.innerText = '' + percent.toFixed(0) + '%';
+                } else {
+                    el.innerText = 'None'
+				}
+            });
+
+
+            report.appendChild(item);
+        }
+
+
+        makeStatusItem('Male', 1, "abcdefghij", "abf");
+        makeStatusItem('Male', 2, null, null);
+        makeStatusItem('Male', 3, "abcdefghijklmn", "abcdefghijklmn");
+        makeStatusItem('Male', 4, "abcdefghi", "abcdefghijklmn");
+
+        makeStatusItem('Female', 1, "abcdefghijklmn", "abf");
+        makeStatusItem('Female', 2, "abcdefghijklmn", "abcdefgijklmn");
+        makeStatusItem('Female', 3, "abcdefghijklmn", "shared");
+        makeStatusItem('Female', 4, "abcdefghi", "abcdefghijklmn");
+
+
+    })(document);
 </script>
-<script type="module" src="/src/EggForge-Kt.js" defer onerror="__private__failed();"></script>
+<!--<script type="module" src="src/EggForge-Kt.js" defer onerror="__private__failed();" onload="__private__loaded()"></script>-->
 </body>
 </html>

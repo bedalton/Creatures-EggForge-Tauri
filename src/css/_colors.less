@@ -81,3 +81,18 @@
 
 @cancel-button-hover-background-color-dark: @accent-color-light-dark;
 @cancel-button-hover-background-color-light: accent-color-light-light;
+
+@warning-text-color-dark: #FFF;
+@warning-text-color-light: #FFF;
+
+@warning-background-color-dark: #b68105;
+@warning-background-color-light: orange;
+
+
+
+._warning() {
+  background: @warning-background-color-dark;
+  background: var(--warning-background-color);
+  color: @warning-text-color-dark;
+  color: var(--warning-text-color);
+}
