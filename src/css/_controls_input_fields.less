@@ -6,12 +6,13 @@
   margin: 0;
   padding: 0;
   .flex-row-flex-fill();
-  .flex-column();
+  ._flex-column();
 
   & input, & button, & select {
     height: @input-height;
   }
 
+  //noinspection CssOverwrittenProperties
   & input[disabled] {
     color: @color-dark !important;
     color: var(--color) !important;
@@ -19,7 +20,7 @@
   }
 
   & input {
-    .flex-fill();
+    .flex-column-flex-fill();
     width: 100%;
   }
 
@@ -33,6 +34,7 @@
 .input-group {
   position: relative;
 
+  //noinspection CssOverwrittenProperties
   & > * {
     margin: 0;
     border-radius: 0;
@@ -64,6 +66,7 @@
   margin-top: -0.6rem;
 }
 
+//noinspection CssOverwrittenProperties
 input[type="text"].path-display {
   &, &[disabled] {
     color: @color-dark !important;

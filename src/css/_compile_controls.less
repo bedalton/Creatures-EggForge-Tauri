@@ -2,7 +2,7 @@
 @import "_colors.less";
 
 #compile {
-  .flex-row();
+  ._flex-row();
   .flex-row-align-middle();
   position: relative;
 
@@ -17,7 +17,7 @@
 
   & span {
     text-align: center;
-    .flex-fill();
+    .flex-row-flex-fill();
   }
 
 
@@ -43,5 +43,3 @@ body:not([data-compiling='true']) {
     display: none !important;
   }
 }
-
-@import "_logger_bubble.less";

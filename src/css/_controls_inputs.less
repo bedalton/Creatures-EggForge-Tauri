@@ -1,11 +1,7 @@
-
-.placeholder(@prefix) {
-  @{prefix} {
-    color: @input-placeholder-color-dark;
-    color: var(--input-placeholder-color);
-  }
-}
-
+@import "_flex.less";
+@import "_colors.less";
+@import "_constants.less";
+@import "_placeholders.less";
 
 // FIREFOX
 .placeholder(~"::-moz-placeholder");
@@ -23,10 +19,11 @@
 
 .placeholder(~".input-placeholder");
 
+//noinspection CssOverwrittenProperties
 .input-with-prefix-label {
   height: @input-height;
   padding: 0;
-  .flex-row();
+  ._flex-row();
   .flex-row-align-middle();
   & > * {
     margin:0;
@@ -43,8 +40,10 @@
     background: var(--button-background);
     padding: 0.4rem 1rem;
   }
+
+  .placeholder(~"input::placeholder");
   & > input {
-    .flex-fill();
+    .flex-row-flex-fill();
     height: 100%;
     border-radius: 0;
     border-top-right-radius: @border-radius;

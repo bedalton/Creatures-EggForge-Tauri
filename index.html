@@ -3,27 +3,40 @@
 <head>
 	<meta charset="UTF-8"/>
 	<link rel="stylesheet" href="./src/css/style.css"/>
+	<link href="src/fonts/material-icons/material-icons.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Egg-Forge</title>
 </head>
 
 <body data-compiling="false">
-<form id="compile-egg-form" onsubmit="return false;">
+<form id="compile-egg-form"
+	  data-id="compile-egg-form" onsubmit="return false;">
 	<header class="header">
 		<img src="src/images/logo/logo.png" alt="egg-forge logo" class="logo">
 
 		<div class="header-right">
-			<p class="logger-bubble" id="logger-bubble-header">Loading...</p>
-			<button id="compile" disabled="disabled">
-				<span id="compile-text" class="hide-on-compile">Compile Egg</span>
-				<span id="cancel-compile-text" class="hide-on-not-compiling">Cancel</span>
-				<img src="./src/images/loading.svg" class="hide-on-not-compiling" id="compiling-spinner"
+			<p class="logger-bubble" id="logger-bubble-header"
+			   data-id="logger-bubble-header">Loading...</p>
+			<button id="compile"
+					data-id="compile-button"
+					disabled="disabled"
+					data-needs-confirm="true"
+			>
+				<span data-id="compile-text"
+					  class="hide-on-compile">Compile Egg</span>
+				<span data-id="cancel-compile-text"
+					  class="hide-on-not-compiling">Cancel</span>
+				<img src="./src/images/loading.svg"
+					 class="hide-on-not-compiling"
+					 id="compiling-spinner"
+					 data-id="compiling-spinner"
 					 alt="loading spinner">
 			</button>
 		</div>
 	</header>
 
-	<div id="debug-logger-panel" class="hidden">
+	<div id="debug-logger-panel"
+		 data-id="debug-logger-panel" class="hidden">
 	</div>
 	<main class="flex-column">
 		<div class="flex-row flex-fill root-row">
@@ -35,18 +48,21 @@
 					<div class="flex-row flex-fill input-group">
 						<input type="text"
 							   id="project-root-path"
+							   data-id="project-root-path"
 							   aria-readonly="true"
 							   readonly="readonly"
 							   class="flex-fill path-display"
 							   placeholder="select input folder"
 						>
 						<button id="refresh-project-folders-button"
+								data-id="refresh-project-folders-button"
 								aria-label="refresh project"
 								class="refresh-button"
 						>
 							<img src="src/images/icons/refresh.svg" alt="refresh">
 						</button>
 						<button id="root-project-open"
+								data-id="root-project-open"
 								aria-label="select project root"
 								class="input-button"
 						>
@@ -59,7 +75,8 @@
 				<div class="input-field flex-column flex-fill">
 					<label for="breed-slot-select" class="flex-fill flex-row">Breed Slot</label>
 					<div class="flex-row flex-fill select-container">
-						<select id="breed-slot-select" class="flex-fill" data-has-selection="false">
+						<select id="breed-slot-select"
+								data-id="breed-slot-select" class="flex-fill" data-has-selection="false">
 						</select>
 						<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
 							<img class="button-icon"
@@ -74,7 +91,8 @@
 				<div class="input-field flex-column flex-fill input-group">
 					<label for="egg-name-input" class="flex-row">Egg Name (for Mucco):</label>
 					<div class="flex-row flex-fill">
-						<input type="text" id="egg-name-input" class="flex-fill" placeholder="Egg display name..">
+						<input type="text" id="egg-name-input"
+							   data-id="egg-name-input" class="flex-fill" placeholder="Egg display name..">
 					</div>
 				</div>
 			</div>
@@ -87,21 +105,24 @@
 							<img src="src/images/icons/folder_open.svg"
 								 class="placeholder"
 								 alt="male glyph preview image">
-							<button class="screen-reader-only" id="male-glyph-select-button">Select male glyph file
+							<button class="screen-reader-only" id="male-glyph-select-button"
+									data-id="male-glyph-select-button">Select male glyph file
 							</button>
 						</div>
 						<div class="glyph-inputs-container">
 							<div class="input-with-prefix-label">
 								<label for="glyph-male-frame-select">Frame</label>
-								<input type="number" id="glyph-male-frame-select" class="flex-fill"
-								       disabled="disabled"
-								       min="0"
+								<input type="number" id="glyph-male-frame-select"
+									   data-id="glyph-male-frame-select" class="flex-fill"
+									   disabled="disabled"
+									   min="0"
 									   data-has-selection="false">
 							</div>
 							<div class="input-field glyph-filename-input">
 								<label for="glyph-male-filename-input" class="screen-reader-only">Output name</label>
 								<input type="text"
 									   id="glyph-male-filename-input"
+									   data-id="glyph-male-filename-input"
 									   class="flex-fill"
 									   data-has-selection="false"
 									   placeholder="Glyph output filename..."
@@ -119,22 +140,25 @@
 									class="placeholder"
 									alt="male glyph image preview"
 							>
-							<button class="screen-reader-only" id="female-glyph-select-button">Select female glyph
+							<button class="screen-reader-only" id="female-glyph-select-button"
+									data-id="female-glyph-select-button">Select female glyph
 								file
 							</button>
 						</div>
 						<div class="glyph-inputs-container">
 							<div class="input-with-prefix-label">
 								<label for="glyph-female-frame-select">Frame</label>
-								<input type="number" id="glyph-female-frame-select" class="flex-fill"
+								<input type="number" id="glyph-female-frame-select"
+									   data-id="glyph-female-frame-select" class="flex-fill"
 									   disabled="disabled"
-								       min="0"
+									   min="0"
 									   data-has-selection="false">
 							</div>
 							<div class="input-field glyph-filename-input">
 								<label for="glyph-female-filename-input" class="screen-reader-only">Output name</label>
 								<input type="text"
 									   id="glyph-female-filename-input"
+									   data-id="glyph-female-filename-input"
 									   class="flex-fill"
 									   data-has-selection="false"
 									   placeholder="Glyph output filename..."
@@ -148,13 +172,15 @@
 
 
 		<!-- GENOME -->
-		<div class="flex-row flex-fill root-row main-panel" id="genome-inputs">
+		<div class="flex-row flex-fill root-row main-panel" id="genome-inputs"
+			 data-id="genome-inputs">
 			<div class="genome-input-group">
 				<!-- Genome Select -->
 				<div class="input-field flex-column flex-fill">
 					<label for="base-genome-select" class="flex-fill flex-row">Base Genome: </label>
 					<div class="flex-row flex-fill select-container">
-						<select id="base-genome-select" class="flex-fill" data-has-selection="false">
+						<select id="base-genome-select"
+								data-id="base-genome-select" class="flex-fill" data-has-selection="false">
 						</select>
 						<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
 							<img class="button-icon"
@@ -171,7 +197,8 @@
 				<div class="input-field">
 					<label for="genome-genus-select" class="flex-fill flex-row">Genome Genus: </label>
 					<div class="flex-row flex-fill select-container">
-						<select id="genome-genus-select" class="flex-fill" data-has-selection="false">
+						<select id="genome-genus-select"
+								data-id="genome-genus-select" class="flex-fill" data-has-selection="false">
 							<option value="" disabled selected="selected" hidden>Select Genome Genus...</option>
 						</select>
 						<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
@@ -186,7 +213,8 @@
 				<div class="input-field flex-column flex-fill input-group">
 					<label for="output-genome-name-input" class="flex-row">Output Genome Name:</label>
 					<div class="flex-row flex-fill">
-						<input type="text" id="output-genome-name-input" class="flex-fill"
+						<input type="text" id="output-genome-name-input"
+							   data-id="output-genome-name-input" class="flex-fill"
 							   placeholder="Output genome file name..">
 					</div>
 				</div>
@@ -200,12 +228,45 @@
 		>{{ _version_ }}
 		</button>
 	</div>
+
 </form>
+<dialog
+		class="compilation-report compilation-report-floating"
+		id="compilation-report-modal"
+		hidden="hidden"
+>
+	<h2>Verify for Compilation</h2>
+	<section class="compilation-report-items">
+	</section>
+	<footer>
+		<form method="dialog" class="input-group">
+			<button id="close-compilation-report"
+					data-id="close-compilation-report"
+					class="cancel-button"
+					aria-label="Cancel Compilation"
+			>Cancel
+			</button>
+			<button class="go-button confirm-compile"
+					data-id="compile-button"
+					data-needs-confirm="false"
+					data-cancellable="false"
+			>Compile</button>
+		</form>
+	</footer>
+</dialog>
+<dialog class="load-failed" id="load-failed" hidden>
+	<h2>Load failed!</h2>
+	<p>Contact us on the EggForge channel on the EemFoo discord</p>
+</dialog>
 <script>
     function __private__failed() {
-        document.getElementById("splash-message").innerHTML = "Load failed!; Contact author on discord"
+        document.getElementById("load-failed").showModal();
+    }
+
+    function __private__loaded() {
+        document.getElementById("load-failed").remove();
     }
 </script>
-<script type="module" src="/src/EggForge-Kt.js" defer onerror="__private__failed();"></script>
+<script type="module" src="src/EggForge-Kt.js" defer onerror="__private__failed();" onload="__private__loaded()"></script>
 </body>
 </html>
