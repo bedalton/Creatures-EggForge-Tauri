@@ -120,7 +120,7 @@ const copyIndexHTMLUpdatingVersion = () => {
 
     const originalIndexHTMLPath = path.join(__dirname, 'index.html');
     const copyIndexHTMLPath = path.join(dist, 'index.html');
-
+  
     let contents = fs.readFileSync(originalIndexHTMLPath, 'utf-8');
 
     const versionRegex = /\{\{\s*_version_\s*}}/gi;
@@ -131,8 +131,8 @@ const copyIndexHTMLUpdatingVersion = () => {
 
 // Ensure ./src directory
 ensureDirectory('src');
-// Copy index.html
 
+// Copy index.html
 copyIndexHTMLUpdatingVersion()
 
 // Copy JS
