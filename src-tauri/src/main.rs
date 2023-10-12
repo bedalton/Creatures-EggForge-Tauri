@@ -45,7 +45,7 @@ async fn add_gno(app_handle: tauri::AppHandle, path: &str) -> Result<bool, Strin
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![is_dir])
+        .invoke_handler(tauri::generate_handler![is_dir, add_gno])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
