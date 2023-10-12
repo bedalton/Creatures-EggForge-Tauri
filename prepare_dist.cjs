@@ -113,8 +113,6 @@ const copyExtensions = (src, extensions) => {
 /**
  * Copies index.html while replacing the version placeholder with the current version described in the Package.JSON
  * Placeholder is `{{ _version_ }}`
- * @param originalHTMLPath
- * @param copyHTMLPath
  */
 const copyIndexHTMLUpdatingVersion = () => {
     const version = fs.readFileSync(path.join(__dirname, 'version.txt'), 'utf-8')
@@ -123,17 +121,19 @@ const copyIndexHTMLUpdatingVersion = () => {
     const originalIndexHTMLPath = path.join(__dirname, 'index.html');
     const copyIndexHTMLPath = path.join(dist, 'index.html');
 
-    let contents = fs.readFileSync(originalHTMLPath, 'utf-8');
+    let contents = fs.readFileSync(originalIndexHTMLPath, 'utf-8');
+
     const versionRegex = /\{\{\s*_version_\s*}}/gi;
     contents = contents.replaceAll(versionRegex, version);
-    fs.writeFileSync(copyHTMLPath, contents);
+
+    fs.writeFileSync(copyIndexHTMLPath, contents);
 }
 
 // Ensure ./src directory
 ensureDirectory('src');
 // Copy index.html
 
-copyIndexHTMLUpdatingVersion(originalIndexHTMLPath, copyIndexHTMLPath)
+copyIndexHTMLUpdatingVersion()
 
 // Copy JS
 copyExtensions('src', ['js', 'js\.map']);
