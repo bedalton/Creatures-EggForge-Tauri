@@ -27,3 +27,4 @@ dist-ssr
 *.css
 !style.css
 !style.css.map
+MacOsBuild.command
