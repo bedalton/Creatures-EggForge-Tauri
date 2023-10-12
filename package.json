@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "./copyVersionToTauri.cjs && ./prepare_dist.cjs",
+    "build": "node copyVersionToTauri.cjs && node prepare_dist.cjs",
     "build_windows": "node prepare_dist.cjs",
     "preview": "vite preview",
-    "tauri": "./copyVersionToTauri.cjs && tauri",
-    "tauri-dev": "./copyVersionToTauri.cjs && tauri dev",
-    "tauri-build": "./copyVersionToTauri.cjs && ./prepare_dist.cjs && tauri build"
+    "tauri": "node copyVersionToTauri.cjs && tauri",
+    "tauri-dev": "node copyVersionToTauri.cjs && tauri dev",
+    "tauri-build": "node copyVersionToTauri.cjs && node prepare_dist.cjs && tauri build"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",
