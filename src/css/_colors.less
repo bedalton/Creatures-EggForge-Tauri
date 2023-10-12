@@ -6,8 +6,8 @@
 
 
 // Accent Color Light
-@accent-color-light-light: #8C69B1;
-@accent-color-light-dark: #8C69B1;
+@accent-color-light-light: #6d4982;
+@accent-color-light-dark: #6d4982;
 
 
 // Accent Color Bold
@@ -23,7 +23,7 @@
 @input-color-dark: @color-dark;
 
 @input-placeholder-color-light: rgba(0, 0, 0, 0.6);
-@input-placeholder-color-dark: rgba(255,255,255,0.7);
+@input-placeholder-color-dark: rgba(255,255,255,0.77);
 
 // Button
 @button-color-light: @color-light;
@@ -48,8 +48,51 @@
 @glyph-image-border-dark: @accent-color-bold-dark;
 
 // Logger Bubble
-@logger-bubble-background-color-dark: #b2aae3;
+@logger-bubble-background-color-dark: #B3B3DB;
 @logger-bubble-background-color-light: @logger-bubble-background-color-dark;
 
-@logger-bubble-text-color-dark: #350d4f;
+@logger-bubble-text-color-dark: #291D34;
 @logger-bubble-text-color-light: @logger-bubble-text-color-dark;
+
+@go-button-text-color-dark: #383333;
+@go-button-text-color-light: #e7e7e7;
+
+
+@go-button-text-color-dark: #f6f6f6;
+@go-button-text-color-light: #e7e7e7;
+
+@go-button-background-color-dark: @accent-color-bold-dark;//#3a7e11;
+@go-button-background-color-light: @accent-color-bold-dark;
+
+@go-button-hover-text-color-dark: #FFF;
+@go-button-hover-text-color-light: #FFF;
+
+@go-button-hover-background-color-dark: #3a7e11;
+@go-button-hover-background-color-light: #3a7e11;
+
+@cancel-button-text-color-dark: #e1dede;
+@cancel-button-text-color-light: #f5f4f4;
+
+@cancel-button-background-color-dark: darken(@accent-color-light-dark, 10%);
+@cancel-button-background-color-light: darken(@accent-color-light-dark, 10%);
+
+@cancel-button-hover-text-color-dark: #FFF;
+@cancel-button-hover-text-color-light: #FFF;
+
+@cancel-button-hover-background-color-dark: @accent-color-light-dark;
+@cancel-button-hover-background-color-light: accent-color-light-light;
+
+@warning-text-color-dark: #FFF;
+@warning-text-color-light: #FFF;
+
+@warning-background-color-dark: #b68105;
+@warning-background-color-light: orange;
+
+
+
+._warning() {
+  background: @warning-background-color-dark;
+  background: var(--warning-background-color);
+  color: @warning-text-color-dark;
+  color: var(--warning-text-color);
+}

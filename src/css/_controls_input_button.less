@@ -2,6 +2,7 @@
 @import "_constants.less";
 @import "_colors.less";
 
+//noinspection CssOverwrittenProperties
 .input-button {
   width: @button-tail-width;
   min-width: @button-tail-width;
@@ -9,7 +10,7 @@
   background: var(--button-background);
   color: @button-color-dark;
   color: var(--button-color);
-  .flex-column();
+  ._flex-column();
   .flex-column-align-center();
   .flex-column-align-middle();
 }

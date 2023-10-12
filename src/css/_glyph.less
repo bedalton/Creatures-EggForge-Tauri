@@ -1,23 +1,25 @@
 @import "_constants.less";
 @import "_flex.less";
+@import "_colors.less";
 
 .glyph {
   margin:0;
   padding: 0;
-  .flex-column();
+  ._flex-column();
   & > h3 {
     margin: 0;
     padding: 0;
     .font();
-    .flex-fill();
+    .flex-column-flex-fill();
   }
   & .glyph-main {
-    .flex-row();
-    .flex-fill();
+    ._flex-row();
+    .flex-column-flex-fill();
 
+    //noinspection CssOverwrittenProperties
     & .glyph-preview-container {
       cursor: pointer;
-      .flex-column();
+      ._flex-column();
       .flex-column-align-middle();
       .flex-column-align-center();
       border-radius: @border-radius;
@@ -44,8 +46,8 @@
     }
 
     & > .glyph-inputs-container {
-      .flex-column();
-      .flex-fill();
+      ._flex-column();
+      .flex-row-flex-fill();
       margin-left: 1em;
 
       & > .glyph-filename-input {
