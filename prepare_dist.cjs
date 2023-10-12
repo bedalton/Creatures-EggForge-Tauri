@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-const {exit} = require('process');
-const os = require('os');
-const fs = require('fs');
+const {exit} = require('node:process');
+const os = require('node:os');
+const fs = require('node:fs');
 const _fs = require('fs-extra');
-const path = require('path');
+const path = require('node:path');
 
 if (os.platform() === 'darwin') {
-    const {exec} = require('child_process');
+    const {exec} = require('node:child_process');
     exec('sh compile-icons.command',
         (error, stdout, stderr) => {
             console.log(stdout);
