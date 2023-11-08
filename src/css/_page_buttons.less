@@ -1,0 +1,160 @@
+@import "_colors_page_button.less";
+@import "_flex.less";
+
+@pageButtonSize: 4rem;
+
+//noinspection CssOverwrittenProperties
+.page-button (@i, @max) when (@i <= @max) {
+
+  @pageStatusDataAttribute: ~"data-page-@{i}-status";
+
+  // Page Icon :: FOCUSED PAGE
+  body[data-current-page="@{i}"] #page-select > [data-for-page="@{i}"] {
+    & > .page-button-number {
+
+      // Background
+      background: @page-button-focused-background-color-dark;
+      background: var(--page-button-focused-background-color);
+
+      // Border
+      border: 3px solid @page-button-focused-border-color-dark;
+      border: 3px solid var(--page-button-focused-border-color);
+    }
+  }
+  // Page Icon :: UN-FOCUSED PAGE
+  body:not([data-current-page="@{i}"]) #page-select > [data-for-page="@{i}"] {
+    & > .page-button-number {
+      // Background
+      background: @page-button-unfocused-background-color-dark;
+      background: var(--page-button-unfocused-background-color);
+
+      // Border
+      border: 3px solid @page-button-unfocused-border-color-dark;
+      border: 3px solid var(--page-button-unfocused-border-color);
+    }
+  }
+
+  // Error Page Icon :: FOCUSED PAGE
+  body[data-current-page="@{i}"][@{pageStatusDataAttribute}="error"] #page-select > [data-for-page="@{i}"] {
+    & > .page-button-number {
+      // Border
+      border: 3px solid @page-button-focused-error-border-color-dark;
+      border: 3px solid var(--page-button-focused-error-border-color);
+      // Background
+      background: @page-button-focused-error-background-color-dark;
+      background: var(--page-button-focused-error-background-color);
+      animation-name: error-pop;
+    }
+  }
+  body[@{pageStatusDataAttribute}="error"] #page-select > [data-for-page="@{i}"] {
+    & > .page-button-number {
+      animation-name: error-pop;
+    }
+  }
+
+  // Error Page Icon :: UN-FOCUSED PAGE
+  body:not([data-current-page="@{i}"])[@{pageStatusDataAttribute}="error"] #page-select > [data-for-page="@{i}"] {
+    & > .page-button-number {
+      // Border
+      border: 3px solid @page-button-unfocused-error-border-color-dark;
+      border: 3px solid var(--page-button-unfocused-error-border-color);
+
+      // Background
+      background: @page-button-unfocused-error-background-color-dark;
+      background: var(--page-button-unfocused-error-background-color);
+    }
+  }
+
+  // Error Page Icon :: FOCUSED PAGE
+  body[data-current-page="@{i}"][@{pageStatusDataAttribute}="complete"] #page-select > [data-for-page="@{i}"] {
+    & > .page-button-number {
+      // Border
+      border: 3px solid @page-button-focused-complete-border-color-dark;
+      border: 3px solid var(--page-button-focused-complete-border-color);
+
+      // Background
+      background: @page-button-focused-complete-background-color-dark;
+      background: var(--page-button-focused-complete-background-color);
+    }
+  }
+
+  // Error Page Icon :: UN-FOCUSED PAGE
+  body:not([data-current-page="@{i}"])[@{pageStatusDataAttribute}="complete"] #page-select > [data-for-page="@{i}"] {
+    & > .page-button-number {
+      animation: ease-in-out;
+      // Border
+      border: 3px solid @page-button-unfocused-complete-border-color-dark;
+      //noinspection CssOverwrittenProperties
+      border: 3px solid var(--page-button-unfocused-complete-border-color);
+
+      // Background
+      background: @page-button-unfocused-complete-background-color-dark;
+      background: var(--page-button-unfocused-complete-background);
+    }
+  }
+  .page-button(@i + 1, @max);
+}
+
+
+
+
+#page-select {
+  @pageButtonTransitionDuration: 600ms;
+  .page-button {
+    position: relative;
+    background: transparent !important;
+    .flex-column();
+    .flex-column-align-center();
+    //width: @pageButtonSize;
+    height: (@pageButtonSize + 3rem);
+    border: none;
+    box-shadow: none;
+    margin: 2rem 0 0;
+
+    //noinspection CssOverwrittenProperties
+    & > .page-button-number {
+      .flex-column();
+      .flex-column-align-middle();
+      .flex-column-align-center();
+      background-color: @page-button-unfocused-background-color-dark;
+      background-color: @page-button-unfocused-background-color-var;
+      width: @pageButtonSize;
+      height: @pageButtonSize;
+      border-radius: 50%;
+      transition: color @pageButtonTransitionDuration, background @pageButtonTransitionDuration, border @pageButtonTransitionDuration;
+      animation-delay: 0ms;
+      animation-duration: 100ms;
+    }
+  }
+}
+
+@pageButtonErrorScale: 0.08;
+@keyframes error-pop {
+  0% {
+    transform: translateY(0);
+    width: @pageButtonSize;
+    height: @pageButtonSize;
+  }
+
+  50% {
+    transform: translateY((@pageButtonSize * (-@pageButtonErrorScale * 0.5)));
+    margin-bottom: -(@pageButtonSize * @pageButtonErrorScale);
+    width: (@pageButtonSize * (1 + @pageButtonErrorScale));
+    height: (@pageButtonSize * (1 + @pageButtonErrorScale));
+  }
+
+  100% {
+    transform: translateY(0);
+    width: @pageButtonSize;
+    height: @pageButtonSize;
+  }
+}
+
+.page-button(1, 4);
+
+
+body:not([data-view='advanced']) {
+  #page-select {
+    display: none !important;
+  }
+}

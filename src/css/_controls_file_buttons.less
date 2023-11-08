@@ -25,3 +25,18 @@ body:not([data-has-project-root="true"]) {
     display: none;
   }
 }
+
+
+.att-cancel-button {
+  .refresh-button;
+  right: 7.5rem;
+}
+
+
+input:placeholder-shown ~ .att-cancel-button {
+  display: none !important;
+}
+
+input:placeholder-shown ~ .refresh-button {
+  display: none !important;
+}

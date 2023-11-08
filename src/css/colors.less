@@ -1,5 +1,6 @@
 @import "_constants.less";
 @import "_colors.less";
+@import "_colors_page_button";
 
 // Dark mode selector
 .color-scheme-dark() {
@@ -41,6 +42,9 @@
 
   --warning-text-color: var(@warning-text-color-dark);
   --warning-background-color: @warning-background-color-dark;
+
+  // Page Button
+  --page-button-unfocused-error-background-color: @page-button-unfocused-error-background-color-dark;
 }
 
 .color-scheme-light() {
@@ -83,6 +87,7 @@
 
     --warning-text-color: var(@warning-text-color-light);
     --warning-background-color: @warning-background-color-light;
+    --page-button-unfocused-error-background-color: @page-button-unfocused-error-background-color-light;
   }
 }
 
@@ -93,6 +98,24 @@ body[data-theme='dark'] {
 html {
   .color-scheme-dark();
   --border-radius: @border-radius;
+
+  // Page Button - No Status
+  --page-button-focused-background-color: @page-button-focused-background-color-var;
+  --page-button-unfocused-background-color: @page-button-unfocused-background-color-var;
+  --page-button-focused-border-color: @page-button-focused-border-color-var;
+  --page-button-unfocused-border-color: @page-button-unfocused-border-color-var;
+
+  // Page Button - Error
+  --page-button-focused-error-background-color: @page-button-focused-error-background-color-var;
+  --page-button-focused-error-border-color: @page-button-focused-error-border-color-var;
+  --page-button-unfocused-error-border-color: @page-button-unfocused-error-border-color-var;
+
+  // Page Button - success
+  --page-button-focused-complete-background-color: @page-button-focused-complete-background-color-var;
+  --page-button-unfocused-complete-background-color: @page-button-unfocused-complete-background-color-var;
+  --page-button-focused-complete-border-color: @page-button-focused-complete-border-color-var;
+  --page-button-unfocused-complete-border-color: @page-button-unfocused-complete-border-color-var;
+
 }
 
 

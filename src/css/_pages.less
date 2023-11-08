@@ -1,0 +1,45 @@
+@import "_flex.less";
+@import "_constants.less";
+@import "_colors.less";
+@import "_page_buttons.less";
+
+.slideAway(@i, @j, @max) when (@i < @max), (@j < @max) {
+  body[data-current-page="@{i}"] main > [data-page="@{j}"] {
+    @dist: (@i - @j) * 100%;
+    left: @dist;
+  }
+  .slideAway(@i + 1, @j, @max)
+}
+
+.pageNav(@i, @max) when (@i <= @max) {
+  body:not([data-current-page="@{i}"]) main > [data-page="@{i}"] {
+    display: none !important;
+  }
+  .pageNav(@i + 1, @max)
+}
+
+
+main {
+  position: relative;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.page {
+  transition: opacity 400ms, left 400ms;
+  flex: 1 1 auto;
+}
+
+.pageNav(1, @page-count);
+
+@media (prefers-reduced-motion) {
+  .page {
+    transition: none;
+  }
+}
+
+#page-select {
+  width: 100%;
+  .flex-row-align-center();
+  ._flex-row();
+}
