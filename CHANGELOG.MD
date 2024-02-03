@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.2.0] - 2024-02-03
+### Fixed
+- Path issues on non C-drives
+- Erroneous missing files reporting
+
 ## [0.2.0] - 2023-10-12
 ### Added
 - Sprite/ATT contents verification/confirmation screen
