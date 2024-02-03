@@ -512,6 +512,13 @@ button:hover {
   color: #FFF;
   color: var(--go-button-text-hover-color);
 }
+.button-plain {
+  background: transparent;
+  box-shadow: none;
+}
+.button-plain:hover {
+  filter: brightness(60%);
+}
 ::-moz-placeholder {
   color: rgba(255, 255, 255, 0.77);
   color: var(--input-placeholder-color);
@@ -758,6 +765,16 @@ body:not([data-compiling='true']) .hide-on-not-compiling {
 .show-log-button-container > #show-log-button:not(:hover) {
   background: transparent;
   box-shadow: none;
+}
+button.close-log-button {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  background: transparent !important;
+}
+button.close-log-button:hover {
+  color: #ffc3e5;
+  filter: none !important;
 }
 .logger-bubble {
   display: block;
