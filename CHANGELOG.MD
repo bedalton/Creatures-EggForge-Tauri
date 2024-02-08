@@ -7,10 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [v0.2.2] - 2024-02-03
+## [v0.2.2] - 2024-02-08
 ### Fixed
 - Fix incorrect auto update URL
 - Fix App version not set in Cargo.toml
+- Fix accidental setting of rust-version
 
 ## [v0.2.1] - 2024-02-03
 ### Fixed
