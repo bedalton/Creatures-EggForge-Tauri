@@ -1,12 +1,12 @@
 [package]
 name = "egg-forge"
-version = "0.0.0"
+version = "0.2.2"
 description = "A Creatures 3 egg agent compiler"
 authors = ["bedalton"]
 license = ""
 repository = ""
 edition = "2021"
-rust-version = "1.57"
+rust-version = "0.2.2"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
