@@ -34,7 +34,7 @@ if (version !== packageJSON.version) {
 
 const cargoTomlPath = path.join(__dirname, 'src-tauri', 'Cargo.toml');
 let cargoTomlText = fs.readFileSync(cargoTomlPath, 'utf-8');
-const tomlVersionRegex  = RegExp(/version\s*=\s*"([0-9.]+)"\n/gmi);
+const tomlVersionRegex  = RegExp(/^version\s*=\s*"([0-9.]+)"\n/gmi);
 const cargoMatch = tomlVersionRegex.exec(cargoTomlText);
 
 if (cargoMatch == null || cargoMatch[1] !== version) {
