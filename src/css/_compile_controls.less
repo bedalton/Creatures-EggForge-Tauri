@@ -15,11 +15,10 @@
     background: var(--button-disabled-background);
   }
 
-  & span {
+  & span:not(.button-progress-bar) {
     text-align: center;
     .flex-row-flex-fill();
   }
-
 
   & img#compiling-spinner {
     position: absolute;
@@ -31,6 +30,27 @@
   }
 }
 
+.compile-button-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-radius: @border-radius;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+
+
+  & .button-progress-bar {
+    position: absolute;
+    display: block;
+    background: @accent-color-vivid-dark;
+    background: var(--accent-color-vivid);
+    width: 0;
+    height: 3px;
+    margin: -3px 0 0;
+    padding: 0;
+  }
+}
 
 body[data-compiling='true'] {
   & .hide-on-compile {
