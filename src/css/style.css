@@ -3,6 +3,7 @@ body[data-theme='dark'] {
   --color: #f8f7f7;
   --accent-color-bold: #5F41B9;
   --accent-color-light: #6d4982;
+  --accent-color-vivid: #ff517c;
   --input-background: #6d4982;
   --input-color: #f8f7f7;
   --input-placeholder-color: rgba(255, 255, 255, 0.77);
@@ -31,6 +32,7 @@ html {
   --color: #f8f7f7;
   --accent-color-bold: #5F41B9;
   --accent-color-light: #6d4982;
+  --accent-color-vivid: #ff517c;
   --input-background: #6d4982;
   --input-color: #f8f7f7;
   --input-placeholder-color: rgba(255, 255, 255, 0.77);
@@ -71,6 +73,7 @@ body[data-theme='light'] html {
   --color: #0f0f0f;
   --accent-color-bold: #5F41B9;
   --accent-color-light: #6d4982;
+  --accent-color-vivid: #dc2b53;
   --input-background: #6d4982;
   --input-color: #f8f7f7;
   --input-placeholder-color: rgba(0, 0, 0, 0.6);
@@ -646,7 +649,7 @@ select {
   background: #7d64c9;
   background: var(--button-disabled-background);
 }
-#compile span {
+#compile span:not(.button-progress-bar) {
   text-align: center;
   flex: 1;
 }
@@ -656,6 +659,24 @@ select {
   display: inline;
   width: 60px;
   height: 60px;
+}
+.compile-button-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.compile-button-container .button-progress-bar {
+  position: absolute;
+  display: block;
+  background: #ff517c;
+  background: var(--accent-color-vivid);
+  width: 0;
+  height: 3px;
+  margin: -3px 0 0;
+  padding: 0;
 }
 body[data-compiling='true'] .hide-on-compile {
   display: none !important;

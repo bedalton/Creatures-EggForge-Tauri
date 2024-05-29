@@ -596,7 +596,7 @@ checksum = "56ce8c6da7551ec6c462cbaf3bfbc75131ebbfa1c944aeaa9dab51ca1c5f0c3b"
 
 [[package]]
 name = "egg-forge"
-version = "0.0.0"
+version = "0.2.2"
 dependencies = [
  "serde",
  "serde_json",
