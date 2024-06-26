@@ -166,7 +166,7 @@ a:hover {
 }
 .flex-column {
   display: flex;
-  flex-direction: column;
+  flex-direction: column!important;
 }
 .flex-column.flex-align-top {
   justify-content: start;
@@ -191,7 +191,7 @@ a:hover {
 }
 .flex-row {
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
 }
 .flex-row.flex-align-top {
   align-items: start;
@@ -912,6 +912,7 @@ header > img {
 }
 .main-panel.no-outline {
   border: none !important;
+  margin: 0;
 }
 .main-panel:not(:last-child) {
   margin-right: 0.5rem;
@@ -962,7 +963,7 @@ header > img {
   position: relative;
   background: transparent !important;
   display: flex;
-  flex-direction: column;
+  flex-direction: column!important;
   align-items: center;
   height: 7rem;
   border: none;
@@ -992,7 +993,7 @@ header > img {
 }
 #page-select .page-button > .page-button-number {
   display: flex;
-  flex-direction: column;
+  flex-direction: column!important;
   justify-content: center;
   align-items: center;
   background-color: transparent;
@@ -1213,6 +1214,7 @@ main {
   position: relative;
   width: 100%;
   overflow-y: auto;
+  margin-top: 10px;
 }
 .page {
   transition: opacity 400ms, left 400ms;
