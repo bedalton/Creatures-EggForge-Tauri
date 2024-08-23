@@ -30,4 +30,6 @@ dist-ssr
 !style.css.map
 MacOsBuild.command
 
+index_without_pages.html
+index_without_pages.html
 /src-tauri/gen
