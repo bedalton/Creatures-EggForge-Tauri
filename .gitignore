@@ -29,3 +29,5 @@ dist-ssr
 !style.css
 !style.css.map
 MacOsBuild.command
+
+/src-tauri/gen
