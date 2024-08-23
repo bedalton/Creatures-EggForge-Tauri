@@ -96,14 +96,6 @@
       "dialog": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDI0ODE2QUJCOUJBNTQwQjAKUldTd1FLV2J1MnFCSkRuOGgzZkVuUW9VbmZpZ3FuVkRqcGNEb3ZTVzA4djE1dnNDR0NkV3NDaXYK"
     },
-    "windows": [
-      {
-        "fullscreen": false,
-        "width": 960,
-        "height": 600,
-        "resizable": false,
-        "title": "EggForge"
-      }
-    ]
+    "windows": []
   }
 }
