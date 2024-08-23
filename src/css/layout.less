@@ -1,7 +1,7 @@
 @import "_flex.less";
 
 @windowWidth: 60em;
-@windowHeight: 33em;
+@windowHeight: 34em;
 
 html, body {
   width: 100vw;
@@ -71,13 +71,17 @@ html, body {
   }
 }
 
+#att-selects {
+  padding-top: 0;
+}
+
 .root-row {
   & .main-panel {
     width: 50%;
   }
 }
 
-#genome-inputs {
+[data-id="genome-inputs"] {
   ._flex-row();
   .flex-column-flex-fill();
   .flex-row-align-top();

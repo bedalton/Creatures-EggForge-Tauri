@@ -44,3 +44,27 @@ main {
   .flex-row-align-center();
   ._flex-row();
 }
+
+body:not([data-view="advanced"]) {
+  [data-show-on="advanced"] {
+    display: none !important;
+  }
+}
+
+body:not([data-view="simple"]) {
+  [data-show-on="simple"] {
+    display: none !important;
+  }
+}
+
+body[data-view="advanced"] {
+  [data-show-on]:not([data-show-on="advanced"]) {
+    display: none !important;
+  }
+}
+
+body[data-view="simple"] {
+  [data-show-on]:not([data-show-on="simple"]) {
+    display: none !important;
+  }
+}
