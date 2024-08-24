@@ -3,7 +3,6 @@ use std::path::{Path, PathBuf};
 use tauri::{Config, Manager, Result, Window};
 use tauri::api::dialog;
 
-use crate::config;
 use crate::config::get_config_value_string;
 
 #[derive(Clone, serde::Serialize)]
@@ -11,22 +10,22 @@ struct OpenFolderPayload {
     path: String
 }
 
-#[tauri::command]
-pub async fn open_sibling_body_data(window: &Window, path: &str) -> Result<Option<String>> {
-    let window: Window = window.clone();
-    let path = Path::new(path);
-    if let Some(parent) = path.parent() {
-        let body_data = path.join("Body Data");
-        if body_data.exists() && body_data.is_dir() {
-            window.app_handle().fs_scope().allow_directory(body_data, false);
-            Some(&body_data.to_string_lossy())
-        } else {
-            None
-        }
-    } else {
-        None
-    }
-}
+// #[tauri::command]
+// pub async fn open_sibling_body_data(window: &Window, path: &str) -> Result<Option<String>> {
+//     let window: Window = window.clone();
+//     let path = Path::new(path);
+//     let mut output: Option<String> = None;
+//     if let Some(parent) = path.parent() {
+//         let body_data = parent().join("Body Data");
+//         if body_data.exists() && body_data.is_dir() {
+//             let _ = window.app_handle().fs_scope().allow_directory(body_data.clone(), false)?;
+//             if let Some(path) = body_data.into_os_string().into_string() {
+//                 output = Some(path);
+//             }
+//         }
+//     }
+//     Result(output)
+// }
 
 pub async fn open_project(window: &Window, config: &Config, is_starting: bool) -> bool {
     let result = get_project_path(config);
@@ -78,14 +77,14 @@ fn get_project_path(config: &Config) -> Option<PathBuf> {
     // Set starting directory
     let starting_directory = get_starting_directory(config);
     if starting_directory.is_some() {
-        open_dialog = open_dialog.set_directory(starting_directory.unwrap())
+        open_dialog = open_dialog.set_directory(starting_directory?)
     }
 
-    return open_dialog.pick_folder();
+    open_dialog.pick_folder()
 }
 
 fn get_starting_directory(config: &Config) -> Option<String> {
-    return get_config_value_string(config, |config| {
+    get_config_value_string(config, |config| {
         config.last_project_root
     })
 }
