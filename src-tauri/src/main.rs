@@ -26,6 +26,7 @@ mod window;
 mod save_dialog;
 mod dialog;
 mod open_project;
+mod add_att_directory;
 
 #[derive(Clone, serde::Serialize)]
 struct StringMessage {
@@ -154,7 +155,14 @@ fn main() {
     let app_name_for_menu = app_name.clone();
     tauri::Builder::default()
         .manage(state)
-        .invoke_handler(tauri::generate_handler![is_dir, add_gno, view_mode::set_egg_mode_in_tauri, get_window_id, save_dialog::save_file])
+        .invoke_handler(tauri::generate_handler![
+            is_dir,
+            add_gno,
+            view_mode::set_egg_mode_in_tauri,
+            get_window_id,
+            save_dialog::save_file,
+            add_att_directory::add_att_directory,
+        ])
         .setup(move |app | {
             let handle = app.handle();
             let menu_handle = handle.clone();
