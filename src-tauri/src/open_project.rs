@@ -1,7 +1,7 @@
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 
-use tauri::{Config, Manager, Result, Window};
 use tauri::api::dialog;
+use tauri::{Config, Manager, Window};
 
 use crate::config::get_config_value_string;
 
@@ -40,7 +40,7 @@ pub async fn open_project(window: &Window, config: &Config, is_starting: bool) -
         return false;
     }
 
-    let _ = window.clone().app_handle().clone().fs_scope().allow_file(path.clone());
+    let _ = window.clone().app_handle().clone().fs_scope().allow_directory(path.clone(), true);
 
     let path_string = path
             .as_path()
@@ -65,7 +65,7 @@ pub async fn open_project(window: &Window, config: &Config, is_starting: bool) -
             }
         }
     } else {
-        window.emit("open_egg", OpenFolderPayload { path: path_string.to_owned() }).is_ok()
+        window.emit("open_project", OpenFolderPayload { path: path_string.to_owned() }).is_ok()
     }
 }
 
