@@ -85,7 +85,7 @@ pub fn get_config_value_path<F>(
     f: F
 ) -> Option<String> where F: Fn(AppConfig) -> Option<String> {
     if let Some(value) = get_config_value_string(config, f) {
-        if (value.clone().trim().is_empty()) {
+        if value.clone().trim().is_empty() {
             return Some(value)
         }
     }

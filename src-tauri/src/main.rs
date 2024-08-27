@@ -16,7 +16,9 @@ use tauri::{AppHandle, LogicalSize, Manager, Result, Size, State, Window, Window
 use tauri::async_runtime::block_on;
 use crate::import_egg::import_egg_file_into_window;
 use crate::open_project::open_project;
-
+use crate::view_mode::set_egg_mode_in_tauri;
+use crate::save_dialog::save_file;
+use crate::add_att_directory::add_att_directory;
 mod menu;
 mod view_mode;
 mod js;
@@ -27,6 +29,7 @@ mod save_dialog;
 mod dialog;
 mod open_project;
 mod add_att_directory;
+
 
 #[derive(Clone, serde::Serialize)]
 struct StringMessage {
@@ -126,7 +129,7 @@ async fn add_gno(app_handle: AppHandle, path: &str) -> Result<bool> {
 /// ```
 #[tauri::command]
 async fn add_agents(app_handle: AppHandle, path: &str) -> Result<bool> {
-    let mut the_path: String = path.to_string();
+    let the_path: String = path.to_string();
     if !the_path.to_lowercase().ends_with(".agents") && !the_path.to_lowercase().ends_with(".agent") {
         println!("Failed to add agents path. Path is not an agents path");
         return Ok(false)
@@ -140,9 +143,6 @@ async fn add_agents(app_handle: AppHandle, path: &str) -> Result<bool> {
         }
     }
 }
-
-
-// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 
 fn main() {
     let state = AppState {
@@ -158,10 +158,10 @@ fn main() {
         .invoke_handler(tauri::generate_handler![
             is_dir,
             add_gno,
-            view_mode::set_egg_mode_in_tauri,
+            set_egg_mode_in_tauri,
             get_window_id,
-            save_dialog::save_file,
-            add_att_directory::add_att_directory,
+            save_file,
+            add_att_directory,
         ])
         .setup(move |app | {
             let handle = app.handle();
@@ -298,9 +298,9 @@ fn next_window_id(state: State<AppState>, prefix: &str) -> String {
 }
 
 fn random_string(chars: usize) -> String {
-    return rand::thread_rng()
+    rand::thread_rng()
         .sample_iter(&Alphanumeric)
         .take(chars)
         .map(char::from)
-        .collect();
+        .collect()
 }

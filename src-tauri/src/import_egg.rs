@@ -1,9 +1,8 @@
 use std::path::PathBuf;
 
-use tauri::{Config, Manager, Window};
 use tauri::api::dialog;
+use tauri::{Config, Manager, Window};
 
-use crate::{config};
 use crate::config::get_config_value_string;
 
 #[derive(Clone, serde::Serialize)]
@@ -17,7 +16,7 @@ pub async fn import_egg_file_into_window(window: &Window, config: &Config, is_st
     if result.is_none() {
         return false;
     }
-
+    
     let path = result.unwrap();
 
     if !path.clone().exists() {
@@ -66,11 +65,11 @@ fn get_egg_agent_path(config: &Config) -> Option<PathBuf> {
         open_dialog = open_dialog.set_directory(starting_directory.unwrap())
     }
 
-    return open_dialog.pick_file();
+    open_dialog.pick_file()
 }
 
 fn get_starting_directory(config: &Config) -> Option<String> {
-    return get_config_value_string(config, |config| {
+    get_config_value_string(config, |config| {
         config.last_egg_import_directory
     })
 }

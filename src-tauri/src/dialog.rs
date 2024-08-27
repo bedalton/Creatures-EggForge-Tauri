@@ -3,9 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-use std::ops::Deref;
-
-use tauri::{Manager, Runtime, Window};
+use tauri::{Runtime, Window};
 
 pub struct MyWindow<R: Runtime>(Window<R>);
 
@@ -18,15 +16,6 @@ unsafe impl<R: Runtime> raw_window_handle::HasRawWindowHandle for MyWindow<R> {
 
 impl<R: Runtime> MyWindow<R> {
     fn get_window_handle_from_parent(&self) {}
-}
-
-macro_rules! run_dialog {
-  ($e:expr, $h: ident) => {{
-    std::thread::spawn(move || {
-      let response = $e;
-      $h(response);
-    });
-  }};
 }
 
 macro_rules! run_file_dialog {
@@ -90,7 +79,7 @@ pub mod blocking {
     use std::path::{Path, PathBuf};
     use std::sync::mpsc::sync_channel;
 
-    use raw_window_handle::{HasRawWindowHandle, HasWindowHandle};
+    use raw_window_handle::HasRawWindowHandle;
 
     #[cfg(target_os = "linux")]
     type FileDialog = rfd::FileDialog;
