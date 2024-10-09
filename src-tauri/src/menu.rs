@@ -79,15 +79,17 @@ pub fn os_default(#[allow(unused)] app_name: &str) -> Menu {
     }
     #[cfg(target_os = "macos")]
     {
-        menu = menu.add_submenu(Submenu::new(
-            "View",
-            Menu::new().add_native_item(MenuItem::EnterFullScreen),
-        ));
+        let mut view_menu = Menu::new();
+        view_menu = add_menu_item_with_accelerator(view_menu, "toggle_egg_mode", "toggle Simple/Advanced mode", "CommandOrControl+t");
+        view_menu = view_menu.add_native_item(MenuItem::Separator);
+        view_menu = view_menu.add_native_item(MenuItem::EnterFullScreen);
+        menu = menu.add_submenu(Submenu::new("View", view_menu));
+
     }
 
     let mut window_menu = Menu::new();
-    window_menu = add_menu_item_with_accelerator(window_menu, "toggle_egg_mode", "toggle Simple/Advanced mode", "CommandOrControl+t");
-    window_menu = window_menu.add_native_item(MenuItem::Separator);
+    // window_menu = add_menu_item_with_accelerator(window_menu, "toggle_egg_mode", "toggle Simple/Advanced mode", "CommandOrControl+t");
+    // window_menu = window_menu.add_native_item(MenuItem::Separator);
     window_menu = window_menu.add_native_item(MenuItem::Minimize);
     #[cfg(target_os = "macos")]
     {
