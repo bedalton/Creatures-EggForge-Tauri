@@ -11,7 +11,8 @@ fn get_config_file_name() -> String {
 #[derive(Serialize, Deserialize)]
 pub struct AppConfig {
     pub last_egg_import_directory: Option<String>,
-    pub last_project_root: Option<String>
+    pub last_project_root: Option<String>,
+    pub previous_genomes: Option<Vec<String>>
 }
 
 pub fn get_config(config: &Config) -> Option<AppConfig>  {

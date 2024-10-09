@@ -19,6 +19,7 @@ use crate::open_project::open_project;
 use crate::view_mode::set_egg_mode_in_tauri;
 use crate::save_dialog::save_file;
 use crate::add_att_directory::add_att_directory;
+use crate::add_previous_genomes_to_scope::add_previous_genomes_to_scope;
 mod menu;
 mod view_mode;
 mod js;
@@ -29,7 +30,7 @@ mod save_dialog;
 mod dialog;
 mod open_project;
 mod add_att_directory;
-
+mod add_previous_genomes_to_scope;
 
 #[derive(Clone, serde::Serialize)]
 struct StringMessage {
@@ -166,6 +167,7 @@ fn main() {
         .setup(move |app | {
             let handle = app.handle();
             let menu_handle = handle.clone();
+            add_previous_genomes_to_scope(handle.clone(), handle.clone().config().borrow());
             std::thread::spawn(move || {
                 make_window_with_app_name(app_name_for_setup.to_owned(), menu_handle);
             });
