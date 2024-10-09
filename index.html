@@ -73,21 +73,21 @@
 						<div class="flex-row flex-fill input-group outline-on-error">
 							<input type="text"
 								   id="project-root-path-simple"
-								   data-id="project-root-path"
+								   data-id="root-path"
 								   aria-readonly="true"
 								   readonly="readonly"
 								   class="flex-fill path-display"
 								   placeholder="select input folder"
 							>
 							<button
-									data-id="refresh-project-folders-button"
+									data-id="refresh-root-button"
 									aria-label="refresh project"
 									class="refresh-button"
 							>
 								<img src="src/images/icons/refresh.svg" alt="refresh">
 							</button>
 							<button
-									data-id="root-project-open"
+									data-id="root-open"
 									aria-label="select project root"
 									class="input-button"
 							>
@@ -280,7 +280,7 @@
 						<label for="project-root-path-advanced" class="flex-row">Project Root Folder</label>
 						<div class="flex-row flex-fill input-group outline-on-error">
 							<input type="text"
-								   data-id="project-root-path"
+								   data-id="root-path"
 								   id="project-root-path-advanced"
 								   aria-readonly="true"
 								   readonly="readonly"
@@ -288,14 +288,14 @@
 								   placeholder="select input folder"
 							>
 							<button
-									data-id="refresh-project-folders-button"
+									data-id="refresh-root-button"
 									aria-label="refresh project"
 									class="refresh-button"
 							>
 								<img src="src/images/icons/refresh.svg" alt="refresh">
 							</button>
 							<button
-									data-id="root-project-open"
+									data-id="root-open"
 									aria-label="select project root"
 									class="input-button"
 							>
@@ -445,30 +445,30 @@
 				 id="att-selects"
 			>
 				<div class="main-panel flex-column no-outline">
-					<div class="input-field row flex-fill">
+					<div class="input-field row flex-fill" data-role="att-root-control">
 						<label for="att-root-path-advanced" class="flex-row">Att Root Folder (Optional)</label>
 						<div class="flex-row flex-fill input-group">
 							<input type="text"
 								   id="att-root-path-advanced"
-								   data-id="att-root-path"
+								   data-id="root-path"
 								   aria-readonly="true"
 								   readonly="readonly"
 								   class="flex-fill"
 								   placeholder="select ATT input folder"
 							>
-							<button data-id="clear-att-folders-button"
+							<button data-id="clear-root-button"
 									aria-label="clear att root directory"
 									class="att-cancel-button"
 							>
 								<img src="src/images/icons/cancel.svg" alt="refresh">
 							</button>
-							<button data-id="refresh-att-folders-button"
+							<button data-id="refresh-root-button"
 									aria-label="refresh project"
 									class="refresh-button"
 							>
 								<img src="src/images/icons/refresh.svg" alt="refresh">
 							</button>
-							<button data-id="att-root-project-open"
+							<button data-id="root-open"
 									aria-label="select ATT file root"
 									class="input-button"
 							>
