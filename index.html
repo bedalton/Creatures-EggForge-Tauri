@@ -1,267 +1,727 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="./src/css/style.css"/>
-    <link href="src/fonts/material-icons/material-icons.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Egg-Forge</title>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="./src/css/style.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Egg-Forge</title>
 </head>
 
-<body data-compiling="false">
-<form id="compile-egg-form"
-      data-id="compile-egg-form" onsubmit="return false;">
-    <header class="header">
-        <img src="src/images/logo/logo.png" alt="egg-forge logo" class="logo">
-
-        <div class="header-right">
-            <p class="logger-bubble" id="logger-bubble-header"
-               data-id="logger-bubble-header">Loading...</p>
-            <div class="compile-button-container">
-            <button id="compile"
-                    data-id="compile-button"
-                    disabled="disabled"
-                    data-needs-confirm="true"
-                    data-is-cancellable="true"
-            >
-				<span data-id="compile-text"
-                      class="hide-on-compile">Compile Egg</span>
-                <span data-id="cancel-compile-text"
-                      class="hide-on-not-compiling">Cancel</span>
-                <img src="./src/images/loading.svg"
-                     class="hide-on-not-compiling"
-                     id="compiling-spinner"
-                     data-id="compiling-spinner"
-                     alt="loading spinner">
-            </button>
-                <div class="button-progress-bar" aria-hidden="true"></div>
-            </div>
-        </div>
-    </header>
-
-    <div id="debug-logger-panel"
-         data-id="debug-logger-panel" class="hidden">
-        <button class="button-plain close-log-button" id="close-log-button"><span class="material-icons">cancel</button>
-    </div>
-    <main class="flex-column">
-        <div class="flex-row flex-fill root-row">
-            <!-- Row with two columns -->
-            <div class="main-panel flex-column">
-                <!-- Project Root -->
-                <div class="input-field row flex-fill">
-                    <label for="project-root-path" class="flex-row">Project Root Folder</label>
-                    <div class="flex-row flex-fill input-group">
-                        <input type="text"
-                               id="project-root-path"
-                               data-id="project-root-path"
-                               aria-readonly="true"
-                               readonly="readonly"
-                               class="flex-fill path-display"
-                               placeholder="select input folder"
-                        >
-                        <button id="refresh-project-folders-button"
-                                data-id="refresh-project-folders-button"
-                                aria-label="refresh project"
-                                class="refresh-button"
-                        >
-                            <img src="src/images/icons/refresh.svg" alt="refresh">
-                        </button>
-                        <button id="root-project-open"
-                                data-id="root-project-open"
-                                aria-label="select project root"
-                                class="input-button"
-                        >
-                            <img class="button-icon" src="src/images/icons/folder_open.svg" alt="open folder">
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Breed Slot -->
-                <div class="input-field flex-column flex-fill">
-                    <label for="breed-slot-select" class="flex-fill flex-row">Breed Slot</label>
-                    <div class="flex-row flex-fill select-container">
-                        <select id="breed-slot-select"
-                                data-id="breed-slot-select" class="flex-fill" data-has-selection="false">
-                        </select>
-                        <div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
-                            <img class="button-icon"
-                                 src="src/images/icons/arrow_drop_down.svg"
-                                 alt="open folder"
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Egg Name (Mucco)  -->
-                <div class="input-field flex-column flex-fill input-group">
-                    <label for="egg-name-input" class="flex-row">Egg Name (for Mucco):</label>
-                    <div class="flex-row flex-fill">
-                        <input type="text" id="egg-name-input"
-                               data-id="egg-name-input" class="flex-fill" placeholder="Egg display name..">
-                    </div>
-                </div>
-            </div>
-
-            <div class="main-panel flex-column">
-                <section class="glyph" data-glyph-gender="male">
-                    <h3>Male Glyph</h3>
-                    <div class="glyph-main">
-                        <div class="glyph-preview-container">
-                            <img src="src/images/icons/folder_open.svg"
-                                 class="placeholder"
-                                 alt="male glyph preview image">
-                            <button class="screen-reader-only" id="male-glyph-select-button"
-                                    data-id="male-glyph-select-button">Select male glyph file
-                            </button>
-                        </div>
-                        <div class="glyph-inputs-container">
-                            <div class="input-with-prefix-label">
-                                <label for="glyph-male-frame-select">Frame</label>
-                                <input type="number" id="glyph-male-frame-select"
-                                       data-id="glyph-male-frame-select" class="flex-fill"
-                                       disabled="disabled"
-                                       min="0"
-                                       data-has-selection="false">
-                            </div>
-                            <div class="input-field glyph-filename-input">
-                                <label for="glyph-male-filename-input" class="screen-reader-only">Output name</label>
-                                <input type="text"
-                                       id="glyph-male-filename-input"
-                                       data-id="glyph-male-filename-input"
-                                       class="flex-fill"
-                                       data-has-selection="false"
-                                       placeholder="Glyph output filename..."
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="glyph" data-glyph-gender="female">
-                    <h3>Female Glyph</h3>
-                    <div class="glyph-main">
-                        <div class="glyph-preview-container">
-                            <img
-                                    src="src/images/icons/folder_open.svg"
-                                    class="placeholder"
-                                    alt="male glyph image preview"
-                            >
-                            <button class="screen-reader-only" id="female-glyph-select-button"
-                                    data-id="female-glyph-select-button">Select female glyph
-                                file
-                            </button>
-                        </div>
-                        <div class="glyph-inputs-container">
-                            <div class="input-with-prefix-label">
-                                <label for="glyph-female-frame-select">Frame</label>
-                                <input type="number" id="glyph-female-frame-select"
-                                       data-id="glyph-female-frame-select" class="flex-fill"
-                                       disabled="disabled"
-                                       min="0"
-                                       data-has-selection="false">
-                            </div>
-                            <div class="input-field glyph-filename-input">
-                                <label for="glyph-female-filename-input" class="screen-reader-only">Output name</label>
-                                <input type="text"
-                                       id="glyph-female-filename-input"
-                                       data-id="glyph-female-filename-input"
-                                       class="flex-fill"
-                                       data-has-selection="false"
-                                       placeholder="Glyph output filename..."
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div> <!-- Root Row -->
-
-
-        <!-- GENOME -->
-        <div class="flex-row flex-fill root-row main-panel" id="genome-inputs"
-             data-id="genome-inputs">
-            <div class="genome-input-group">
-                <!-- Genome Select -->
-                <div class="input-field flex-column flex-fill">
-                    <label for="base-genome-select" class="flex-fill flex-row">Base Genome: </label>
-                    <div class="flex-row flex-fill select-container">
-                        <select id="base-genome-select"
-                                data-id="base-genome-select" class="flex-fill" data-has-selection="false">
-                        </select>
-                        <div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
-                            <img class="button-icon"
-                                 src="src/images/icons/arrow_drop_down.svg"
-                                 alt="open folder"
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="genome-input-group">
-
-                <!-- Genome Genus -->
-                <div class="input-field">
-                    <label for="genome-genus-select" class="flex-fill flex-row">Genome Genus: </label>
-                    <div class="flex-row flex-fill select-container">
-                        <select id="genome-genus-select"
-                                data-id="genome-genus-select" class="flex-fill" data-has-selection="false">
-                            <option value="" disabled selected="selected" hidden>Select Genome Genus...</option>
-                        </select>
-                        <div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
-                            <img class="button-icon"
-                                 src="src/images/icons/arrow_drop_down.svg"
-                                 alt="open folder"
-                            >
-                        </div>
-                    </div>
-                </div>
-                <!-- Genome Output name  -->
-                <div class="input-field flex-column flex-fill input-group">
-                    <label for="output-genome-name-input" class="flex-row">Output Genome Name:</label>
-                    <div class="flex-row flex-fill">
-                        <input type="text" id="output-genome-name-input"
-                               data-id="output-genome-name-input" class="flex-fill"
-                               placeholder="Output genome file name..">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <div class="show-log-button-container">
-        <button id="show-log-button"
-                data-id="show-log-button"
-                aria-label="v{{ _version_ }} - Debug Log"
-        >{{ _version_ }}
-        </button>
-    </div>
-
-</form>
-<dialog
-        class="compilation-report compilation-report-floating"
-        id="compilation-report-modal"
-        hidden="hidden"
+<body data-compiling="false"
+	  data-has-project-root="true"
+	  data-current-page="1"
+	  data-page-1-status=""
+	  data-page-2-status=""
+	  data-view="simple"
+	  data-loading-main="false"
+	  data-loading-egg="false"
 >
-    <h2>Verify for Compilation</h2>
-    <section class="compilation-report-items">
-    </section>
-    <footer>
-        <form method="dialog" class="input-group">
-            <button id="close-compilation-report"
-                    data-id="close-compilation-report"
-                    class="cancel-button"
-                    aria-label="Cancel Compilation"
-            >Cancel
-            </button>
-            <button class="go-button confirm-compile"
-                    data-id="compile-button"
-                    data-needs-confirm="false"
-                    data-cancellable="false"
-            >Compile</button>
-        </form>
-    </footer>
+<form id="compile-egg-form" onsubmit="return false;">
+	<p class="logger-bubble"
+	   data-role="logger-bubble-header"
+	   data-id="logger-bubble-header">
+		Loading...
+	</p>
+	<div class="header flex-row">
+		<header class="flex-fill">
+			<img src="src/images/logo/logo.png" alt="egg-forge logo" class="logo">
+			<div class="flex-fill"></div>
+		</header>
+		<div id="page-select" class="flex-fill" data-show-on="advanced">
+			<button class="page-button" aria-label="Basic Details (current-page)" data-for-page="1">
+				<span class="page-button-number">1</span>
+				<span class="page-button-label">Basic Details</span>
+				<span class="page-button-status">
+                    <span aria-label="error" class="icon error">!</span>
+                    <span aria-label="complete" class="icon complete">✓</span>
+                </span>
+				<span class="screen-reader-only page-button-current-page">current page</span>
+			</button>
+			<button class="page-button" data-label="Egg Details" data-for-page="2">
+				<span class="page-button-number">2</span>
+				<span class="page-button-label">Egg Details</span>
+				<span class="page-button-status">
+                    <span aria-label="error" class="icon error">!</span>
+                    <span aria-label="complete" class="icon complete">✓</span>
+                </span>
+				<span class="screen-reader-only page-button-current-page">current page</span>
+			</button>
+		</div>
+		<div class="header-right">
+			<p class="logger-bubble" data-id="logger-bubble-header" data-role="logger-bubble-header" hidden="hidden">Loading...</p>
+			<button id="compile" disabled="disabled" data-needs-confirm="true">
+				<span data-id="compile-text" class="hide-on-compile">Compile Egg</span>
+				<span data-id="cancel-compile-text" class="hide-on-not-compiling">Cancel</span>
+				<img src="./src/images/loading.svg" class="hide-on-not-compiling" data-id="compiling-spinner"
+					 alt="loading spinner">
+			</button>
+		</div>
+	</div>
+	<div id="debug-logger-panel"
+		 data-id="debug-logger-panel" class="hidden">
+		<button class="button-plain close-log-button" id="close-log-button"><span class="material-icons">cancel</button>
+	</div>
+	<main class="pages">
+		<section class="flex-column" data-page="0" id="simple-view" data-show-on="simple" data-page-for="simple"
+				 data-role="page">
+			<div class="flex-row flex-fill root-row">
+				<!-- Row with two columns -->
+				<div class="main-panel flex-column">
+					<!-- Project Root -->
+					<div class="input-field row flex-fill validatable-input-container" data-role="project-root-control" >
+						<label for="project-root-path-simple" class="flex-row">Project Root Folder</label>
+						<div class="flex-row flex-fill input-group outline-on-error">
+							<input type="text"
+								   id="project-root-path-simple"
+								   data-id="root-path"
+								   aria-readonly="true"
+								   readonly="readonly"
+								   class="flex-fill path-display"
+								   placeholder="select input folder"
+							>
+							<button
+									data-id="refresh-root-button"
+									aria-label="refresh project"
+									class="refresh-button"
+							>
+								<img src="src/images/icons/refresh.svg" alt="refresh">
+							</button>
+							<button
+									data-id="root-open"
+									aria-label="select project root"
+									class="input-button"
+							>
+								<img class="button-icon" src="src/images/icons/folder_open.svg" alt="open folder">
+							</button>
+						</div>
+					</div>
+
+					<!-- Breed Slot -->
+					<div class="input-field flex-column flex-fill validatable-input-container">
+						<label for="breed-slot-select-simple" class="flex-fill flex-row">Breed Slot</label>
+						<div class="flex-row flex-fill select-container">
+							<select id="breed-slot-select-simple"
+									data-role="sprite-breed-slot"
+									class="flex-fill"
+									data-has-selection="false"
+							>
+								<option value="" disabled selected="selected" hidden>Select Breed Slot...</option>
+							</select>
+							<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+								<img class="button-icon"
+									 src="src/images/icons/arrow_drop_down.svg"
+									 alt="open folder"
+								>
+							</div>
+						</div>
+					</div>
+
+					<!-- Egg Name (Mucco)  -->
+					<div class="input-field flex-column flex-fill input-group validatable-input-container">
+						<label for="egg-name-input-simple" class="flex-row">Egg Name (for Mucco):</label>
+						<div class="flex-row flex-fill">
+							<input type="text" id="egg-name-input-simple"
+								   data-role="egg-name-input"
+								   data-id="egg-name-input"
+								   class="flex-fill outline-on-error"
+								   placeholder="Egg display name.."
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-panel flex-column">
+					<section class="glyph" data-glyph-gender="male" data-role="glyph">
+						<h3>Male Glyph</h3>
+						<div class="glyph-main validatable-input-container">
+							<div class="glyph-preview-container shade-on-error">
+								<img src="src/images/icons/folder_open.svg"
+									 class="placeholder"
+									 alt="male glyph preview image">
+								<button class="screen-reader-only"
+										data-id="male-glyph-select-button">Select male glyph file
+								</button>
+							</div>
+							<div class="glyph-inputs-container">
+								<div class="input-with-prefix-label validatable-input-container">
+									<label for="glyph-male-frame-select-simple">Frame</label>
+									<input type="number" id="glyph-male-frame-select-simple"
+										   data-id="glyph-male-frame-select" class="flex-fill"
+										   disabled="disabled"
+										   min="0"
+										   data-has-selection="false">
+								</div>
+								<div class="input-field glyph-filename-input validatable-input-container">
+									<label for="glyph-male-filename-input-simple" class="screen-reader-only">Output
+										name</label>
+									<input type="text"
+										   id="glyph-male-filename-input-simple"
+										   data-id="glyph-male-filename-input"
+										   class="flex-fill"
+										   data-has-selection="false"
+										   placeholder="Glyph output filename..."
+									>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="glyph" data-glyph-gender="female" data-role="glyph">
+						<h3>Female Glyph</h3>
+						<div class="glyph-main validatable-input-container">
+							<div class="glyph-preview-container shade-on-error">
+								<img
+										src="src/images/icons/folder_open.svg"
+										class="placeholder"
+										alt="male glyph image preview"
+								>
+								<button class="screen-reader-only"
+										data-id="female-glyph-select-button">Select female glyph
+									file
+								</button>
+							</div>
+							<div class="glyph-inputs-container">
+								<div class="input-with-prefix-label">
+									<label for="glyph-female-frame-select-simple">Frame</label>
+									<input type="number" id="glyph-female-frame-select-simple"
+										   data-id="glyph-female-frame-select" class="flex-fill"
+										   disabled="disabled"
+										   min="0"
+										   data-has-selection="false">
+								</div>
+								<div class="input-field glyph-filename-input">
+									<label for="glyph-female-filename-input-simple" class="screen-reader-only">Output
+										name</label>
+									<input type="text"
+										   id="glyph-female-filename-input-simple"
+										   data-id="glyph-female-filename-input"
+										   class="flex-fill"
+										   data-has-selection="false"
+										   placeholder="Glyph output filename..."
+									>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div> <!-- Root Row -->
+
+
+			<!-- GENOME -->
+			<div class="flex-row flex-fill root-row main-panel"
+				 data-role="genome-control"
+				 data-genome-gender="0"
+				 data-genome-optional="false"
+				 data-id="genome-inputs"
+				 data-show-on="simple"
+			>
+				<div class="genome-input-group">
+					<!-- Genome Select -->
+					<div class="input-field flex-column flex-fill validatable-input-container">
+						<label for="base-genome-select-simple" class="flex-fill flex-row">Base Genome: </label>
+						<div class="flex-row flex-fill select-container">
+							<select id="base-genome-select-simple"
+									data-role="genome-select"
+									data-id="base-genome-select"
+									class="flex-fill outline-on-error"
+									data-has-selection="false">
+							</select>
+							<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+								<img class="button-icon"
+									 src="src/images/icons/arrow_drop_down.svg"
+									 alt="open folder"
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="genome-input-group">
+
+					<!-- Genome Genus -->
+					<div class="input-field">
+						<label for="genome-genus-select-simple" class="flex-fill flex-row">Genome Genus: </label>
+						<div class="flex-row flex-fill select-container validatable-input-container">
+							<select id="genome-genus-select-simple"
+									data-role="genome-genus-select"
+									class="flex-fill outline-on-error"
+									data-has-selection="false">
+								<option value="" disabled selected="selected" hidden>Select Genome Genus...</option>
+							</select>
+							<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+								<img class="button-icon"
+									 src="src/images/icons/arrow_drop_down.svg"
+									 alt="open folder"
+								>
+							</div>
+						</div>
+					</div>
+					<!-- Genome Output name  -->
+					<div class="input-field flex-column flex-fill input-group validatable-input-container">
+						<label for="output-genome-name-input-simple" class="flex-row">Output Genome Name:</label>
+						<div class="flex-row flex-fill">
+							<input type="text" id="output-genome-name-input-simple"
+								   data-id="output-genome-name-input"
+								   data-role="output-genome-name"
+								   class="flex-fill outline-on-error"
+								   placeholder="Output genome file name..">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="page flex-column" data-page="1" id="basics-page" data-show-on="advanced"
+				 data-page-for="advanced" data-role="page">
+			<div class="flex-row flex-fill root-row">
+
+				<!-- Row with two columns -->
+				<div class="main-panel flex-column">
+
+					<!-- Project Root -->
+					<div class="input-field row flex-fill  validatable-input-container" data-role="project-root-control">
+						<label for="project-root-path-advanced" class="flex-row">Project Root Folder</label>
+						<div class="flex-row flex-fill input-group outline-on-error">
+							<input type="text"
+								   data-id="root-path"
+								   id="project-root-path-advanced"
+								   aria-readonly="true"
+								   readonly="readonly"
+								   class="flex-fill"
+								   placeholder="select input folder"
+							>
+							<button
+									data-id="refresh-root-button"
+									aria-label="refresh project"
+									class="refresh-button"
+							>
+								<img src="src/images/icons/refresh.svg" alt="refresh">
+							</button>
+							<button
+									data-id="root-open"
+									aria-label="select project root"
+									class="input-button"
+							>
+								<img class="button-icon" src="src/images/icons/folder_open.svg" alt="open folder">
+							</button>
+						</div>
+					</div>
+
+					<!-- Breed Slot -->
+					<div class="input-field flex-column flex-fill validatable-input-container">
+						<label for="breed-slot-select-advanced" class="flex-fill flex-row">Input Breed Slot</label>
+						<div class="flex-row flex-fill select-container">
+							<select
+									id="breed-slot-select-advanced"
+									class="flex-fill outline-on-error"
+									data-has-selection="false"
+									data-role="sprite-breed-slot"
+							>
+								<option value="" disabled selected="selected" hidden>Select Breed Slot...</option>
+							</select>
+							<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+								<img class="button-icon"
+									 src="src/images/icons/arrow_drop_down.svg"
+									 alt="open folder"
+								>
+							</div>
+						</div>
+					</div>
+
+					<!-- Breed Slot -->
+					<div class="input-field flex-column flex-fill validatable-input-container">
+						<label for="breed-slot-select-advanced" class="flex-fill flex-row">Output Breed Slot</label>
+						<div class="flex-row flex-fill select-container">
+							<select
+									id="output-breed-slot-select-advanced"
+									class="flex-fill outline-on-error"
+									data-has-selection="false"
+									data-role="output-breed-slot"
+							>
+								<option value="" disabled selected="selected" hidden>Select Output Breed Slot...</option>
+							</select>
+							<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+								<img class="button-icon"
+									 src="src/images/icons/arrow_drop_down.svg"
+									 alt="open folder"
+								>
+							</div>
+						</div>
+					</div>
+
+					<!-- Genome Genus -->
+					<div class="input-field  validatable-input-container">
+						<label for="genome-genus-select-advanced" class="flex-fill flex-row">Genome Genus: </label>
+						<div class="flex-row flex-fill select-container">
+							<select
+									id="genome-genus-select-advanced"
+									data-role="genome-genus-select"
+									class="flex-fill outline-on-error"
+									data-has-selection="false"
+							>
+								<option value="" disabled selected="selected" hidden>Select Genome Genus...</option>
+							</select>
+							<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+								<img class="button-icon"
+									 src="src/images/icons/arrow_drop_down.svg"
+									 alt="open folder"
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-panel flex-column">
+					<section class="glyph" data-glyph-gender="male" data-role="glyph">
+						<h3>Male Glyph</h3>
+						<div class="glyph-main validatable-input-container">
+							<div class="glyph-preview-container shade-on-error">
+								<img src="src/images/icons/folder_open.svg"
+									 class="placeholder"
+									 alt="male glyph preview image">
+								<button class="screen-reader-only" data-id="male-glyph-select-button">Select male glyph
+									file
+								</button>
+							</div>
+							<div class="glyph-inputs-container">
+								<div class="input-with-prefix-label">
+									<label for="glyph-male-frame-select-advanced">Frame</label>
+									<input type="number" id="glyph-male-frame-select-advanced" class="flex-fill"
+										   disabled="disabled"
+										   min="0"
+										   data-has-selection="false">
+								</div>
+								<div class="input-field glyph-filename-input">
+									<label for="glyph-male-filename-input-advanced" class="screen-reader-only">Output
+										name</label>
+									<input type="text"
+										   id="glyph-male-filename-input-advanced"
+										   class="flex-fill"
+										   data-has-selection="false"
+										   placeholder="Glyph output filename..."
+									>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="glyph" data-glyph-gender="female" data-role="glyph">
+						<h3>Female Glyph</h3>
+						<div class="glyph-main validatable-input-container">
+							<div class="glyph-preview-container shade-on-error">
+								<img
+										src="src/images/icons/folder_open.svg"
+										class="placeholder"
+										alt="male glyph image preview"
+								>
+								<button class="screen-reader-only" data-id="female-glyph-select-button">Select female
+									glyph
+									file
+								</button>
+							</div>
+							<div class="glyph-inputs-container">
+								<div class="input-with-prefix-label">
+									<label for="glyph-female-frame-select-advanced">Frame</label>
+									<input type="number" id="glyph-female-frame-select-advanced" class="flex-fill"
+										   disabled="disabled"
+										   min="0"
+										   data-has-selection="false">
+								</div>
+								<div class="input-field glyph-filename-input">
+									<label for="glyph-female-filename-input-advanced" class="screen-reader-only">Output
+										name</label>
+									<input type="text"
+										   id="glyph-female-filename-input-advanced"
+										   class="flex-fill"
+										   data-has-selection="false"
+										   placeholder="Glyph output filename..."
+									>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div> <!-- Root Row -->
+
+
+			<!-- ATT Select -->
+			<div class="flex-row flex-fill root-row main-panel borderless-panel-container"
+				 id="att-selects"
+			>
+				<div class="main-panel flex-column no-outline">
+					<div class="input-field row flex-fill" data-role="att-root-control">
+						<label for="att-root-path-advanced" class="flex-row">Att Root Folder (Optional)</label>
+						<div class="flex-row flex-fill input-group">
+							<input type="text"
+								   id="att-root-path-advanced"
+								   data-id="root-path"
+								   aria-readonly="true"
+								   readonly="readonly"
+								   class="flex-fill"
+								   placeholder="select ATT input folder"
+							>
+							<button data-id="clear-root-button"
+									aria-label="clear att root directory"
+									class="att-cancel-button"
+							>
+								<img src="src/images/icons/cancel.svg" alt="refresh">
+							</button>
+							<button data-id="refresh-root-button"
+									aria-label="refresh project"
+									class="refresh-button"
+							>
+								<img src="src/images/icons/refresh.svg" alt="refresh">
+							</button>
+							<button data-id="root-open"
+									aria-label="select ATT file root"
+									class="input-button"
+							>
+								<img class="button-icon" src="src/images/icons/folder_open.svg" alt="open folder">
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-panel flex-column no-outline">
+					<!-- ATT SLOT -->
+					<div class="input-field flex-column flex-fill  validatable-input-container" >
+						<label for="att-breed-slot-select-advanced" class="flex-fill flex-row">ATT Breed Slot</label>
+						<div class="flex-row flex-fill select-container">
+							<select id="att-breed-slot-select-advanced"
+									data-role="att-breed-slot"
+									class="flex-fill outline-on-error"
+									data-has-selection="false">
+								<option value="" disabled selected="selected">No compiled ATTs found in ATT folder
+								</option>
+							</select>
+							<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+								<img class="button-icon"
+									 src="src/images/icons/arrow_drop_down.svg"
+									 alt="open folder"
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="flex-row root-row page"
+			 aria-hidden="true"
+			 id="genome-page"
+			 data-page="2"
+			 data-show-on="advanced"
+			 data-page-for="advanced"
+			 data-role="page"
+		>
+			<div class="flex-column main-panel flex-fill"
+				 data-genome-gender="0"
+				 data-role="genome-control"
+				 data-genome-optional="false"
+			>
+				<!-- Egg Select -->
+				<div class="input-field flex-column flex-fill input">
+					<label for="egg-select-advanced" class="flex-fill flex-row">Egg: </label>
+					<div class="flex-row flex-fill select-container egg-input">
+						<select id="egg-select-advanced"
+								data-role="egg-select"
+								class="flex-fill base-genome-select"
+								data-has-selection="false">
+						</select>
+						<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+							<img class="button-icon"
+								 src="src/images/icons/arrow_drop_down.svg"
+								 alt="open folder"
+							>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- Egg Name (Mucco)  -->
+				<div class="input-field flex-column flex-fill input-group  validatable-input-container">
+					<label for="egg-name-input-advanced" class="flex-row">Egg Name (for Mucco):</label>
+					<div class="flex-row flex-fill">
+						<input type="text"
+							   id="egg-name-input-advanced"
+							   data-role="egg-name-input"
+							   class="flex-fill outline-on-error"
+							   placeholder="Egg display name..">
+					</div>
+				</div>
+
+				<!-- Genome Select -->
+				<div class="input-field flex-column flex-fill validatable-input-container">
+					<label for="base-genome-select-0" class="flex-fill flex-row">Base Genome: </label>
+					<div class="flex-row flex-fill select-container">
+						<select id="base-genome-select-0"
+								class="flex-fill base-genome-select outline-on-error"
+								data-role="genome-select"
+								data-has-selection="false"
+						>
+						</select>
+						<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+							<img class="button-icon"
+								 src="src/images/icons/arrow_drop_down.svg"
+								 alt="open folder"
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- Genome Output name  -->
+				<div class="input-field flex-column flex-fill input-group validatable-input-container">
+					<label for="output-genome-name-input-0" class="flex-row">Output Genome Name:</label>
+					<div class="flex-row flex-fill">
+						<input type="text"
+							   id="output-genome-name-input-0"
+							   class="flex-fill output-genome-name-input outline-on-error"
+							   data-role="output-genome-name"
+							   placeholder="Output genome file name..">
+					</div>
+				</div>
+				<!-- Egg Add/Remove Select -->
+				<div class="input-group flex-row flex-align-right">
+					<button aria-label="add-egg" class="input-button"
+							data-id="add-egg-button"
+							data-role="add-egg-button"
+							title="Add a new egg into this agent">
+						<img src="src/images/icons/plus.svg" alt="add egg" class="button-icon">
+					</button>
+					<button aria-label="delete egg" class="input-button"
+							data-id="egg-delete-button"
+							data-role="egg-delete-button"
+							title="Delete the current egg">
+						<img src="src/images/icons/trash.svg" alt="delete egg" class="button-icon">
+					</button>
+				</div>
+			</div>
+			<div class="main-panel flex-column flex-fill" id="parent-genome-controls">
+				<div class="panel flex-column flex-fill"
+					 data-genome-gender="2"
+					 data-genome-optional="true"
+					 data-role="genome-control"
+				>
+					<!-- Genome Select -->
+					<div class="input-field flex-column flex-fill  validatable-input-container" >
+						<label for="base-genome-select-2" class="flex-fill flex-row">Mother Base Genome: </label>
+						<div class="flex-row flex-fill select-container">
+							<select id="base-genome-select-2"
+									class="flex-fill base-genome-select outline-on-error"
+									data-role="genome-select"
+									data-has-selection="false">
+							</select>
+							<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+								<img class="button-icon"
+									 src="src/images/icons/arrow_drop_down.svg"
+									 alt="open folder"
+								>
+							</div>
+						</div>
+					</div>
+					<!-- Genome Output name  -->
+					<div class="input-field flex-column flex-fill input-group validatable-input-container">
+						<label for="output-genome-name-input-2" class="flex-row">Mother Genome Name:</label>
+						<div class="flex-row flex-fill">
+							<input type="text" id="output-genome-name-input-2"
+								   class="flex-fill output-genome-name-input outline-on-error"
+								   data-role="output-genome-name"
+								   placeholder="Output genome file name..">
+						</div>
+					</div>
+				</div>
+				<div class="panel flex-column flex-fill" data-genome-gender="1" data-genome-optional="true"
+					 data-role="genome-control">
+					<!-- Genome Select -->
+					<div class="input-field flex-column flex-fill">
+						<label for="base-genome-select-1" class="flex-fill flex-row">Father Base
+							Genome: </label>
+						<div class="flex-row flex-fill select-container validatable-input-container">
+							<select
+									id="base-genome-select-1"
+									class="flex-fill base-genome-select outline-on-error"
+									data-role="genome-select"
+									data-has-selection="false">
+							</select>
+							<div class="invisible-input-button input-button dropdown-icon" aria-hidden="true">
+								<img class="button-icon"
+									 src="src/images/icons/arrow_drop_down.svg"
+									 alt="open folder"
+								>
+							</div>
+						</div>
+					</div>
+					<!-- Genome Output name  -->
+					<div class="input-field flex-column flex-fill input-group validatable-input-container">
+						<label for="output-genome-name-input-1" class="flex-row">Father Genome Name:</label>
+						<div class="flex-row flex-fill">
+							<input type="text"
+								   id="output-genome-name-input-1"
+								   class="flex-fill output-genome-name-input outline-on-error"
+								   data-role="output-genome-name"
+								   placeholder="Output genome file name..">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div class="show-log-button-container">
+		<button id="show-log-button"
+				data-id="show-log-button"
+				aria-label="v{{ _version_ }} - Debug Log"
+		>
+			{{ _version_ }}
+		</button>
+	</div>
+</form>
+<div class="modal-background"></div>
+<dialog
+		class="egg-load-progress-logger"
+		id="egg-load-progress-logger"
+		data-show="false"
+>
+	<div class="spinner-container">
+		<img src="./src/images/loading.svg" data-id="egg-load-spinner"
+			 alt="loading spinner">
+	</div>
+	<h2>Loading egg..</h2>
+	<p data-role="log">Progress: 0%</p>
+<!--	<p data-role="log"><span data-role="progress-prefix-label">Progress: </span><span data-role="progress-percent">0%</span></p>-->
+	<footer>
+		<form method="dialog" class="input-group right">
+			<button id="cancel-egg-load-button"
+					data-id="cancel-egg-load-button"
+					class="cancel-button"
+					aria-label="Cancel Egg Load"
+			>Cancel
+			</button>
+		</form>
+	</footer>
+</dialog>
+<dialog
+		class="compilation-report compilation-report-floating"
+		id="compilation-report-modal"
+		hidden="hidden"
+>
+	<h2>Verify for Compilation</h2>
+	<section class="compilation-report-items">
+	</section>
+	<footer>
+		<form method="dialog" class="input-group">
+			<button id="close-compilation-report"
+					data-id="close-compilation-report"
+					class="cancel-button"
+					aria-label="Cancel Compilation"
+			>Cancel
+			</button>
+			<button class="go-button confirm-compile"
+					data-id="compile-button"
+					data-needs-confirm="false"
+					data-cancellable="false"
+			>Compile
+			</button>
+		</form>
+	</footer>
 </dialog>
 <dialog class="load-failed" id="load-failed" hidden>
-    <h2>Load failed!</h2>
-    <p>Contact us on the EggForge channel on the EemFoo discord</p>
+	<h2>Load failed!</h2>
+	<p>Contact us on the EggForge channel on the EemFoo discord</p>
 </dialog>
 <script>
     function __private__failed() {
@@ -272,6 +732,17 @@
         document.getElementById("load-failed").remove();
     }
 </script>
-<script type="module" src="src/EggForge-Kt.js" defer onerror="__private__failed();" onload="__private__loaded()"></script>
+<script>
+    function __private__failed() {
+        // document.getElementById("compile-egg-form").innerHTML = "Load failed!; Contact author on discord"
+    }
+</script>
+<script>
+	window.onerror = (e) => {
+        const error = e instanceof Error ? e.message : e
+		alert("Unhandled error: " + error);
+	}
+</script>
+<script type="module" src="/src/EggForge-Kt.js" defer onerror="__private__failed();"></script>
 </body>
 </html>

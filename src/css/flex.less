@@ -1,6 +1,7 @@
 @import "_flex.less";
 .flex-column {
-  ._flex-column();
+  display: flex;
+  flex-direction: column!important;
   &.flex-align-top {
     .flex-column-flex-align-top();
   }
@@ -27,7 +28,10 @@
 }
 
 .flex-row{
-  ._flex-row();
+
+  display: flex;
+  flex-direction: row !important;
+
   &.flex-align-top {
     .flex-row-align-top();
   }

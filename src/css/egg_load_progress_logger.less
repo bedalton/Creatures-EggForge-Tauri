@@ -1,0 +1,94 @@
+@import "_colors.less";
+@import "_flex.less";
+@width: 15em;
+@height: 12em;
+@spinner-size: 5em;
+
+//noinspection CssOverwrittenProperties
+#egg-load-progress-logger {
+    width: @width;
+    background: @glyph-image-border-dark;
+    background: @glyph-image-border-var;
+    color: @color-dark;
+    color: var(--color);
+    border-radius: @border-radius;
+    border-radius: var(--border-radius);
+    border: 2px solid @logger-bubble-background-color-dark;
+    border: 2px solid var(--logger-bubble-background-color);
+    text-align: center;
+    .flex-column;
+    .flex-row-align-middle;
+    transition: opacity 300ms, transform 400ms;
+    transform: translateY(3em);
+    opacity: 0;
+    pointer-events: none;
+
+    & h2 {
+        margin: 0;
+    }
+
+    & .spinner-container {
+        position: relative;
+        width: @spinner-size;
+        height: @spinner-size;
+        & img {
+            transform: translate(-15%, -15%);
+            width: 150%;
+            height: 150%;
+        }
+    }
+    & .input-group.right {
+        text-align: right !important;
+    }
+}
+
+#compile-egg-form {
+    transition: all 200ms;
+}
+
+.modal-background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0, 0.8);
+    display: none;
+}
+
+body[data-loading-egg="true"], body[data-loading-egg="indeterminate"] {
+
+    & #compile-egg-form {
+        //filter: brightness(50%);
+        pointer-events: none;
+    }
+    #egg-load-progress-logger {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+    }
+    .modal-background {
+        display: block;
+    }
+}
+
+body[data-loading-egg="done"] {
+    #egg-load-progress-logger {
+        transform: translateY(0);
+    }
+}
+body[data-loading-egg="indeterminate"] {
+    [data-role="log"] {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    #compile-egg-form {
+        transition: none;
+    }
+    #egg-load-progress-logger {
+        transition: none;
+    }
+}
