@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.3.0] - 2024-10-10
+### Added
+- Advanced mode
+  - Set output breed
+  - Set mother/father genome
+  - Multi-egg agents
+  - Load alternate ATTs
+- Egg Agent Import
+  - Import egg assets directly from agent
+  - Files can be used as though loaded from disk
+  - All normal EggForge options are available  
+
 ## [v0.2.2] - 2024-02-08
 ### Fixed
 - Fix incorrect auto update URL
