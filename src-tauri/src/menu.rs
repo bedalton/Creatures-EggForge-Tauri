@@ -1,5 +1,10 @@
 
+
+#[cfg(target_os = "macos")]
 use tauri::{AboutMetadata, CustomMenuItem, Menu, MenuItem, Submenu, WindowBuilder};
+
+#[cfg(not(target_os = "macos"))]
+use tauri::{CustomMenuItem, Menu, MenuItem, Submenu, WindowBuilder};
 
 pub fn init_menu(app_name: String, window_builder: WindowBuilder) -> WindowBuilder {
     let menu = os_default(app_name.clone().as_str());
@@ -83,6 +88,14 @@ pub fn os_default(#[allow(unused)] app_name: &str) -> Menu {
         view_menu = add_menu_item_with_accelerator(view_menu, "toggle_egg_mode", "toggle Simple/Advanced mode", "CommandOrControl+t");
         view_menu = view_menu.add_native_item(MenuItem::Separator);
         view_menu = view_menu.add_native_item(MenuItem::EnterFullScreen);
+        menu = menu.add_submenu(Submenu::new("View", view_menu));
+
+    }
+
+    #[cfg(not(target_os = "macos"))]
+    {
+        let mut view_menu = Menu::new();
+        view_menu = add_menu_item_with_accelerator(view_menu, "toggle_egg_mode", "toggle Simple/Advanced mode", "CommandOrControl+t");
         menu = menu.add_submenu(Submenu::new("View", view_menu));
 
     }
