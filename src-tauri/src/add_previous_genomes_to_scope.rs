@@ -11,7 +11,7 @@ pub fn add_previous_genomes_to_scope(app_handle: AppHandle, tauri_config: &Confi
             for genome in genomes {
                 let _ = app_handle.fs_scope().allow_file(genome);
             }
-        },
+        }
         None => {}
     }
 }
@@ -21,20 +21,37 @@ fn get_previous_genomes(config: AppConfig) -> Vec<PathBuf> {
     match previous {
         Some(genomes) => {
             if genomes.is_empty() {
-                return Vec::new()
+                return Vec::new();
             }
             let mut out: Vec<PathBuf> = Vec::new();
             for path_string in genomes.iter() {
                 let path = PathBuf::from(path_string);
-                if path.clone().exists() {
+                if is_valid_genome(path.clone()) {
                     out.push(path);
-                } else {
-                    println!("Skipping previous genomes: {:?}; Genome not found", path);
                 }
             }
             out
-        },
+        }
         None => Vec::new()
     }
 }
 
+fn is_valid_genome(path: PathBuf) -> bool {
+    if !path.clone().exists() {
+        return false;
+    }
+    match path.clone().extension() {
+        Some(mut extension) => {
+            if extension.to_ascii_lowercase() == "gen" {
+                true
+            } else {
+                println!("Invalid file extension on genomoe in previous genome list; Path: {:?}", path);
+                false
+            }
+        }
+        None => {
+            println!("Invalid genome filename in previous genome list; Path: {:?}", path);
+            false
+        }
+    }
+}
