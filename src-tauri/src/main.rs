@@ -218,7 +218,7 @@ fn main() {
         ])
         .setup(move |app| {
             let handle = app.handle();
-            let menu_handle = handle.clone();
+            let menu_handle = app.handle();
             add_previous_genomes_to_scope(handle.clone(), handle.clone().config().borrow());
             thread::spawn(move || {
                 make_window_with_app_name(app_name_for_setup.to_owned(), menu_handle);
