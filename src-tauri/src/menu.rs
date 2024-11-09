@@ -122,10 +122,13 @@ pub fn os_default(#[allow(unused)] app_name: &str) -> Menu {
     menu
 }
 
+#[cfg(target_os = "macos")]
+pub async fn set_menu_item_text(_window: Window, _id:  &str, _new_menu_text: String) -> Result<bool> {
+    Ok(true)
+}
+
+#[cfg(not(target_os = "macos"))]
 pub async fn set_menu_item_text(window: Window, id:  &str, new_menu_text: String) -> Result<bool> {
-    #[cfg(target_os = "macos")] {
-        Ok(true)
-    }
     #[cfg(not(target_os = "macos"))] {
         let menu_handle = window.menu_handle();
         let result = menu_handle.get_item(id).set_title(new_menu_text.clone());
