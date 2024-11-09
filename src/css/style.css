@@ -784,6 +784,18 @@ body:not([data-compiling='true']) .hide-on-not-compiling {
 .logging-panel > .log-warning {
   background: #ab6e10;
 }
+#debug-logger-panel .log-item:before,
+.logging-panel .log-item:before {
+  left: 0.5em;
+  content: ">>>";
+  margin-right: 0.5em;
+  display: inline-block;
+  color: #FFFFFF;
+}
+#debug-logger-panel [data-role="log"],
+.logging-panel [data-role="log"] {
+  padding: 1.2em;
+}
 .show-log-button-container {
   position: fixed;
   right: 0;
@@ -802,9 +814,20 @@ body:not([data-compiling='true']) .hide-on-not-compiling {
 }
 button.close-log-button {
   position: fixed;
+  box-sizing: content-box;
   top: 1em;
-  right: 1em;
-  background: transparent !important;
+  right: 2em;
+  padding: 0.5em;
+  border-radius: 50%;
+  background: #2F2555;
+  width: 2.5em;
+  min-width: 2.5em;
+  height: 2.5em;
+  min-height: 2.5em;
+}
+button.close-log-button img {
+  width: 100%;
+  max-width: 100%;
 }
 button.close-log-button:hover {
   color: #ffc3e5;
