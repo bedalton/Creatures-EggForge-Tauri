@@ -44425,6 +44425,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   function toggleEggMode_0(eggMode) {
     var inverted = invert(eggMode);
     ForgeStore_getInstance().dispatch_wfe2cj_k$(new SetEggModeAction(inverted));
+    AppEggMode_getInstance().setEggMode$default_73eoz4_k$(inverted);
   }
   function setEggModeInTauri$lambda($eggMode) {
     return function ($this$tauriInvoke) {
@@ -60333,8 +60334,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var newRoot = tmp;
       var path = formatPath($this, newRoot);
       var paths = PathUtil_getInstance().shortestPaths_rtw6eb_k$($this.pastPaths_1, 1);
-      var tmp2_elvis_lhs = paths.get_wei43m_k$(path);
-      var out = tmp2_elvis_lhs == null ? path : tmp2_elvis_lhs;
+      var out = path;
       // Inline function 'com.bedalton.log.Log.i' call
       var this_0 = Log_getInstance();
       // Inline function 'kotlin.contracts.contract' call
@@ -60346,17 +60346,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         // Inline function 'com.bedalton.log.Log.format' call
         // Inline function 'kotlin.contracts.contract' call
         // Inline function 'com.creaturesforge.application.ui.controls.Companion.updateShortestPaths.<anonymous>' call
-        var tmp$ret$0 = 'NewRoot: ' + newRoot + '; ShortPath: ' + path;
+        var tmp_1 = out;
+        var tmp_2 = paths.get_keys_wop4xp_k$();
+        var tmp$ret$0 = 'NewRoot: ' + newRoot + '; ShortPath: ' + path + '; Out: ' + tmp_1 + '; Paths: [' + joinToString(tmp_2, VOID, VOID, VOID, VOID, VOID, RootInput$Companion$updateShortestPaths$lambda) + ']';
         var tmp$ret$1 = this_0.format_bqai8u_k$('LOG1', className, tmp$ret$0);
         tmp_0.info(false, tmp$ret$1, null);
       }
-      var tmp_1;
+      var tmp_3;
       if (!(control.clearRootButton_1 == null)) {
-        tmp_1 = 28;
+        tmp_3 = 28;
       } else {
-        tmp_1 = 34;
+        tmp_3 = 34;
       }
-      var maxLength = tmp_1;
+      var maxLength = tmp_3;
       if (out.length >= maxLength) {
         // Inline function 'kotlin.text.substring' call
         var this_1 = out;
@@ -60370,6 +60372,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   function formatPath($this, pathRaw) {
     // Inline function 'kotlin.text.replace' call
     return $this.USER_PATH_REGEX_1.replace_1ix0wf_k$(pathRaw, '~/');
+  }
+  function RootInput$Companion$updateShortestPaths$lambda(it) {
+    return '"' + it + '"';
   }
   function _get_kind__d99vlj($this) {
     return $this.kind_1;
@@ -63575,6 +63580,20 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   };
+  protoOf(AppEggMode).setEggMode_6dyjzl_k$ = function (eggMode, updateConfig) {
+    this.setEggMode_662pmg_k$(null, eggMode, updateConfig);
+  };
+  protoOf(AppEggMode).setEggMode$default_73eoz4_k$ = function (eggMode, updateConfig, $super) {
+    updateConfig = updateConfig === VOID ? true : updateConfig;
+    var tmp;
+    if ($super === VOID) {
+      this.setEggMode_6dyjzl_k$(eggMode, updateConfig);
+      tmp = Unit_getInstance();
+    } else {
+      tmp = $super.setEggMode_6dyjzl_k$.call(this, eggMode, updateConfig);
+    }
+    return tmp;
+  };
   protoOf(AppEggMode).setEggMode_662pmg_k$ = function (projectRoot, eggMode, updateConfig) {
     var changed = !this.get_eggModeOrDefault_ibhu4h_k$().equals(eggMode);
     _set_mView__hhicwj(this, toViewMode(this, eggMode));
@@ -63613,7 +63632,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       // Inline function 'kotlin.text.isNullOrBlank' call
       // Inline function 'kotlin.contracts.contract' call
       if (from == null ? true : isBlank(from)) {
-        throw Exception_init_$Create$('Cannot parse invalid view mode; Should be one of [simple, advanced]; Found: ' + mode);
+        throw Exception_init_$Create$('Cannot parse invalid view mode; Should be one of [simple, advanced]; Found: ' + mode + '; From: ' + from);
       } else {
         throw Exception_init_$Create$('' + from + " has invalid 'data-page-for' attribute; Should be one of [simple, advanced]; Found: " + mode);
       }
@@ -108731,10 +108750,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   var NoSuchElementException_init_$Create$ = kotlin_kotlin.$_$.i2;
   var compareTo = kotlin_kotlin.$_$.sf;
   var HashMap_init_$Create$ = kotlin_kotlin.$_$.t;
-  var endsWith_0 = kotlin_kotlin.$_$.tj;
   var isCharSequence = kotlin_kotlin.$_$.lg;
   var trim_0 = kotlin_kotlin.$_$.om;
   var toString_2 = kotlin_kotlin.$_$.oh;
+  var endsWith_0 = kotlin_kotlin.$_$.tj;
   var contains_2 = kotlin_kotlin.$_$.d7;
   var listOf = kotlin_kotlin.$_$.la;
   var equals_0 = kotlin_kotlin.$_$.uj;
@@ -111384,7 +111403,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         // Inline function 'kotlin.collections.set' call
         var tmp_1;
         if ((endsWith(original, _Char___init__impl__6a9atx(47)) ? true : endsWith(original, _Char___init__impl__6a9atx(92))) ? true : endsWith(original, separator)) {
-          tmp_1 = temp;
+          tmp_1 = temp + toString_0(separator);
         } else {
           tmp_1 = trim(temp, charArrayOf([_Char___init__impl__6a9atx(47), _Char___init__impl__6a9atx(92), separator]));
         }
@@ -111540,10 +111559,30 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var path = tmp1_loop_parameter.get_key_18j28a_k$();
       // Inline function 'kotlin.collections.component2' call
       var shortest = tmp1_loop_parameter.get_value_j01efc_k$();
-      // Inline function 'kotlin.math.max' call
+      // Inline function 'kotlin.text.isEmpty' call
+      if (charSequenceLength(path) === 0) {
+        continue $l$loop_0;
+      }
+      // Inline function 'kotlin.text.trim' call
+      // Inline function 'kotlin.text.replace' call
+      // Inline function 'kotlin.text.trim' call
+      var this_0 = toString_2(trim_0(isCharSequence(path) ? path : THROW_CCE()));
+      // Inline function 'kotlin.text.toRegex' call
+      var regex = Regex_init_$Create$('[\\\\/]');
+      var replacement = toString_0(separator);
+      var tmp$ret$6 = regex.replace_1ix0wf_k$(this_0, replacement);
+      var this_1 = trimEnd(tmp$ret$6, charArrayOf([separator]));
+      var pathNormalized = toString_2(trim_0(isCharSequence(this_1) ? this_1 : THROW_CCE()));
       // Inline function 'kotlin.text.count' call
+      // Inline function 'kotlin.text.replace' call
+      // Inline function 'kotlin.text.trim' call
+      var this_2 = toString_2(trim_0(isCharSequence(shortest) ? shortest : THROW_CCE()));
+      // Inline function 'kotlin.text.toRegex' call
+      var regex_0 = Regex_init_$Create$('[\\\\/]');
+      var replacement_0 = toString_0(separator);
+      var tmp$ret$10 = regex_0.replace_1ix0wf_k$(this_2, replacement_0);
       var count = 0;
-      var indexedObject = trim(shortest, charArrayOf([separator, _Char___init__impl__6a9atx(32), _Char___init__impl__6a9atx(9), _Char___init__impl__6a9atx(10), _Char___init__impl__6a9atx(8)]));
+      var indexedObject = trimEnd(tmp$ret$10, charArrayOf([separator]));
       var inductionVariable = 0;
       while (inductionVariable < charSequenceLength(indexedObject)) {
         var element = charSequenceGet(indexedObject, inductionVariable);
@@ -111553,25 +111592,31 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           count = count + 1 | 0;
         }
       }
-      var a = count;
-      var shortestDepth = Math.max(a, 0);
+      var shortestDepth = count;
       if (minDepth > shortestDepth) {
-        // Inline function 'kotlin.text.split' call
-        // Inline function 'kotlin.text.toRegex' call
-        var tmp$ret$7 = Regex_init_$Create$('[\\\\/]').split_p7ck23_k$(path, 0);
-        var components = dropLast(tmp$ret$7, shortestDepth + 1 | 0);
-        if (components.isEmpty_y1axqb_k$()) {
-          continue $l$loop_0;
+        var allComponents = split(trimEnd(pathNormalized, charArrayOf([separator])), charArrayOf([separator]));
+        // Inline function 'kotlin.collections.filter' call
+        // Inline function 'kotlin.collections.filterTo' call
+        var destination = ArrayList_init_$Create$();
+        var tmp0_iterator_0 = allComponents.iterator_jk1svi_k$();
+        while (tmp0_iterator_0.hasNext_bitz1p_k$()) {
+          var element_0 = tmp0_iterator_0.next_20eer_k$();
+          // Inline function 'com.bedalton.common.util.ensureMinimumDepth.<anonymous>' call
+          // Inline function 'kotlin.text.isNotEmpty' call
+          if (charSequenceLength(element_0) > 0) {
+            destination.add_utx5q5_k$(element_0);
+          }
         }
-        var toDrop = components.get_size_woubt6_k$() - (minDepth - shortestDepth | 0) | 0;
+        var toDrop = (destination.get_size_woubt6_k$() - minDepth | 0) - 1 | 0;
         if (toDrop <= 0) {
+          // Inline function 'kotlin.collections.set' call
+          out.put_4fpzoq_k$(path, path);
           continue $l$loop_0;
         }
-        var prefixComponents = drop_0(components, toDrop);
-        var prefix = joinToString_0(prefixComponents, separator) + toString_0(separator);
+        var prefixComponents = drop_0(allComponents, toDrop);
+        var prefix = joinToString_0(prefixComponents, separator);
         // Inline function 'kotlin.collections.set' call
-        var value = prefix + shortest;
-        out.put_4fpzoq_k$(path, value);
+        out.put_4fpzoq_k$(path, prefix);
       }
     }
     return out;
@@ -335067,25 +335112,6 @@ if (typeof Math.hypot === 'undefined') {
     return Math.sqrt(y);
   };
 }
-if (typeof Math.log2 === 'undefined') {
-  Math.log2 = function (x) {
-    return Math.log(x) * Math.LOG2E;
-  };
-}
-if (typeof Math.sign === 'undefined') {
-  Math.sign = function (x) {
-    x = +x; // convert to a number
-    if (x === 0 || isNaN(x)) {
-      return Number(x);
-    }
-    return x > 0 ? 1 : -1;
-  };
-}
-if (typeof Math.log10 === 'undefined') {
-  Math.log10 = function (x) {
-    return Math.log(x) * Math.LOG10E;
-  };
-}
 if (typeof Math.clz32 === 'undefined') {
   Math.clz32 = function (log, LN2) {
     return function (x) {
@@ -335097,6 +335123,31 @@ if (typeof Math.clz32 === 'undefined') {
     };
   }(Math.log, Math.LN2);
 }
+if (typeof Math.log2 === 'undefined') {
+  Math.log2 = function (x) {
+    return Math.log(x) * Math.LOG2E;
+  };
+}
+if (typeof Math.log10 === 'undefined') {
+  Math.log10 = function (x) {
+    return Math.log(x) * Math.LOG10E;
+  };
+}
+if (typeof Math.sign === 'undefined') {
+  Math.sign = function (x) {
+    x = +x; // convert to a number
+    if (x === 0 || isNaN(x)) {
+      return Number(x);
+    }
+    return x > 0 ? 1 : -1;
+  };
+}
+if (typeof String.prototype.startsWith === 'undefined') {
+  Object.defineProperty(String.prototype, 'startsWith', {value: function (searchString, position) {
+    position = position || 0;
+    return this.lastIndexOf(searchString, position) === position;
+  }});
+}
 if (typeof String.prototype.endsWith === 'undefined') {
   Object.defineProperty(String.prototype, 'endsWith', {value: function (searchString, position) {
     var subjectString = this.toString();
@@ -335106,12 +335157,6 @@ if (typeof String.prototype.endsWith === 'undefined') {
     position -= searchString.length;
     var lastIndex = subjectString.indexOf(searchString, position);
     return lastIndex !== -1 && lastIndex === position;
-  }});
-}
-if (typeof String.prototype.startsWith === 'undefined') {
-  Object.defineProperty(String.prototype, 'startsWith', {value: function (searchString, position) {
-    position = position || 0;
-    return this.lastIndexOf(searchString, position) === position;
   }});
 }
 (function () {
@@ -357958,10 +358003,6 @@ if (typeof Math.imul === 'undefined') {
     var tmp$ret$1 = charSequenceSubSequence(this_0, startIndex, endIndex + 1 | 0);
     return toString_3(tmp$ret$1);
   }
-  function split_1(_this__u8e3s4, regex, limit) {
-    limit = limit === VOID ? 0 : limit;
-    return regex.split_p7ck23_k$(_this__u8e3s4, limit);
-  }
   function padEnd(_this__u8e3s4, length, padChar) {
     padChar = padChar === VOID ? _Char___init__impl__6a9atx(32) : padChar;
     return toString_3(padEnd_0(isCharSequence(_this__u8e3s4) ? _this__u8e3s4 : THROW_CCE(), length, padChar));
@@ -358151,6 +358192,10 @@ if (typeof Math.imul === 'undefined') {
       }
     }
     return charSequenceSubSequence(_this__u8e3s4, startIndex, endIndex + 1 | 0);
+  }
+  function split_1(_this__u8e3s4, regex, limit) {
+    limit = limit === VOID ? 0 : limit;
+    return regex.split_p7ck23_k$(_this__u8e3s4, limit);
   }
   function ifBlank(_this__u8e3s4, defaultValue) {
     return isBlank(_this__u8e3s4) ? defaultValue() : _this__u8e3s4;
