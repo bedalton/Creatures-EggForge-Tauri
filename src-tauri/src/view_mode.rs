@@ -1,4 +1,5 @@
 use tauri::{ Window };
+use crate::menu::set_menu_item_text;
 
 /// Sets the tauri view mode menu button from JS frontend
 ///
@@ -19,7 +20,7 @@ pub async fn set_egg_mode_in_tauri(
     window: Window,
     egg_mode: String,
 ) -> tauri::Result<bool> {
-    let _ = set_toggle_egg_mode_text_in_menu(window, egg_mode.to_owned());
+    let _ = set_toggle_egg_mode_text_in_menu(window, egg_mode.to_owned()).await;
     Ok(true)
 }
 
@@ -36,10 +37,9 @@ pub async fn set_egg_mode_in_tauri(
 /// ```
 /// set_toggle_view_mode_text_in_menu(app_handle.get_window("main"), "simple");
 /// ```
-fn set_toggle_egg_mode_text_in_menu(window: Window, current_view_mod: String) {
+async fn set_toggle_egg_mode_text_in_menu(window: Window, current_view_mod: String) {
     let new_menu_text = get_toggle_egg_mode_text(current_view_mod.clone());
-    let menu_handle = window.menu_handle();
-    menu_handle.get_item("toggle_egg_mode").set_title(new_menu_text).unwrap()
+    let _ = set_menu_item_text(window, "toggle_egg_mode", new_menu_text).await;
 }
 
 ///

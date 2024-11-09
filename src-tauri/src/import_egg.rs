@@ -1,13 +1,45 @@
 use std::path::PathBuf;
 
 use tauri::api::dialog;
-use tauri::{Config, Manager, Window};
+use tauri::{AppHandle, Config, Manager, Window};
 
 use crate::config::get_config_value_string;
 
 #[derive(Clone, serde::Serialize)]
 struct OpenEggPayload {
     path: String
+}
+
+
+/// Adds the AGENTS file to the filesystem scope for a given agent file
+///
+/// # Arguments
+///
+/// * `app_handle`: handle to tauri app
+/// * `path`: path to agent file if any
+///
+/// returns: Result<bool, Error> Ok(true) if GNO was added
+///
+/// # Examples
+///
+/// ```
+/// add_agent_file_to_scope(app_handle, "~/Documents/Creatures/Docking Station/Genetics/bruin.ex47.gno")
+/// ```
+#[tauri::command]
+pub async fn add_agent_file_to_scope(app_handle: AppHandle, path: &str) -> tauri::Result<bool> {
+    let the_path: String = path.to_string();
+    if !the_path.to_lowercase().ends_with(".agents") && !the_path.to_lowercase().ends_with(".agent") {
+        println!("Failed to add agents path. Path is not an agents path");
+        return Ok(false)
+    }
+    let result = app_handle.fs_scope().allow_file(the_path);
+    match result {
+        Ok(_) => Ok(true.into()),
+        Err(e) => {
+            eprintln!("Failed to add agents path {:?}", e);
+            Ok(false.into())
+        }
+    }
 }
 
 pub async fn import_egg_file_into_window(window: &Window, config: &Config, is_starting: bool) -> bool {

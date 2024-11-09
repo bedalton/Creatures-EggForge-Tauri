@@ -1,5 +1,9 @@
+use std::string::ToString;
+#[cfg(target_os = "macos")]
+use tauri::{AboutMetadata};
 
-use tauri::{AboutMetadata, CustomMenuItem, Menu, MenuItem, Submenu, WindowBuilder};
+
+use tauri::{CustomMenuItem, Menu, MenuItem, Submenu, WindowBuilder, Result, Window};
 
 pub fn init_menu(app_name: String, window_builder: WindowBuilder) -> WindowBuilder {
     let menu = os_default(app_name.clone().as_str());
@@ -12,8 +16,8 @@ fn add_menu_item(menu: Menu, label: &str, title: &str) -> Menu {
     menu.add_item(CustomMenuItem::new(label, title.to_owned()))
 }
 
-fn add_menu_item_with_accelerator(menu: Menu, label: &str, title: &str, keyboard_shortcut: &str) -> Menu {
-    let item = CustomMenuItem::new(label, title.to_owned())
+fn add_menu_item_with_accelerator(menu: Menu, id: &str, title: &str, keyboard_shortcut: &str) -> Menu {
+    let item = CustomMenuItem::new(id, title.to_owned())
         .accelerator(keyboard_shortcut);
     menu.add_item(item)
 }
@@ -44,9 +48,17 @@ pub fn os_default(#[allow(unused)] app_name: &str) -> Menu {
     let mut file_menu = Menu::new();
     file_menu = add_menu_item_with_accelerator(file_menu, "open_folder", "Open Folder", "CommandOrControl+o");
     file_menu = add_menu_item_with_accelerator(file_menu, "new_window", "New Window", "CommandOrControl+n");
-    file_menu = add_menu_item_with_accelerator(file_menu, "reset", "Reset", "CommandOrControl+r");
+    file_menu = add_menu_item_with_accelerator(file_menu, "reset", "Clear Window", "CommandOrControl+r");
+    // file_menu = add_menu_item(file_menu, "clear_project_settings_for_project", "Reset Project and Clear Settings");
     file_menu = file_menu.add_native_item(MenuItem::Separator);
     file_menu = add_menu_item_with_accelerator(file_menu, "import_egg_agent", "Import Egg Agent", "CommandOrControl+i");
+    file_menu = file_menu.add_native_item(MenuItem::Separator);
+    file_menu = add_menu_item(file_menu, "clear_project_settings_for_all_projects", "Clear All Saved Project Settings");
+    file_menu = add_menu_item(file_menu, "toggle_project_settings_disabled", "Toggle Project Settings Reloading");
+    file_menu = file_menu.add_native_item(MenuItem::Separator);
+    // file_menu = add_menu_item(file_menu, "clear_previous_genomes_for_project", "Clear Genomes List For Project");
+    file_menu = add_menu_item(file_menu, "clear_previous_genomes_for_all_projects", "Clear All Previous Genomes");
+    file_menu = add_menu_item(file_menu, "toggle_previous_genomes_list_disabled", "Toggle Previous Genomes Reloading");
     file_menu = file_menu.add_native_item(MenuItem::Separator);
     file_menu = file_menu.add_native_item(MenuItem::CloseWindow);
     #[cfg(not(target_os = "macos"))]
@@ -87,6 +99,14 @@ pub fn os_default(#[allow(unused)] app_name: &str) -> Menu {
 
     }
 
+    #[cfg(not(target_os = "macos"))]
+    {
+        let mut view_menu = Menu::new();
+        view_menu = add_menu_item_with_accelerator(view_menu, "toggle_egg_mode", "toggle Simple/Advanced mode", "CommandOrControl+t");
+        menu = menu.add_submenu(Submenu::new("View", view_menu));
+
+    }
+
     let mut window_menu = Menu::new();
     // window_menu = add_menu_item_with_accelerator(window_menu, "toggle_egg_mode", "toggle Simple/Advanced mode", "CommandOrControl+t");
     // window_menu = window_menu.add_native_item(MenuItem::Separator);
@@ -100,4 +120,19 @@ pub fn os_default(#[allow(unused)] app_name: &str) -> Menu {
     menu = menu.add_submenu(Submenu::new("Window", window_menu));
 
     menu
+}
+
+pub async fn set_menu_item_text(window: Window, id:  &str, new_menu_text: String) -> Result<bool> {
+    let menu_handle = window.menu_handle();
+    let result = menu_handle.get_item(id).set_title(new_menu_text.clone());
+    match result {
+        Ok(_) => {
+            println!("Changed menu item: {:?}", new_menu_text.clone());
+            Ok(true)
+        },
+        Err(e) => {
+            println!("Failed to set menu text; Error: {:?}", e.to_string());
+            Ok(false)
+        }
+    }
 }

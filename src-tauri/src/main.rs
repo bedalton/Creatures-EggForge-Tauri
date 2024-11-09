@@ -5,21 +5,25 @@
 #![allow(dead_code)]
 use std::borrow::Borrow;
 use std::collections::HashSet;
-use std::{env, thread};
+use std::{env, fs, thread};
 use std::fmt::format;
 use std::ops::Deref;
+use std::path::Path;
 use std::sync::Mutex;
 
 use rand::distributions::Alphanumeric;
 use rand::Rng;
-use tauri::{AppHandle, LogicalSize, Manager, Result, Size, State, Window, WindowBuilder, WindowUrl};
+use tauri::{AppHandle, LogicalSize, Manager, Size, State, Window, WindowBuilder, WindowUrl};
 use tauri::async_runtime::block_on;
-use crate::import_egg::import_egg_file_into_window;
+use crate::import_egg::{add_agent_file_to_scope, import_egg_file_into_window};
 use crate::open_project::open_project;
 use crate::view_mode::set_egg_mode_in_tauri;
 use crate::save_dialog::save_file;
 use crate::add_att_directory::add_att_directory;
 use crate::add_previous_genomes_to_scope::add_previous_genomes_to_scope;
+use crate::add_previous_genomes_to_scope::add_previous_genome_to_scope;
+use crate::previous_settings_disabled::{set_genome_list_disabled_in_tauri, set_project_settings_cached_disabled_in_tauri};
+
 mod menu;
 mod view_mode;
 mod js;
@@ -31,6 +35,7 @@ mod dialog;
 mod open_project;
 mod add_att_directory;
 mod add_previous_genomes_to_scope;
+mod previous_settings_disabled;
 
 #[derive(Clone, serde::Serialize)]
 struct StringMessage {
@@ -39,7 +44,7 @@ struct StringMessage {
 
 pub struct AppState {
     last_window_id: Mutex<i32>,
-    window_ids: Mutex<HashSet<String>>
+    window_ids: Mutex<HashSet<String>>,
 }
 
 /// JS callable function to find if path is Directory
@@ -61,7 +66,7 @@ pub struct AppState {
 /// }
 /// ```
 #[tauri::command]
-fn is_dir(path: &str) -> bool {
+fn is_directory(path: &str) -> bool {
     let path_for_os = match env::consts::OS {
         "windows" => path.to_string(),
         _ => path.to_string()
@@ -77,10 +82,82 @@ fn is_dir(path: &str) -> bool {
     }
 }
 
+
+#[tauri::command]
+fn file_exists(path: &str) -> bool {
+    let path_for_os = match env::consts::OS {
+        "windows" => path.to_string(),
+        _ => path.to_string()
+    };
+    Path::new(path_for_os.as_str()).exists()
+}
+
+#[tauri::command]
+async fn list_files(app_handle: AppHandle, path: &str) -> Result<Vec<String>, String> {
+    let path_for_os = match env::consts::OS {
+        "windows" => path.to_string(),
+        _ => path.to_string()
+    };
+
+    let paths = match fs::read_dir(path_for_os) {
+        Ok(result) => result,
+        Err(e) => {
+            let error = format!("Failed to read_dir; {:?}", e.to_string());
+            return Err(error);
+        }
+    };
+
+    let mut out = Vec::new();
+
+    for path in paths {
+        let p = match path {
+            Ok(p) => p.path(),
+            Err(_) => continue
+        };
+
+        if p.clone().is_dir() {
+            continue;
+        }
+
+        let add = match p.clone().extension().unwrap().to_str() {
+            Some(ext) => {
+                match ext.to_lowercase().as_str() {
+                    "att" => true,
+                    "c16" => true,
+                    "gno" => true,
+                    "gen" => true,
+                    "agent" => true,
+                    "agents" => true,
+                    _ => false
+                }
+            }
+            None => false
+        };
+
+        if add {
+            continue;
+        }
+
+        match app_handle.fs_scope().allow_file(p.clone()) {
+            Ok(_) => {
+                let path_string = p.clone().into_os_string().into_string().unwrap();
+                out.push(path_string);
+            }
+            Err(_) => {
+                let error_path = p.clone().into_os_string();
+                let message = format!("Error adding path to scope from list_dir: {:?}", error_path);
+                return Err(message.as_str().into());
+            }
+        }
+    }
+    Ok(out)
+}
+
+
 #[tauri::command]
 async fn get_window_id(
     window: Window,
-) -> Result<String> {
+) -> Result<String, tauri::Error> {
     Ok(window.label().to_owned())
 }
 
@@ -99,47 +176,16 @@ async fn get_window_id(
 /// add_gno(app_handle, "~/Documents/Creatures/Docking Station/Genetics/bruin.ex47.gno")
 /// ```
 #[tauri::command]
-async fn add_gno(app_handle: AppHandle, path: &str) -> Result<bool> {
+async fn add_gno(app_handle: AppHandle, path: &str) -> Result<bool, tauri::Error> {
     let mut the_path = path.to_string();
     if !the_path.to_lowercase().ends_with(".gno") {
-        the_path = format!("{:?}.gno", the_path);
+        the_path = format!("{}.gno", the_path);
     }
     let result = app_handle.fs_scope().allow_file(the_path);
     match result {
         Ok(_) => Ok(true.into()),
         Err(e) => {
             println!("Failed to add gno path {:?}", e);
-            Ok(false.into())
-        }
-    }
-}
-
-/// Adds the GNO file to the filesystem scope for a given genome
-///
-/// # Arguments
-///
-/// * `app_handle`: handle to tauri app
-/// * `path`: path to GNO file if any
-///
-/// returns: Result<bool, Error> Ok(true) if GNO was added
-///
-/// # Examples
-///
-/// ```
-/// add_gno(app_handle, "~/Documents/Creatures/Docking Station/Genetics/bruin.ex47.gno")
-/// ```
-#[tauri::command]
-async fn add_agents(app_handle: AppHandle, path: &str) -> Result<bool> {
-    let the_path: String = path.to_string();
-    if !the_path.to_lowercase().ends_with(".agents") && !the_path.to_lowercase().ends_with(".agent") {
-        println!("Failed to add agents path. Path is not an agents path");
-        return Ok(false)
-    }
-    let result = app_handle.fs_scope().allow_file(the_path);
-    match result {
-        Ok(_) => Ok(true.into()),
-        Err(e) => {
-            eprintln!("Failed to add agents path {:?}", e);
             Ok(false.into())
         }
     }
@@ -157,38 +203,44 @@ fn main() {
     tauri::Builder::default()
         .manage(state)
         .invoke_handler(tauri::generate_handler![
-            is_dir,
+            is_directory,
+            file_exists,
+            list_files,
             add_gno,
+            add_previous_genome_to_scope,
             set_egg_mode_in_tauri,
             get_window_id,
             save_file,
             add_att_directory,
+            add_agent_file_to_scope,
+            set_genome_list_disabled_in_tauri,
+            set_project_settings_cached_disabled_in_tauri
         ])
-        .setup(move |app | {
+        .setup(move |app| {
             let handle = app.handle();
             let menu_handle = handle.clone();
             add_previous_genomes_to_scope(handle.clone(), handle.clone().config().borrow());
-            std::thread::spawn(move || {
+            thread::spawn(move || {
                 make_window_with_app_name(app_name_for_setup.to_owned(), menu_handle);
             });
             Ok(())
         })
-        .on_menu_event(move | e| {
+        .on_menu_event(move |e| {
             let _ = match e.menu_item_id() {
                 "toggle_egg_mode" => {
                     js::toggle_egg_mode_in_js(e.window());
                     true
-                },
+                }
                 "reset" => {
                     js::reset_view(e.window());
                     true
-                },
+                }
                 "new_window" => {
                     let window = e.window().clone();
                     let app_handle = window.app_handle();
                     make_window_with_app_name(app_name_for_menu.to_owned(), app_handle);
                     true
-                },
+                }
                 "import_egg_agent" => {
                     let window_ = e.window().clone();
                     let config = window_.clone().config();
@@ -211,6 +263,40 @@ fn main() {
                             println!("Failed to set egg import");
                         }
                     });
+                    true
+                }
+                "clear_project_settings_for_all_projects" => {
+                    let window_ = e.window().clone();
+                    previous_settings_disabled::clear_saved_settings_for_all_projects_in_js(window_);
+                    true
+                }
+                "clear_project_settings_for_project" => {
+                    let window_ = e.window().clone();
+                    previous_settings_disabled::clear_saved_project_settings_for_project_in_js(window_);
+                    true
+                }
+
+                "toggle_project_settings_disabled" => {
+                    let window_ = e.window().clone();
+                    previous_settings_disabled::toggle_disable_project_settings_reload_in_js(window_);
+                    true
+                }
+
+                "clear_previous_genomes_for_project" => {
+                    let window_ = e.window().clone();
+                    previous_settings_disabled::clear_previous_genomes_list_from_project_in_js(window_);
+                    true
+                }
+
+                "clear_previous_genomes_for_all_projects" => {
+                    let window_ = e.window().clone();
+                    previous_settings_disabled::clear_all_previous_genomes_from_all_time_in_js(window_);
+                    true
+                }
+
+                "toggle_previous_genomes_list_disabled" => {
+                    let window_ = e.window().clone();
+                    previous_settings_disabled::toggle_disable_genome_list_reload_in_js(window_);
                     true
                 }
                 _ => false
@@ -275,7 +361,7 @@ fn next_window_id(state: State<AppState>, prefix: &str) -> String {
             *locked = next_id.clone();
             let id_int_as_string = next_id.to_string();
             id_int_as_string
-        },
+        }
         Err(_) => {
             let window_ids_locked = state.window_ids.lock();
             match window_ids_locked {
@@ -287,7 +373,7 @@ fn next_window_id(state: State<AppState>, prefix: &str) -> String {
                     }
                     window_ids.insert(out.clone().to_owned());
                     out
-                },
+                }
                 Err(_) => {
                     random_string(18)
                 }
