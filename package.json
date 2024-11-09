@@ -1,7 +1,7 @@
 {
   "name": "egg-forge",
   "private": true,
-  "version": "0.3.1",
+  "version": "0.3.1-beta",
   "type": "module",
   "scripts": {
     "dev": "vite",
