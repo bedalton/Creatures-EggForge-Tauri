@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.3.1] - 2024-11-08
+### Fixed
+- Fixed menu not showing on windows
+- Prevent incorrect menu item text on macOS (by never changing it)
+
 ## [v0.3.0] - 2024-10-10
 ### Added
 - Advanced mode
