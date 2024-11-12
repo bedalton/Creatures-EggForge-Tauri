@@ -8,7 +8,9 @@
     "build": "node copyVersionToTauri.cjs && node prepare_dist.cjs",
     "build_windows": "node copyVersionToTauri.cjs && node prepare_dist.cjs",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "tauri-dev": "tauri dev",
+    "tauri-build": "tauri build"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.14",
