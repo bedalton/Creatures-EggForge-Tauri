@@ -7547,6 +7547,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   var isArray = kotlin_kotlin.$_$.hg;
   var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.z1;
   var NotImplementedError = kotlin_kotlin.$_$.fn;
+  var Comparator = kotlin_kotlin.$_$.um;
+  var compareValues = kotlin_kotlin.$_$.ee;
+  var sortedWith = kotlin_kotlin.$_$.ic;
+  var asThrowable = kotlin_com_bedalton_bedalton_common_core.$_$.d;
+  var Mutex = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.v;
   var Exception_init_$Create$_1 = kotlin_kotlin.$_$.q1;
   var plus_1 = kotlin_kotlin.$_$.lo;
   var SuspendFunction2 = kotlin_kotlin.$_$.af;
@@ -7619,12 +7624,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   var sortWith = kotlin_kotlin.$_$.gc;
   var getGenusString = kotlin_com_bedalton_creatures_creatures_common.$_$.f;
   var capitalize = kotlin_com_bedalton_bedalton_common_core.$_$.n;
-  var Comparator = kotlin_kotlin.$_$.um;
-  var compareValues = kotlin_kotlin.$_$.ee;
   var ensureEndsWith_0 = kotlin_com_bedalton_bedalton_common_core.$_$.q;
   var NoSuchElementException_init_$Create$_0 = kotlin_kotlin.$_$.k2;
   var launchMain = kotlin_com_bedalton_bedalton_common_coroutines.$_$.f;
-  var sortedWith = kotlin_kotlin.$_$.ic;
   var IndexOutOfBoundsException_init_$Create$ = kotlin_kotlin.$_$.h2;
   var contentEquals = kotlin_kotlin.$_$.f7;
   var ensureNotStartsWith_0 = kotlin_com_bedalton_bedalton_common_core.$_$.v;
@@ -7868,104 +7870,111 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   setMetadataFor(OpenEggRequest, 'OpenEggRequest', classMeta, StartupRequest);
   setMetadataFor(Companion_14, 'Companion', objectMeta);
   setMetadataFor(SetProjectRootRequest, 'SetProjectRootRequest', classMeta, StartupRequest);
-  setMetadataFor($updateEggModeInTauriCOROUTINE$84, '$updateEggModeInTauriCOROUTINE$84', classMeta, CoroutineImpl);
-  setMetadataFor($toggleEggModeCOROUTINE$85, '$toggleEggModeCOROUTINE$85', classMeta, CoroutineImpl);
+  setMetadataFor(sam$kotlin_Comparator$0, 'sam$kotlin_Comparator$0', classMeta, VOID, [Comparator]);
+  setMetadataFor(Companion_15, 'Companion', objectMeta);
+  setMetadataFor(CacheDirectory, 'CacheDirectory', classMeta);
+  setMetadataFor($createAgentCacheDirectoryCOROUTINE$84, '$createAgentCacheDirectoryCOROUTINE$84', classMeta, CoroutineImpl);
+  setMetadataFor($writeFileToCacheDirectoryCOROUTINE$85, '$writeFileToCacheDirectoryCOROUTINE$85', classMeta, CoroutineImpl);
+  setMetadataFor($writeAgentFilesToCacheCOROUTINE$86, '$writeAgentFilesToCacheCOROUTINE$86', classMeta, CoroutineImpl);
+  setMetadataFor($updateEggModeInTauriCOROUTINE$87, '$updateEggModeInTauriCOROUTINE$87', classMeta, CoroutineImpl);
+  setMetadataFor($toggleEggModeCOROUTINE$88, '$toggleEggModeCOROUTINE$88', classMeta, CoroutineImpl);
   setMetadataFor(TauriEvents$initTauriListeners$slambda, 'TauriEvents$initTauriListeners$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [2]);
   setMetadataFor(TauriEvents$initTauriListeners$slambda_1, 'TauriEvents$initTauriListeners$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [2]);
   setMetadataFor(TauriEvents$initTauriListeners$slambda_3, 'TauriEvents$initTauriListeners$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [2]);
   setMetadataFor(TauriEvents$listenAsync$lambda$slambda, 'TauriEvents$listenAsync$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($onTauriWindowFocusCOROUTINE$86, '$onTauriWindowFocusCOROUTINE$86', classMeta, CoroutineImpl);
+  setMetadataFor($onTauriWindowFocusCOROUTINE$89, '$onTauriWindowFocusCOROUTINE$89', classMeta, CoroutineImpl);
   setMetadataFor(TauriEvents, 'TauriEvents', objectMeta, VOID, VOID, VOID, VOID, VOID, [0]);
-  setMetadataFor($tauriAsyncCOROUTINE$87, '$tauriAsyncCOROUTINE$87', classMeta, CoroutineImpl);
-  setMetadataFor($tauriAsyncTypedCOROUTINE$88, '$tauriAsyncTypedCOROUTINE$88', classMeta, CoroutineImpl);
+  setMetadataFor($tauriAsyncCOROUTINE$90, '$tauriAsyncCOROUTINE$90', classMeta, CoroutineImpl);
+  setMetadataFor($tauriAsyncTypedCOROUTINE$91, '$tauriAsyncTypedCOROUTINE$91', classMeta, CoroutineImpl);
   setMetadataFor(initTauriInterop$slambda, 'initTauriInterop$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($pushStateToWindowCOROUTINE$89, '$pushStateToWindowCOROUTINE$89', classMeta, CoroutineImpl);
+  setMetadataFor($pushStateToWindowCOROUTINE$92, '$pushStateToWindowCOROUTINE$92', classMeta, CoroutineImpl);
   setMetadataFor(tauriMiddleware$lambda$slambda, 'tauriMiddleware$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($updatePreviousGenomeListDisabledInTauriCOROUTINE$90, '$updatePreviousGenomeListDisabledInTauriCOROUTINE$90', classMeta, CoroutineImpl);
-  setMetadataFor($updateProjectSettingReloadDisabledInTauriCOROUTINE$91, '$updateProjectSettingReloadDisabledInTauriCOROUTINE$91', classMeta, CoroutineImpl);
+  setMetadataFor($updatePreviousGenomeListDisabledInTauriCOROUTINE$93, '$updatePreviousGenomeListDisabledInTauriCOROUTINE$93', classMeta, CoroutineImpl);
+  setMetadataFor($updateProjectSettingReloadDisabledInTauriCOROUTINE$94, '$updateProjectSettingReloadDisabledInTauriCOROUTINE$94', classMeta, CoroutineImpl);
   setMetadataFor(DisabledSettingsInterop, 'DisabledSettingsInterop', objectMeta, VOID, VOID, VOID, VOID, VOID, [0]);
   setMetadataFor(EggProgress, 'EggProgress', objectMeta);
   setMetadataFor(preCompileMiddleware$slambda, 'preCompileMiddleware$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
   setMetadataFor(preCompileMiddleware$slambda_1, 'preCompileMiddleware$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
   setMetadataFor(onCompileEggAction$slambda, 'onCompileEggAction$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($onCompileEggCompletedActionCOROUTINE$92, '$onCompileEggCompletedActionCOROUTINE$92', classMeta, CoroutineImpl);
-  setMetadataFor($saveConfigCOROUTINE$93, '$saveConfigCOROUTINE$93', classMeta, CoroutineImpl);
-  setMetadataFor($getConfigLoadingCOROUTINE$94, '$getConfigLoadingCOROUTINE$94', classMeta, CoroutineImpl);
-  setMetadataFor($ensureConfigDirectoryCOROUTINE$95, '$ensureConfigDirectoryCOROUTINE$95', classMeta, CoroutineImpl);
-  setMetadataFor($getFullPathCOROUTINE$96, '$getFullPathCOROUTINE$96', classMeta, CoroutineImpl);
+  setMetadataFor($onCompileEggCompletedActionCOROUTINE$95, '$onCompileEggCompletedActionCOROUTINE$95', classMeta, CoroutineImpl);
+  setMetadataFor($saveConfigCOROUTINE$96, '$saveConfigCOROUTINE$96', classMeta, CoroutineImpl);
+  setMetadataFor($getConfigLoadingCOROUTINE$97, '$getConfigLoadingCOROUTINE$97', classMeta, CoroutineImpl);
+  setMetadataFor($ensureConfigDirectoryCOROUTINE$98, '$ensureConfigDirectoryCOROUTINE$98', classMeta, CoroutineImpl);
+  setMetadataFor($getFullPathCOROUTINE$99, '$getFullPathCOROUTINE$99', classMeta, CoroutineImpl);
   setMetadataFor(ConfigLoader, 'ConfigLoader', objectMeta, VOID, VOID, VOID, VOID, VOID, [1, 0]);
   setMetadataFor(cacheAgentOpenDirectory$slambda, 'cacheAgentOpenDirectory$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($readCOROUTINE$98, '$readCOROUTINE$98', classMeta, CoroutineImpl);
-  setMetadataFor($fileExistsCOROUTINE$99, '$fileExistsCOROUTINE$99', classMeta, CoroutineImpl);
+  setMetadataFor($readCOROUTINE$101, '$readCOROUTINE$101', classMeta, CoroutineImpl);
+  setMetadataFor($fileExistsCOROUTINE$102, '$fileExistsCOROUTINE$102', classMeta, CoroutineImpl);
   setMetadataFor(TauriFS, 'TauriFS', classMeta, UnscopedFileSystem, VOID, TauriFS, VOID, VOID, [1, 3, 0, 2, 4]);
-  setMetadataFor($getSaveFilePathCOROUTINE$97, '$getSaveFilePathCOROUTINE$97', classMeta, CoroutineImpl);
-  setMetadataFor($showCOROUTINE$100, '$showCOROUTINE$100', classMeta, CoroutineImpl);
+  setMetadataFor($getSaveFilePathCOROUTINE$100, '$getSaveFilePathCOROUTINE$100', classMeta, CoroutineImpl);
+  setMetadataFor($showCOROUTINE$103, '$showCOROUTINE$103', classMeta, CoroutineImpl);
   setMetadataFor(ConfirmCompileModal, 'ConfirmCompileModal', objectMeta, VOID, VOID, VOID, VOID, VOID, [1]);
   setMetadataFor(DialogDslMarker, 'DialogDslMarker', classMeta, VOID, [Annotation]);
   setMetadataFor(ModalDialog, 'ModalDialog', classMeta, DIV);
   setMetadataFor(message$slambda, 'message$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($openSingleCOROUTINE$101, '$openSingleCOROUTINE$101', classMeta, CoroutineImpl);
-  setMetadataFor($showMessageAndWaitCOROUTINE$102, '$showMessageAndWaitCOROUTINE$102', classMeta, CoroutineImpl);
+  setMetadataFor($openSingleCOROUTINE$104, '$openSingleCOROUTINE$104', classMeta, CoroutineImpl);
+  setMetadataFor($showMessageAndWaitCOROUTINE$105, '$showMessageAndWaitCOROUTINE$105', classMeta, CoroutineImpl);
   setMetadataFor(FileInput$onInputButtonClicked$slambda, 'FileInput$onInputButtonClicked$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($openCOROUTINE$103, '$openCOROUTINE$103', classMeta, CoroutineImpl);
-  setMetadataFor($saveCOROUTINE$104, '$saveCOROUTINE$104', classMeta, CoroutineImpl);
+  setMetadataFor($openCOROUTINE$106, '$openCOROUTINE$106', classMeta, CoroutineImpl);
+  setMetadataFor($saveCOROUTINE$107, '$saveCOROUTINE$107', classMeta, CoroutineImpl);
   setMetadataFor(FileInput, 'FileInput', classMeta, VOID, VOID, VOID, VOID, VOID, [0]);
-  setMetadataFor(Companion_15, 'Companion', objectMeta);
+  setMetadataFor(Companion_16, 'Companion', objectMeta);
   setMetadataFor(LoggerPanel, 'LoggerPanel', classMeta);
   setMetadataFor(ModalManager, 'ModalManager', objectMeta);
-  setMetadataFor(Companion_16, 'Companion', objectMeta);
-  setMetadataFor(LoggerBubbleElement, 'LoggerBubbleElement', classMeta);
   setMetadataFor(Companion_17, 'Companion', objectMeta);
-  setMetadataFor(VerifyPanel, 'VerifyPanel', classMeta);
+  setMetadataFor(LoggerBubbleElement, 'LoggerBubbleElement', classMeta);
   setMetadataFor(Companion_18, 'Companion', objectMeta);
+  setMetadataFor(VerifyPanel, 'VerifyPanel', classMeta);
+  setMetadataFor(Companion_19, 'Companion', objectMeta);
   setMetadataFor(VerifyRow, 'VerifyRow', classMeta);
   setMetadataFor(Validatable, 'Validatable', interfaceMeta);
   setMetadataFor(BreedSlot_0, 'BreedSlot', classMeta, VOID, [Validatable]);
   setMetadataFor(AttBreedSlot, 'AttBreedSlot', classMeta, BreedSlot_0);
-  setMetadataFor($getLastRootFromConfigCOROUTINE$105, '$getLastRootFromConfigCOROUTINE$105', classMeta, CoroutineImpl);
-  setMetadataFor($onRootSetCOROUTINE$106, '$onRootSetCOROUTINE$106', classMeta, CoroutineImpl);
+  setMetadataFor($getLastRootFromConfigCOROUTINE$108, '$getLastRootFromConfigCOROUTINE$108', classMeta, CoroutineImpl);
+  setMetadataFor($onRootSetCOROUTINE$109, '$onRootSetCOROUTINE$109', classMeta, CoroutineImpl);
   setMetadataFor(RootInput, 'RootInput', classMeta, VOID, [Validatable], VOID, VOID, VOID, [1, 0, 2]);
   setMetadataFor(AttRootInput, 'AttRootInput', classMeta, RootInput, VOID, VOID, VOID, VOID, [1, 2]);
-  setMetadataFor(Companion_19, 'Companion', objectMeta);
-  setMetadataFor(sam$kotlin_Comparator$0, 'sam$kotlin_Comparator$0', classMeta, VOID, [Comparator]);
+  setMetadataFor(Companion_20, 'Companion', objectMeta);
+  setMetadataFor(sam$kotlin_Comparator$0_0, 'sam$kotlin_Comparator$0', classMeta, VOID, [Comparator]);
   setMetadataFor(CompileButton$onClick$slambda, 'CompileButton$onClick$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($requestCompileCOROUTINE$107, '$requestCompileCOROUTINE$107', classMeta, CoroutineImpl);
-  setMetadataFor($getDefaultSavePathCOROUTINE$108, '$getDefaultSavePathCOROUTINE$108', classMeta, CoroutineImpl);
-  setMetadataFor($getDefaultFolderCOROUTINE$109, '$getDefaultFolderCOROUTINE$109', classMeta, CoroutineImpl);
+  setMetadataFor($requestCompileCOROUTINE$110, '$requestCompileCOROUTINE$110', classMeta, CoroutineImpl);
+  setMetadataFor($getDefaultSavePathCOROUTINE$111, '$getDefaultSavePathCOROUTINE$111', classMeta, CoroutineImpl);
+  setMetadataFor($getDefaultFolderCOROUTINE$112, '$getDefaultFolderCOROUTINE$112', classMeta, CoroutineImpl);
   setMetadataFor(CompileButton, 'CompileButton', classMeta, VOID, VOID, VOID, VOID, VOID, [1, 2]);
   setMetadataFor(EggNameInput, 'EggNameInput', classMeta, VOID, [Validatable]);
-  setMetadataFor(sam$kotlin_Comparator$0_0, 'sam$kotlin_Comparator$0', classMeta, VOID, [Comparator]);
-  setMetadataFor(EggSelect, 'EggSelect', classMeta);
-  setMetadataFor(Companion_20, 'Companion', objectMeta);
   setMetadataFor(sam$kotlin_Comparator$0_1, 'sam$kotlin_Comparator$0', classMeta, VOID, [Comparator]);
+  setMetadataFor(EggSelect, 'EggSelect', classMeta);
+  setMetadataFor(Companion_21, 'Companion', objectMeta);
   setMetadataFor(sam$kotlin_Comparator$0_2, 'sam$kotlin_Comparator$0', classMeta, VOID, [Comparator]);
+  setMetadataFor(sam$kotlin_Comparator$0_3, 'sam$kotlin_Comparator$0', classMeta, VOID, [Comparator]);
   setMetadataFor(GenomeControl$lambda$slambda, 'GenomeControl$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
   setMetadataFor(GenomeControl$selectGenomeInSelect$slambda, 'GenomeControl$selectGenomeInSelect$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
   setMetadataFor(GenomeControl$onBaseGenomeChange$slambda, 'GenomeControl$onBaseGenomeChange$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($ensureGenomeOptionsCOROUTINE$110, '$ensureGenomeOptionsCOROUTINE$110', classMeta, CoroutineImpl);
-  setMetadataFor($ensureGenomeOptionCOROUTINE$111, '$ensureGenomeOptionCOROUTINE$111', classMeta, CoroutineImpl);
-  setMetadataFor($selectGenomeFromDiskCOROUTINE$112, '$selectGenomeFromDiskCOROUTINE$112', classMeta, CoroutineImpl);
+  setMetadataFor($ensureGenomeOptionsCOROUTINE$113, '$ensureGenomeOptionsCOROUTINE$113', classMeta, CoroutineImpl);
+  setMetadataFor($ensureGenomeOptionCOROUTINE$114, '$ensureGenomeOptionCOROUTINE$114', classMeta, CoroutineImpl);
+  setMetadataFor($selectGenomeFromDiskCOROUTINE$115, '$selectGenomeFromDiskCOROUTINE$115', classMeta, CoroutineImpl);
   setMetadataFor(GenomeControl, 'GenomeControl', classMeta, VOID, [Validatable], VOID, VOID, VOID, [1, 2, 0]);
   setMetadataFor(GenusSelect, 'GenusSelect', classMeta, VOID, [Validatable]);
-  setMetadataFor(Companion_21, 'Companion', objectMeta);
+  setMetadataFor(Companion_22, 'Companion', objectMeta);
   setMetadataFor(GlyphSelect$initImage$slambda, 'GlyphSelect$initImage$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
   setMetadataFor(GlyphSelect$selectImage$slambda, 'GlyphSelect$selectImage$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($initImageAsyncCOROUTINE$113, '$initImageAsyncCOROUTINE$113', classMeta, CoroutineImpl);
-  setMetadataFor($initFrameInputCOROUTINE$114, '$initFrameInputCOROUTINE$114', classMeta, CoroutineImpl);
-  setMetadataFor($selectImageAsyncCOROUTINE$115, '$selectImageAsyncCOROUTINE$115', classMeta, CoroutineImpl);
-  setMetadataFor($setImageGlyphCOROUTINE$116, '$setImageGlyphCOROUTINE$116', classMeta, CoroutineImpl);
-  setMetadataFor($defaultOpenDirectoryCOROUTINE$117, '$defaultOpenDirectoryCOROUTINE$117', classMeta, CoroutineImpl);
-  setMetadataFor(GlyphSelect, 'GlyphSelect', classMeta, VOID, [Validatable], VOID, VOID, VOID, [1, 0]);
+  setMetadataFor(GlyphSelect$selectAgentImage$slambda, 'GlyphSelect$selectAgentImage$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
+  setMetadataFor($initImageAsyncCOROUTINE$116, '$initImageAsyncCOROUTINE$116', classMeta, CoroutineImpl);
+  setMetadataFor($initFrameInputCOROUTINE$117, '$initFrameInputCOROUTINE$117', classMeta, CoroutineImpl);
+  setMetadataFor($selectImageAsyncCOROUTINE$118, '$selectImageAsyncCOROUTINE$118', classMeta, CoroutineImpl);
+  setMetadataFor($setImageGlyphCOROUTINE$119, '$setImageGlyphCOROUTINE$119', classMeta, CoroutineImpl);
+  setMetadataFor($defaultOpenDirectoryCOROUTINE$120, '$defaultOpenDirectoryCOROUTINE$120', classMeta, CoroutineImpl);
+  setMetadataFor(GlyphSelect, 'GlyphSelect', classMeta, VOID, [Validatable], VOID, VOID, VOID, [1]);
   setMetadataFor(OutputBreedSlot, 'OutputBreedSlot', classMeta, BreedSlot_0);
-  setMetadataFor($getLastRootFromConfigCOROUTINE$118, '$getLastRootFromConfigCOROUTINE$118', classMeta, CoroutineImpl);
-  setMetadataFor($onRootSetCOROUTINE$119, '$onRootSetCOROUTINE$119', classMeta, CoroutineImpl);
+  setMetadataFor($getLastRootFromConfigCOROUTINE$121, '$getLastRootFromConfigCOROUTINE$121', classMeta, CoroutineImpl);
+  setMetadataFor($onRootSetCOROUTINE$122, '$onRootSetCOROUTINE$122', classMeta, CoroutineImpl);
   setMetadataFor(ProjectRootInput, 'ProjectRootInput', classMeta, RootInput, VOID, VOID, VOID, VOID, [1, 2]);
-  setMetadataFor(Companion_22, 'Companion', objectMeta);
+  setMetadataFor(Companion_23, 'Companion', objectMeta);
   setMetadataFor(RootInput$initClickHandlers$lambda$slambda, 'RootInput$initClickHandlers$lambda$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
   setMetadataFor(RootInput$selectRoot$slambda, 'RootInput$selectRoot$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($selectRootAsyncCOROUTINE$120, '$selectRootAsyncCOROUTINE$120', classMeta, CoroutineImpl);
-  setMetadataFor($requestRootCOROUTINE$121, '$requestRootCOROUTINE$121', classMeta, CoroutineImpl);
-  setMetadataFor($clearRootInternalCOROUTINE$122, '$clearRootInternalCOROUTINE$122', classMeta, CoroutineImpl);
+  setMetadataFor($selectRootAsyncCOROUTINE$123, '$selectRootAsyncCOROUTINE$123', classMeta, CoroutineImpl);
+  setMetadataFor($requestRootCOROUTINE$124, '$requestRootCOROUTINE$124', classMeta, CoroutineImpl);
+  setMetadataFor($clearRootInternalCOROUTINE$125, '$clearRootInternalCOROUTINE$125', classMeta, CoroutineImpl);
   setMetadataFor(SpriteBreedSlot, 'SpriteBreedSlot', classMeta, BreedSlot_0);
   setMetadataFor(IAnAttributeBase, 'IAnAttributeBase', interfaceMeta);
   setMetadataFor(AnAttributeBase, 'AnAttributeBase', classMeta, VOID, [IAnAttributeBase]);
@@ -7981,8 +7990,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   setMetadataFor(iteratorCasted$1, VOID, classMeta, VOID, [Iterator]);
   setMetadataFor(iterator$1, VOID, classMeta, VOID, [Iterator]);
   setMetadataFor(AppEggMode$setEggMode$slambda, 'AppEggMode$setEggMode$slambda', classMeta, CoroutineImpl, [CoroutineImpl], VOID, VOID, VOID, [1]);
-  setMetadataFor($initCOROUTINE$123, '$initCOROUTINE$123', classMeta, CoroutineImpl);
-  setMetadataFor($getEggModeNotNullCOROUTINE$124, '$getEggModeNotNullCOROUTINE$124', classMeta, CoroutineImpl);
+  setMetadataFor($initCOROUTINE$126, '$initCOROUTINE$126', classMeta, CoroutineImpl);
+  setMetadataFor($getEggModeNotNullCOROUTINE$127, '$getEggModeNotNullCOROUTINE$127', classMeta, CoroutineImpl);
   setMetadataFor(AppEggMode, 'AppEggMode', objectMeta, VOID, VOID, VOID, VOID, VOID, [0]);
   setMetadataFor(Page, 'Page', classMeta, VOID, [Validatable]);
   setMetadataFor(PageButtons, 'PageButtons', objectMeta);
@@ -12220,7 +12229,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             this.exceptionState_1 = 6;
             var e = this.exception_1;
             var tmp_2 = this;
-            rethrowCancellationException(asThrowable(e));
+            rethrowCancellationException(asThrowable_0(e));
             tmp_2.TRY_RESULT1__1 = this.projectFolder_1;
             this.state_1 = 7;
             continue $sm;
@@ -44050,7 +44059,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     Log_getInstance().setMode_nqe7y8_k$(get_LOG_DEBUG(), true);
     Log_getInstance().setMode_nqe7y8_k$(get_LOG_PROGRESS(), true);
     Log_getInstance().setMode_nqe7y8_k$(get_LOG_STATUS(), true);
-    Companion_getInstance_23().initLoggerPanels_d1kuf5_k$();
+    Companion_getInstance_24().initLoggerPanels_d1kuf5_k$();
   }
   function setVersionText(coroutineScope) {
     return launch(coroutineScope, VOID, VOID, setVersionText$slambda_0(null));
@@ -44406,18 +44415,440 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
     return tmp;
   }
+  function get_hashMutex() {
+    _init_properties_interop_agentcache_kt__ykcbma();
+    return hashMutex;
+  }
+  var hashMutex;
+  function get_written() {
+    _init_properties_interop_agentcache_kt__ykcbma();
+    return written;
+  }
+  var written;
+  function createAgentCacheDirectory($completion) {
+    var tmp = new $createAgentCacheDirectoryCOROUTINE$84($completion);
+    tmp.result_1 = Unit_getInstance();
+    tmp.exception_1 = null;
+    return tmp.doResume_5yljmg_k$();
+  }
+  function writeFileToCacheDirectory(path, bytes, $completion) {
+    var tmp = new $writeFileToCacheDirectoryCOROUTINE$85(path, bytes, $completion);
+    tmp.result_1 = Unit_getInstance();
+    tmp.exception_1 = null;
+    return tmp.doResume_5yljmg_k$();
+  }
+  function writeAgentFilesToCache(projectRoot, files, $completion) {
+    var tmp = new $writeAgentFilesToCacheCOROUTINE$86(projectRoot, files, $completion);
+    tmp.result_1 = Unit_getInstance();
+    tmp.exception_1 = null;
+    return tmp.doResume_5yljmg_k$();
+  }
+  function sam$kotlin_Comparator$0(function_0) {
+    this.function_1 = function_0;
+  }
+  protoOf(sam$kotlin_Comparator$0).compare_bczr_k$ = function (a, b) {
+    return this.function_1(a, b);
+  };
+  protoOf(sam$kotlin_Comparator$0).compare = function (a, b) {
+    return this.compare_bczr_k$(a, b);
+  };
+  function CacheDirectory$Companion$toHashString$lambda(a, b) {
+    // Inline function 'kotlin.comparisons.compareValuesBy' call
+    // Inline function 'com.creaturesforge.application.interop.Companion.toHashString.<anonymous>' call
+    var tmp = a.get_key_18j28a_k$();
+    // Inline function 'com.creaturesforge.application.interop.Companion.toHashString.<anonymous>' call
+    var tmp$ret$1 = b.get_key_18j28a_k$();
+    return compareValues(tmp, tmp$ret$1);
+  }
+  function CacheDirectory$Companion$toHashString$lambda_0(it) {
+    return it.get_key_18j28a_k$() + ':' + it.get_value_j01efc_k$().length + ':' + hashCode(it.get_value_j01efc_k$());
+  }
+  function CacheDirectory_init_$Init$(projectRoot, files, cacheDirectory, $this) {
+    CacheDirectory.call($this, projectRoot, Companion_getInstance_23().toHashString_xo5m4m_k$(files), cacheDirectory);
+    return $this;
+  }
+  function CacheDirectory_init_$Create$(projectRoot, files, cacheDirectory) {
+    return CacheDirectory_init_$Init$(projectRoot, files, cacheDirectory, objectCreate(protoOf(CacheDirectory)));
+  }
+  function Companion_15() {
+    Companion_instance_15 = this;
+  }
+  protoOf(Companion_15).toHashString_xo5m4m_k$ = function (files) {
+    // Inline function 'kotlin.collections.sortedBy' call
+    var this_0 = files.get_entries_p20ztl_k$();
+    // Inline function 'kotlin.comparisons.compareBy' call
+    var tmp = CacheDirectory$Companion$toHashString$lambda;
+    var tmp$ret$0 = new sam$kotlin_Comparator$0(tmp);
+    var tmp_0 = sortedWith(this_0, tmp$ret$0);
+    return joinToString(tmp_0, ';', VOID, VOID, VOID, VOID, CacheDirectory$Companion$toHashString$lambda_0);
+  };
+  var Companion_instance_15;
+  function Companion_getInstance_23() {
+    if (Companion_instance_15 == null)
+      new Companion_15();
+    return Companion_instance_15;
+  }
+  function CacheDirectory(projectRoot, hashString, cacheDirectory) {
+    Companion_getInstance_23();
+    this.projectRoot_1 = projectRoot;
+    this.hashString_1 = hashString;
+    this.cacheDirectory_1 = cacheDirectory;
+  }
+  protoOf(CacheDirectory).get_projectRoot_1nedou_k$ = function () {
+    return this.projectRoot_1;
+  };
+  protoOf(CacheDirectory).get_hashString_95x514_k$ = function () {
+    return this.hashString_1;
+  };
+  protoOf(CacheDirectory).get_cacheDirectory_ji8b9w_k$ = function () {
+    return this.cacheDirectory_1;
+  };
+  protoOf(CacheDirectory).component1_7eebsc_k$ = function () {
+    return this.projectRoot_1;
+  };
+  protoOf(CacheDirectory).component2_7eebsb_k$ = function () {
+    return this.hashString_1;
+  };
+  protoOf(CacheDirectory).component3_7eebsa_k$ = function () {
+    return this.cacheDirectory_1;
+  };
+  protoOf(CacheDirectory).copy_nc7k0r_k$ = function (projectRoot, hashString, cacheDirectory) {
+    return new CacheDirectory(projectRoot, hashString, cacheDirectory);
+  };
+  protoOf(CacheDirectory).copy$default_9dj1o0_k$ = function (projectRoot, hashString, cacheDirectory, $super) {
+    projectRoot = projectRoot === VOID ? this.projectRoot_1 : projectRoot;
+    hashString = hashString === VOID ? this.hashString_1 : hashString;
+    cacheDirectory = cacheDirectory === VOID ? this.cacheDirectory_1 : cacheDirectory;
+    return $super === VOID ? this.copy_nc7k0r_k$(projectRoot, hashString, cacheDirectory) : $super.copy_nc7k0r_k$.call(this, projectRoot, hashString, cacheDirectory);
+  };
+  protoOf(CacheDirectory).toString = function () {
+    return 'CacheDirectory(projectRoot=' + this.projectRoot_1 + ', hashString=' + this.hashString_1 + ', cacheDirectory=' + this.cacheDirectory_1 + ')';
+  };
+  protoOf(CacheDirectory).hashCode = function () {
+    var result = getStringHashCode(this.projectRoot_1);
+    result = imul(result, 31) + getStringHashCode(this.hashString_1) | 0;
+    result = imul(result, 31) + getStringHashCode(this.cacheDirectory_1) | 0;
+    return result;
+  };
+  protoOf(CacheDirectory).equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof CacheDirectory))
+      return false;
+    var tmp0_other_with_cast = other instanceof CacheDirectory ? other : THROW_CCE();
+    if (!(this.projectRoot_1 === tmp0_other_with_cast.projectRoot_1))
+      return false;
+    if (!(this.hashString_1 === tmp0_other_with_cast.hashString_1))
+      return false;
+    if (!(this.cacheDirectory_1 === tmp0_other_with_cast.cacheDirectory_1))
+      return false;
+    return true;
+  };
+  function writeFileToCacheDirectory$lambda($path, $bytes) {
+    return function ($this$tauriAsync) {
+      $this$tauriAsync.path = $path;
+      $this$tauriAsync.bytes = Array.from($bytes);
+      return Unit_getInstance();
+    };
+  }
+  function $createAgentCacheDirectoryCOROUTINE$84(resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf($createAgentCacheDirectoryCOROUTINE$84).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.result_1;
+    $sm: do
+      try {
+        var tmp = this.state_1;
+        switch (tmp) {
+          case 0:
+            this.exceptionState_1 = 3;
+            this.exceptionState_1 = 2;
+            this.state_1 = 1;
+            suspendResult = tauriAsync('create_agent_cache_directory', VOID, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            this.TRY_RESULT0__1 = suspendResult;
+            this.exceptionState_1 = 3;
+            this.state_1 = 4;
+            continue $sm;
+          case 2:
+            this.exceptionState_1 = 3;
+            var eDynamic = this.exception_1;
+            var tmp_0 = this;
+            var e = asThrowable(eDynamic);
+            rethrowCancellationException(e);
+            Log_getInstance().e_y4wm5h_k$('Failed to create agent cache directory: ' + formatted(e));
+            tmp_0.TRY_RESULT0__1 = null;
+            this.state_1 = 4;
+            continue $sm;
+          case 3:
+            throw this.exception_1;
+          case 4:
+            this.exceptionState_1 = 3;
+            return this.TRY_RESULT0__1;
+        }
+      } catch ($p) {
+        var e_0 = $p;
+        if (this.exceptionState_1 === 3) {
+          throw e_0;
+        } else {
+          this.state_1 = this.exceptionState_1;
+          this.exception_1 = e_0;
+        }
+      }
+     while (true);
+  };
+  function $writeFileToCacheDirectoryCOROUTINE$85(path, bytes, resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
+    this.path_1 = path;
+    this.bytes_1 = bytes;
+  }
+  protoOf($writeFileToCacheDirectoryCOROUTINE$85).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.result_1;
+    $sm: do
+      try {
+        var tmp = this.state_1;
+        switch (tmp) {
+          case 0:
+            this.exceptionState_1 = 3;
+            this.exceptionState_1 = 2;
+            this.state_1 = 1;
+            suspendResult = tauriAsync('write_agent_cache_file', writeFileToCacheDirectory$lambda(this.path_1, this.bytes_1), this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            this.TRY_RESULT0__1 = suspendResult;
+            this.exceptionState_1 = 3;
+            this.state_1 = 4;
+            continue $sm;
+          case 2:
+            this.exceptionState_1 = 3;
+            var eDynamic = this.exception_1;
+            var tmp_0 = this;
+            var e = asThrowable(eDynamic);
+            rethrowCancellationException(e);
+            Log_getInstance().e_y4wm5h_k$('Failed to write file[' + this.path_1 + '] to cache directory: ' + formatted(e));
+            tmp_0.TRY_RESULT0__1 = false;
+            this.state_1 = 4;
+            continue $sm;
+          case 3:
+            throw this.exception_1;
+          case 4:
+            this.exceptionState_1 = 3;
+            return this.TRY_RESULT0__1;
+        }
+      } catch ($p) {
+        var e_0 = $p;
+        if (this.exceptionState_1 === 3) {
+          throw e_0;
+        } else {
+          this.state_1 = this.exceptionState_1;
+          this.exception_1 = e_0;
+        }
+      }
+     while (true);
+  };
+  function $writeAgentFilesToCacheCOROUTINE$86(projectRoot, files, resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
+    this.projectRoot_1 = projectRoot;
+    this.files_1 = files;
+  }
+  protoOf($writeAgentFilesToCacheCOROUTINE$86).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.result_1;
+    $sm: do
+      try {
+        var tmp = this.state_1;
+        switch (tmp) {
+          case 0:
+            this.exceptionState_1 = 19;
+            this.state_1 = 1;
+            continue $sm;
+          case 1:
+            var tmp_0 = this;
+            tmp_0.this1__1 = get_hashMutex();
+            var tmp_1 = this;
+            tmp_1.owner2__1 = null;
+            this.state_1 = 2;
+            suspendResult = this.this1__1.lock_ugrcvf_k$(this.owner2__1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 2:
+            this.state_1 = 3;
+            continue $sm;
+          case 3:
+            this.state_1 = 4;
+            continue $sm;
+          case 4:
+            this.state_1 = 5;
+            continue $sm;
+          case 5:
+            this.exceptionState_1 = 18;
+            var tmp_2 = this;
+            var tmp_3 = get_written();
+            var this_0 = this.projectRoot_1;
+            tmp_2.previous6__1 = tmp_3.get_wei43m_k$(this_0.toLowerCase());
+            this.hashString7__1 = Companion_getInstance_23().toHashString_xo5m4m_k$(this.files_1);
+            if (!(this.previous6__1 == null)) {
+              if (this.previous6__1.hashString_1 === this.hashString7__1) {
+                this.tmp$ret$05__1 = this.previous6__1.cacheDirectory_1;
+                this.exceptionState_1 = 19;
+                this.state_1 = 14;
+                continue $sm;
+              } else {
+                this.state_1 = 6;
+                continue $sm;
+              }
+            } else {
+              this.state_1 = 7;
+              continue $sm;
+            }
+
+          case 6:
+            this.state_1 = 7;
+            continue $sm;
+          case 7:
+            this.state_1 = 8;
+            suspendResult = createAgentCacheDirectory(this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 8:
+            this.tmp0_elvis_lhs8__1 = suspendResult;
+            if (this.tmp0_elvis_lhs8__1 == null) {
+              this.tmp$ret$05__1 = null;
+              this.exceptionState_1 = 19;
+              this.state_1 = 14;
+              var tmp_4 = this;
+              continue $sm;
+            } else {
+              this.WHEN_RESULT9__1 = this.tmp0_elvis_lhs8__1;
+              this.state_1 = 9;
+              continue $sm;
+            }
+
+          case 9:
+            this.cacheDirectory10__1 = this.WHEN_RESULT9__1;
+            var tmp_5 = this;
+            tmp_5.tmp1_iterator11__1 = this.files_1.get_entries_p20ztl_k$().iterator_jk1svi_k$();
+            this.state_1 = 10;
+            continue $sm;
+          case 10:
+            if (!this.tmp1_iterator11__1.hasNext_bitz1p_k$()) {
+              this.state_1 = 13;
+              continue $sm;
+            }
+
+            this.tmp2_loop_parameter12__1 = this.tmp1_iterator11__1.next_20eer_k$();
+            var tmp_6 = this;
+            tmp_6.virtualPath13__1 = this.tmp2_loop_parameter12__1.get_key_18j28a_k$();
+            var tmp_7 = this;
+            tmp_7.bytes14__1 = this.tmp2_loop_parameter12__1.get_value_j01efc_k$();
+            this.path15__1 = PathUtil_getInstance().combine_vm27cv_k$([this.cacheDirectory10__1, last(split_0(this.virtualPath13__1, ['/']))]);
+            this.state_1 = 11;
+            suspendResult = writeFileToCacheDirectory(this.path15__1, this.bytes14__1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 11:
+            var ARGUMENT = suspendResult;
+            if (!ARGUMENT) {
+              this.tmp$ret$05__1 = null;
+              this.exceptionState_1 = 19;
+              this.state_1 = 14;
+              continue $sm;
+            } else {
+              this.state_1 = 12;
+              continue $sm;
+            }
+
+          case 12:
+            this.state_1 = 10;
+            continue $sm;
+          case 13:
+            var this_1 = get_written();
+            var key = this.projectRoot_1.toLowerCase();
+            var value = new CacheDirectory(this.cacheDirectory10__1, this.hashString7__1, this.cacheDirectory10__1);
+            this_1.put_4fpzoq_k$(key, value);
+            this.tmp$ret$05__1 = this.cacheDirectory10__1;
+            this.exceptionState_1 = 19;
+            this.state_1 = 14;
+            var tmp_8 = this;
+            continue $sm;
+          case 14:
+            var tmp_9 = this.tmp$ret$05__1;
+            this.exceptionState_1 = 19;
+            this.this1__1.unlock_ulcrcl_k$(this.owner2__1);
+            return tmp_9;
+          case 15:
+            this.exceptionState_1 = 19;
+            var tmp_10 = this;
+            this.this1__1.unlock_ulcrcl_k$(this.owner2__1);
+            tmp_10.tmp$ret$60__1 = Unit_getInstance();
+            this.state_1 = 17;
+            continue $sm;
+          case 16:
+            this.exceptionState_1 = 19;
+            this.this1__1.unlock_ulcrcl_k$(this.owner2__1);
+            if (false) {}
+
+            this.state_1 = 17;
+            continue $sm;
+          case 17:
+            return this.tmp$ret$60__1;
+          case 18:
+            this.exceptionState_1 = 19;
+            var t = this.exception_1;
+            this.this1__1.unlock_ulcrcl_k$(this.owner2__1);
+            throw t;
+          case 19:
+            throw this.exception_1;
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.exceptionState_1 === 19) {
+          throw e;
+        } else {
+          this.state_1 = this.exceptionState_1;
+          this.exception_1 = e;
+        }
+      }
+     while (true);
+  };
+  var properties_initialized_interop_agentcache_kt_wzccuo;
+  function _init_properties_interop_agentcache_kt__ykcbma() {
+    if (!properties_initialized_interop_agentcache_kt_wzccuo) {
+      properties_initialized_interop_agentcache_kt_wzccuo = true;
+      hashMutex = Mutex();
+      // Inline function 'kotlin.collections.mutableMapOf' call
+      written = LinkedHashMap_init_$Create$_0();
+    }
+  }
   function setEggModeInTauri(eggMode) {
     var tmp = tauriInvoke('set_egg_mode_in_tauri', setEggModeInTauri$lambda(eggMode));
     return tmp.then(setEggModeInTauri$lambda_0);
   }
   function updateEggModeInTauri($completion) {
-    var tmp = new $updateEggModeInTauriCOROUTINE$84($completion);
+    var tmp = new $updateEggModeInTauriCOROUTINE$87($completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   }
   function toggleEggMode($completion) {
-    var tmp = new $toggleEggModeCOROUTINE$85($completion);
+    var tmp = new $toggleEggModeCOROUTINE$88($completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -44440,10 +44871,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   function setEggModeInTauri$lambda_0(it) {
     return Unit_getInstance();
   }
-  function $updateEggModeInTauriCOROUTINE$84(resultContinuation) {
+  function $updateEggModeInTauriCOROUTINE$87(resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf($updateEggModeInTauriCOROUTINE$84).doResume_5yljmg_k$ = function () {
+  protoOf($updateEggModeInTauriCOROUTINE$87).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -44476,10 +44907,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $toggleEggModeCOROUTINE$85(resultContinuation) {
+  function $toggleEggModeCOROUTINE$88(resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf($toggleEggModeCOROUTINE$85).doResume_5yljmg_k$ = function () {
+  protoOf($toggleEggModeCOROUTINE$88).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -44559,7 +44990,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     listen_0($this, 'toggle_disable_genome_list_reload', true, TauriEvents$addPreviousGenomeListInteropListeners$lambda_1);
   }
   function onTauriWindowFocus($this, $completion) {
-    var tmp = new $onTauriWindowFocusCOROUTINE$86($this, $completion);
+    var tmp = new $onTauriWindowFocusCOROUTINE$89($this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -44902,7 +45333,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       } catch ($p) {
         var tmp_5;
         var eRaw = $p;
-        var e = asThrowable(eRaw);
+        var e = asThrowable_0(eRaw);
         Log_getInstance().e_y4wm5h_k$('Failure in listener[' + $eventName + ']; Global: ' + $global + '; Async: false; ' + formatted(e, true));
         tmp_5 = Unit_getInstance();
         tmp_1 = tmp_5;
@@ -45032,7 +45463,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       } catch ($p) {
         var tmp_2;
         var eRaw = $p;
-        var exception = asThrowable(eRaw);
+        var exception = asThrowable_0(eRaw);
         rethrowCancellationException(exception);
         // Inline function 'kotlin.contracts.contract' call
         // Inline function 'kotlin.contracts.contract' call
@@ -45055,11 +45486,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return Unit_getInstance();
     };
   }
-  function $onTauriWindowFocusCOROUTINE$86(_this__u8e3s4, resultContinuation) {
+  function $onTauriWindowFocusCOROUTINE$89(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($onTauriWindowFocusCOROUTINE$86).doResume_5yljmg_k$ = function () {
+  protoOf($onTauriWindowFocusCOROUTINE$89).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -45149,7 +45580,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return invoke(event, payload);
     } catch ($p) {
       var e = $p;
-      throw asThrowable(e);
+      throw asThrowable_0(e);
     }
   }
   function tauriInvokeTyped(event, init) {
@@ -45165,7 +45596,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return invoke(event, payload);
     } catch ($p) {
       var e = $p;
-      throw asThrowable(e);
+      throw asThrowable_0(e);
     }
   }
   function tauriAsync(event, init, $completion) {
@@ -45176,7 +45607,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       tmp = init;
     }
     init = tmp;
-    var tmp_0 = new $tauriAsyncCOROUTINE$87(event, init, $completion);
+    var tmp_0 = new $tauriAsyncCOROUTINE$90(event, init, $completion);
     tmp_0.result_1 = Unit_getInstance();
     tmp_0.exception_1 = null;
     return tmp_0.doResume_5yljmg_k$();
@@ -45189,7 +45620,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       tmp = init;
     }
     init = tmp;
-    var tmp_0 = new $tauriAsyncTypedCOROUTINE$88(event, init, $completion);
+    var tmp_0 = new $tauriAsyncTypedCOROUTINE$91(event, init, $completion);
     tmp_0.result_1 = Unit_getInstance();
     tmp_0.exception_1 = null;
     return tmp_0.doResume_5yljmg_k$();
@@ -45206,12 +45637,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   function tauriAsyncTyped$lambda($this$null) {
     return Unit_getInstance();
   }
-  function $tauriAsyncCOROUTINE$87(event, init, resultContinuation) {
+  function $tauriAsyncCOROUTINE$90(event, init, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.event_1 = event;
     this.init_1 = init;
   }
-  protoOf($tauriAsyncCOROUTINE$87).doResume_5yljmg_k$ = function () {
+  protoOf($tauriAsyncCOROUTINE$90).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -45233,7 +45664,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           case 2:
             this.exceptionState_1 = 3;
             var e = this.exception_1;
-            throw asThrowable(e);
+            throw asThrowable_0(e);
           case 3:
             throw this.exception_1;
           case 4:
@@ -45251,12 +45682,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $tauriAsyncTypedCOROUTINE$88(event, init, resultContinuation) {
+  function $tauriAsyncTypedCOROUTINE$91(event, init, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.event_1 = event;
     this.init_1 = init;
   }
-  protoOf($tauriAsyncTypedCOROUTINE$88).doResume_5yljmg_k$ = function () {
+  protoOf($tauriAsyncTypedCOROUTINE$91).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -45278,7 +45709,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           case 2:
             this.exceptionState_1 = 3;
             var e = this.exception_1;
-            throw asThrowable(e);
+            throw asThrowable_0(e);
           case 3:
             throw this.exception_1;
           case 4:
@@ -45311,7 +45742,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return mWindowId;
   }
   function pushStateToWindow($completion) {
-    var tmp = new $pushStateToWindowCOROUTINE$89($completion);
+    var tmp = new $pushStateToWindowCOROUTINE$92($completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -45392,10 +45823,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     l.$arity = 1;
     return l;
   }
-  function $pushStateToWindowCOROUTINE$89(resultContinuation) {
+  function $pushStateToWindowCOROUTINE$92(resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf($pushStateToWindowCOROUTINE$89).doResume_5yljmg_k$ = function () {
+  protoOf($pushStateToWindowCOROUTINE$92).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -45607,11 +46038,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return Unit_getInstance();
     };
   }
-  function $updatePreviousGenomeListDisabledInTauriCOROUTINE$90(_this__u8e3s4, resultContinuation) {
+  function $updatePreviousGenomeListDisabledInTauriCOROUTINE$93(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($updatePreviousGenomeListDisabledInTauriCOROUTINE$90).doResume_5yljmg_k$ = function () {
+  protoOf($updatePreviousGenomeListDisabledInTauriCOROUTINE$93).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -45644,11 +46075,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $updateProjectSettingReloadDisabledInTauriCOROUTINE$91(_this__u8e3s4, resultContinuation) {
+  function $updateProjectSettingReloadDisabledInTauriCOROUTINE$94(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($updateProjectSettingReloadDisabledInTauriCOROUTINE$91).doResume_5yljmg_k$ = function () {
+  protoOf($updateProjectSettingReloadDisabledInTauriCOROUTINE$94).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -45716,7 +46147,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
   };
   protoOf(DisabledSettingsInterop).updatePreviousGenomeListDisabledInTauri_5i0ksu_k$ = function ($completion) {
-    var tmp = new $updatePreviousGenomeListDisabledInTauriCOROUTINE$90(this, $completion);
+    var tmp = new $updatePreviousGenomeListDisabledInTauriCOROUTINE$93(this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -45725,7 +46156,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     tauriInvoke('set_project_settings_cached_disabled_in_tauri', DisabledSettingsInterop$setDisableCachedProjectSettingsInTauri$lambda(disabled));
   };
   protoOf(DisabledSettingsInterop).updateProjectSettingReloadDisabledInTauri_obusj6_k$ = function ($completion) {
-    var tmp = new $updateProjectSettingReloadDisabledInTauriCOROUTINE$91(this, $completion);
+    var tmp = new $updateProjectSettingReloadDisabledInTauriCOROUTINE$94(this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -46528,7 +46959,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
   }
   function onCompileEggCompletedAction(action, $completion) {
-    var tmp = new $onCompileEggCompletedActionCOROUTINE$92(action, $completion);
+    var tmp = new $onCompileEggCompletedActionCOROUTINE$95(action, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -46686,11 +47117,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     $this$message.type = 'error';
     return Unit_getInstance();
   }
-  function $onCompileEggCompletedActionCOROUTINE$92(action, resultContinuation) {
+  function $onCompileEggCompletedActionCOROUTINE$95(action, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.action_1 = action;
   }
-  protoOf($onCompileEggCompletedActionCOROUTINE$92).doResume_5yljmg_k$ = function () {
+  protoOf($onCompileEggCompletedActionCOROUTINE$95).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -46774,13 +47205,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return $this.tauriFsOptions_1;
   }
   function ensureConfigDirectory($this, $completion) {
-    var tmp = new $ensureConfigDirectoryCOROUTINE$95($this, $completion);
+    var tmp = new $ensureConfigDirectoryCOROUTINE$98($this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   }
   function getFullPath($this, $completion) {
-    var tmp = new $getFullPathCOROUTINE$96($this, $completion);
+    var tmp = new $getFullPathCOROUTINE$99($this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -46794,12 +47225,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     $this$jsOb.recursive = true;
     return Unit_getInstance();
   }
-  function $saveConfigCOROUTINE$93(_this__u8e3s4, config, resultContinuation) {
+  function $saveConfigCOROUTINE$96(_this__u8e3s4, config, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.config_1 = config;
   }
-  protoOf($saveConfigCOROUTINE$93).doResume_5yljmg_k$ = function () {
+  protoOf($saveConfigCOROUTINE$96).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -46921,12 +47352,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $getConfigLoadingCOROUTINE$94(_this__u8e3s4, cached, resultContinuation) {
+  function $getConfigLoadingCOROUTINE$97(_this__u8e3s4, cached, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.cached_1 = cached;
   }
-  protoOf($getConfigLoadingCOROUTINE$94).doResume_5yljmg_k$ = function () {
+  protoOf($getConfigLoadingCOROUTINE$97).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -47072,11 +47503,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $ensureConfigDirectoryCOROUTINE$95(_this__u8e3s4, resultContinuation) {
+  function $ensureConfigDirectoryCOROUTINE$98(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($ensureConfigDirectoryCOROUTINE$95).doResume_5yljmg_k$ = function () {
+  protoOf($ensureConfigDirectoryCOROUTINE$98).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -47116,11 +47547,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $getFullPathCOROUTINE$96(_this__u8e3s4, resultContinuation) {
+  function $getFullPathCOROUTINE$99(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($getFullPathCOROUTINE$96).doResume_5yljmg_k$ = function () {
+  protoOf($getFullPathCOROUTINE$99).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -47176,13 +47607,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return this.mLoadedOnce_1;
   };
   protoOf(ConfigLoader).saveConfig_6vquhn_k$ = function (config, $completion) {
-    var tmp = new $saveConfigCOROUTINE$93(this, config, $completion);
+    var tmp = new $saveConfigCOROUTINE$96(this, config, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   };
   protoOf(ConfigLoader).getConfigLoading_powlm6_k$ = function (cached, $completion) {
-    var tmp = new $getConfigLoadingCOROUTINE$94(this, cached, $completion);
+    var tmp = new $getConfigLoadingCOROUTINE$97(this, cached, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -47710,7 +48141,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return tauriAsync('add_gno', addGno$lambda(path), $completion);
   }
   function getSaveFilePath(opts, $completion) {
-    var tmp = new $getSaveFilePathCOROUTINE$97(opts, $completion);
+    var tmp = new $getSaveFilePathCOROUTINE$100(opts, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -47744,12 +48175,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return Unit_getInstance();
     };
   }
-  function $readCOROUTINE$98(_this__u8e3s4, path, resultContinuation) {
+  function $readCOROUTINE$101(_this__u8e3s4, path, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.path_1 = path;
   }
-  protoOf($readCOROUTINE$98).doResume_5yljmg_k$ = function () {
+  protoOf($readCOROUTINE$101).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -47789,12 +48220,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $fileExistsCOROUTINE$99(_this__u8e3s4, path, resultContinuation) {
+  function $fileExistsCOROUTINE$102(_this__u8e3s4, path, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.path_1 = path;
   }
-  protoOf($fileExistsCOROUTINE$99).doResume_5yljmg_k$ = function () {
+  protoOf($fileExistsCOROUTINE$102).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -47838,13 +48269,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     UnscopedFileSystem.call(this);
   }
   protoOf(TauriFS).read_3sms9f_k$ = function (path, $completion) {
-    var tmp = new $readCOROUTINE$98(this, path, $completion);
+    var tmp = new $readCOROUTINE$101(this, path, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   };
   protoOf(TauriFS).fileExists_go3s02_k$ = function (path, $completion) {
-    var tmp = new $fileExistsCOROUTINE$99(this, path, $completion);
+    var tmp = new $fileExistsCOROUTINE$102(this, path, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -47870,11 +48301,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return Unit_getInstance();
     };
   }
-  function $getSaveFilePathCOROUTINE$97(opts, resultContinuation) {
+  function $getSaveFilePathCOROUTINE$100(opts, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.opts_1 = opts;
   }
-  protoOf($getSaveFilePathCOROUTINE$97).doResume_5yljmg_k$ = function () {
+  protoOf($getSaveFilePathCOROUTINE$100).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -48070,12 +48501,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     $this$jsOb.once = true;
     return Unit_getInstance();
   }
-  function $showCOROUTINE$100(_this__u8e3s4, state, resultContinuation) {
+  function $showCOROUTINE$103(_this__u8e3s4, state, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.state_2 = state;
   }
-  protoOf($showCOROUTINE$100).doResume_5yljmg_k$ = function () {
+  protoOf($showCOROUTINE$103).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -48159,7 +48590,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     ModalManager_getInstance().close_fqmg3p_k$(this.modal_1);
   };
   protoOf(ConfirmCompileModal).show_8n1tkp_k$ = function (state, $completion) {
-    var tmp = new $showCOROUTINE$100(this, state, $completion);
+    var tmp = new $showCOROUTINE$103(this, state, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -48418,7 +48849,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     this.mFooter_1 = null;
   };
   function openSingle(init, $completion) {
-    var tmp = new $openSingleCOROUTINE$101(init, $completion);
+    var tmp = new $openSingleCOROUTINE$104(init, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -48446,7 +48877,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   }
   function showMessageAndWait(message, init, $completion) {
     init = init === VOID ? null : init;
-    var tmp = new $showMessageAndWaitCOROUTINE$102(message, init, $completion);
+    var tmp = new $showMessageAndWaitCOROUTINE$105(message, init, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -48615,11 +49046,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     l.$arity = 1;
     return l;
   }
-  function $openSingleCOROUTINE$101(init, resultContinuation) {
+  function $openSingleCOROUTINE$104(init, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.init_1 = init;
   }
-  protoOf($openSingleCOROUTINE$101).doResume_5yljmg_k$ = function () {
+  protoOf($openSingleCOROUTINE$104).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -48660,12 +49091,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $showMessageAndWaitCOROUTINE$102(message, init, resultContinuation) {
+  function $showMessageAndWaitCOROUTINE$105(message, init, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this.message_1 = message;
     this.init_1 = init;
   }
-  protoOf($showMessageAndWaitCOROUTINE$102).doResume_5yljmg_k$ = function () {
+  protoOf($showMessageAndWaitCOROUTINE$105).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -48738,13 +49169,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     launch(tmp, VOID, VOID, FileInput$onInputButtonClicked$slambda_0($this, null));
   }
   function open_0($this, $completion) {
-    var tmp = new $openCOROUTINE$103($this, $completion);
+    var tmp = new $openCOROUTINE$106($this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   }
   function save_1($this, $completion) {
-    var tmp = new $saveCOROUTINE$104($this, $completion);
+    var tmp = new $saveCOROUTINE$107($this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -48967,11 +49398,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return Unit_getInstance();
     };
   }
-  function $openCOROUTINE$103(_this__u8e3s4, resultContinuation) {
+  function $openCOROUTINE$106(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($openCOROUTINE$103).doResume_5yljmg_k$ = function () {
+  protoOf($openCOROUTINE$106).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -49016,11 +49447,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $saveCOROUTINE$104(_this__u8e3s4, resultContinuation) {
+  function $saveCOROUTINE$107(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($saveCOROUTINE$104).doResume_5yljmg_k$ = function () {
+  protoOf($saveCOROUTINE$107).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -49276,10 +49707,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
   }
   function LoggerPanel$Companion$debugPanel$delegate$lambda() {
-    return Companion_getInstance_23().getLoggerPanelFromId$default_bm1zsi_k$('debug-logger-panel', listOf('*'), true);
+    return Companion_getInstance_24().getLoggerPanelFromId$default_bm1zsi_k$('debug-logger-panel', listOf('*'), true);
   }
   function LoggerPanel$Companion$initLoggerPanels$lambda(it) {
-    _get_debugPanel__ce8sai(Companion_getInstance_23()).show_1w0eq0_k$(true);
+    _get_debugPanel__ce8sai(Companion_getInstance_24()).show_1w0eq0_k$(true);
     return Unit_getInstance();
   }
   function LoggerPanel$Companion$initLoggerPanels$lambda_0(e) {
@@ -49295,12 +49726,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       tmp = false;
     }
     if (tmp) {
-      _get_debugPanel__ce8sai(Companion_getInstance_23()).show_1w0eq0_k$(true);
+      _get_debugPanel__ce8sai(Companion_getInstance_24()).show_1w0eq0_k$(true);
     } else {
       // Inline function 'kotlin.text.lowercase' call
       // Inline function 'kotlin.js.asDynamic' call
       if (event.key.toLowerCase() === 'escape') {
-        hide(Companion_getInstance_23(), Companion_getInstance_23().currentPanel_1);
+        hide(Companion_getInstance_24(), Companion_getInstance_24().currentPanel_1);
       }
     }
     return Unit_getInstance();
@@ -49323,8 +49754,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   function _get_classArray__iu8y5m($this) {
     return $this.classArray_1;
   }
-  function Companion_15() {
-    Companion_instance_15 = this;
+  function Companion_16() {
+    Companion_instance_16 = this;
     this.currentPanel_1 = null;
     this.didInitKeyboardListener_1 = false;
     var tmp = this;
@@ -49333,7 +49764,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var tmp_0 = this;
     tmp_0.debugPanel$delegate_1 = lazy(LoggerPanel$Companion$debugPanel$delegate$lambda);
   }
-  protoOf(Companion_15).logToLoggerPanels_filk1l_k$ = function (namespace, type, message) {
+  protoOf(Companion_16).logToLoggerPanels_filk1l_k$ = function (namespace, type, message) {
     // Inline function 'kotlin.collections.forEach' call
     var tmp0_iterator = this.loggers_1.iterator_jk1svi_k$();
     while (tmp0_iterator.hasNext_bitz1p_k$()) {
@@ -49342,7 +49773,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       element(namespace, type, message);
     }
   };
-  protoOf(Companion_15).initLoggerPanels_d1kuf5_k$ = function () {
+  protoOf(Companion_16).initLoggerPanels_d1kuf5_k$ = function () {
     if (this.didInitKeyboardListener_1) {
       return Unit_getInstance();
     }
@@ -49356,22 +49787,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var tmp_0 = window;
     tmp_0.addEventListener('keyup', LoggerPanel$Companion$initLoggerPanels$lambda_0, true);
   };
-  protoOf(Companion_15).getLoggerPanelFromElement_a9mo06_k$ = function (panel, namespaces, classes) {
+  protoOf(Companion_16).getLoggerPanelFromElement_a9mo06_k$ = function (panel, namespaces, classes) {
     // Inline function 'kotlin.js.unsafeCast' call
     var tmp0_elvis_lhs = panel.querySelector("[data-role='log']");
     // Inline function 'kotlin.js.asDynamic' call
     var tmp$ret$1 = tmp0_elvis_lhs == null ? panel : tmp0_elvis_lhs;
     return new LoggerPanel(panel, tmp$ret$1, namespaces, classes);
   };
-  protoOf(Companion_15).getLoggerPanelFromElement$default_ufoxn3_k$ = function (panel, namespaces, classes, $super) {
+  protoOf(Companion_16).getLoggerPanelFromElement$default_ufoxn3_k$ = function (panel, namespaces, classes, $super) {
     classes = classes === VOID ? '' : classes;
     return $super === VOID ? this.getLoggerPanelFromElement_a9mo06_k$(panel, namespaces, classes) : $super.getLoggerPanelFromElement_a9mo06_k$.call(this, panel, namespaces, classes);
   };
-  protoOf(Companion_15).getLoggerPanelFromId_wql6wp_k$ = function (id, namespaces, create, classes, init) {
+  protoOf(Companion_16).getLoggerPanelFromId_wql6wp_k$ = function (id, namespaces, create, classes, init) {
     var panel = getLoggerPanelElement(this, id, create, init);
     return this.getLoggerPanelFromElement_a9mo06_k$(panel, namespaces, classes);
   };
-  protoOf(Companion_15).getLoggerPanelFromId$default_bm1zsi_k$ = function (id, namespaces, create, classes, init, $super) {
+  protoOf(Companion_16).getLoggerPanelFromId$default_bm1zsi_k$ = function (id, namespaces, create, classes, init, $super) {
     create = create === VOID ? false : create;
     classes = classes === VOID ? '' : classes;
     var tmp;
@@ -49383,11 +49814,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     init = tmp;
     return $super === VOID ? this.getLoggerPanelFromId_wql6wp_k$(id, namespaces, create, classes, init) : $super.getLoggerPanelFromId_wql6wp_k$.call(this, id, namespaces, create, classes, init);
   };
-  var Companion_instance_15;
-  function Companion_getInstance_23() {
-    if (Companion_instance_15 == null)
-      new Companion_15();
-    return Companion_instance_15;
+  var Companion_instance_16;
+  function Companion_getInstance_24() {
+    if (Companion_instance_16 == null)
+      new Companion_16();
+    return Companion_instance_16;
   }
   function LoggerPanel$log$ref($boundThis) {
     var l = function (p0, p1, p2) {
@@ -49404,7 +49835,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     };
   }
   function LoggerPanel(parent, panel, namespaces, classes) {
-    Companion_getInstance_23();
+    Companion_getInstance_24();
     var tmp;
     if (panel === VOID) {
       var tmp0_elvis_lhs = getOrNull_1(parent, "[data-role='log']");
@@ -49471,8 +49902,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
     }
     tmp_3.classArray_1 = copyToArray(destination_0);
-    init_0(Companion_getInstance_23(), this.parent_1);
-    var tmp_4 = Companion_getInstance_23().loggers_1;
+    init_0(Companion_getInstance_24(), this.parent_1);
+    var tmp_4 = Companion_getInstance_24().loggers_1;
     tmp_4.add_utx5q5_k$(LoggerPanel$log$ref(this));
     var tmp0_safe_receiver = this.parent_1.querySelector('.close-log-button');
     if (tmp0_safe_receiver == null)
@@ -49483,9 +49914,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   }
   protoOf(LoggerPanel).show_1w0eq0_k$ = function (show) {
     if (show) {
-      show_0(Companion_getInstance_23(), this.parent_1);
+      show_0(Companion_getInstance_24(), this.parent_1);
     } else {
-      hide(Companion_getInstance_23(), this.parent_1);
+      hide(Companion_getInstance_24(), this.parent_1);
     }
   };
   protoOf(LoggerPanel).log_kikgdp_k$ = function (namespace, type, message) {
@@ -49508,7 +49939,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return Unit_getInstance();
     }
     // Inline function 'kotlin.apply' call
-    var this_0 = createLogItem(Companion_getInstance_23(), type, message, this.classArray_1);
+    var this_0 = createLogItem(Companion_getInstance_24(), type, message, this.classArray_1);
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'com.creaturesforge.application.ui.LoggerPanel.log.<anonymous>' call
     if (isNotNullOrBlank(namespace)) {
@@ -49829,8 +50260,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var tmp_0 = window;
     tmp.timeoutHandle_1 = tmp_0.setTimeout(LoggerBubbleElement$hideLoggingBubbleActual$ref($this), timeout);
   }
-  function Companion_16() {
-    Companion_instance_16 = this;
+  function Companion_17() {
+    Companion_instance_17 = this;
     this.SHOW_FOR_1 = 1000;
     var tmp = this;
     // Inline function 'kotlin.text.toRegex' call
@@ -49838,14 +50269,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var option = RegexOption_IGNORE_CASE_getInstance();
     tmp.inlineRegexForIndex_1 = Regex_init_$Create$_0(this_0, option);
   }
-  protoOf(Companion_16).get_inlineRegexForIndex_15xoby_k$ = function () {
+  protoOf(Companion_17).get_inlineRegexForIndex_15xoby_k$ = function () {
     return this.inlineRegexForIndex_1;
   };
-  var Companion_instance_16;
-  function Companion_getInstance_24() {
-    if (Companion_instance_16 == null)
-      new Companion_16();
-    return Companion_instance_16;
+  var Companion_instance_17;
+  function Companion_getInstance_25() {
+    if (Companion_instance_17 == null)
+      new Companion_17();
+    return Companion_instance_17;
   }
   function LoggerBubbleElement$onClick$ref($boundThis) {
     var l = function (p0) {
@@ -49864,7 +50295,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return l;
   }
   function LoggerBubbleElement(logBubble) {
-    Companion_getInstance_24();
+    Companion_getInstance_25();
     this.logBubble_1 = logBubble;
     this.timeoutHandle_1 = -1;
     this.lastMessageType_1 = null;
@@ -49916,7 +50347,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
     var messageText = message;
     if (namespace === get_LOG_PROGRESS()) {
-      messageText = getProgressStatement(Companion_getInstance_24(), messageText);
+      messageText = getProgressStatement(Companion_getInstance_25(), messageText);
     }
     var tmp;
     if (namespace === get_LOG_PROGRESS() ? true : namespace === get_LOG_STATUS()) {
@@ -49989,7 +50420,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   };
   function getProgressPercentFromProgressMessage(messageWithoutNamespace) {
     _init_properties_ProgressLogger_kt__wj2l8d();
-    var tmp0_safe_receiver = Companion_getInstance_24().inlineRegexForIndex_1.matchEntire_6100vb_k$(messageWithoutNamespace);
+    var tmp0_safe_receiver = Companion_getInstance_25().inlineRegexForIndex_1.matchEntire_6100vb_k$(messageWithoutNamespace);
     var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_groupValues_rkv314_k$();
     var tmp2_elvis_lhs = tmp1_safe_receiver == null ? null : nullIfEmpty(tmp1_safe_receiver);
     var tmp;
@@ -50046,7 +50477,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var tmp0_container = Log_getInstance().namespaceLogComponents_k682bp_k$(message);
     var namespace = tmp0_container.component1_7eebsc_k$();
     var text = tmp0_container.component2_7eebsb_k$();
-    Companion_getInstance_23().logToLoggerPanels_filk1l_k$(namespace, status, text);
+    Companion_getInstance_24().logToLoggerPanels_filk1l_k$(namespace, status, text);
   }
   function progressLogger$delegate$lambda$lambda(namespace, messageWithoutNamespace, color) {
     _init_properties_ProgressLogger_kt__wj2l8d();
@@ -50062,7 +50493,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       console.log('NamespaceLogInBubble: %s -> "%s"', namespace, messageWithoutNamespace);
       element.log_k6gl2i_k$('info', namespace, messageWithoutNamespace, color);
     }
-    Companion_getInstance_23().logToLoggerPanels_filk1l_k$(namespace, 'info', messageWithoutNamespace);
+    Companion_getInstance_24().logToLoggerPanels_filk1l_k$(namespace, 'info', messageWithoutNamespace);
     return Unit_getInstance();
   }
   function progressLogger$delegate$lambda$lambda_0(_anonymous_parameter_0__qggqh8, message, color) {
@@ -50522,16 +50953,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       element.clear_j9egeb_k$();
     }
   }
-  function Companion_17() {
-    Companion_instance_17 = this;
+  function Companion_18() {
+    Companion_instance_18 = this;
     this.mLastId_1 = atomic$int$1(1);
     this.TBODY_CLASS_1 = 'verify-tbody';
   }
-  var Companion_instance_17;
-  function Companion_getInstance_25() {
-    if (Companion_instance_17 == null)
-      new Companion_17();
-    return Companion_instance_17;
+  var Companion_instance_18;
+  function Companion_getInstance_26() {
+    if (Companion_instance_18 == null)
+      new Companion_18();
+    return Companion_instance_18;
   }
   function VerifyPanel$root$delegate$lambda(this$0) {
     return function () {
@@ -50612,9 +51043,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     };
   }
   function VerifyPanel(element) {
-    Companion_getInstance_25();
+    Companion_getInstance_26();
     this.element_1 = element;
-    this.id_1 = _get_nextId__2oskgz(Companion_getInstance_25());
+    this.id_1 = _get_nextId__2oskgz(Companion_getInstance_26());
     var tmp = this;
     tmp.root$delegate_1 = lazy(VerifyPanel$root$delegate$lambda(this));
     var tmp_0 = this;
@@ -50877,7 +51308,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
       set_ariaLabel(element, null);
     } else {
-      var missingRuns = joinToString(getRuns(Companion_getInstance_26(), missingAfterShared));
+      var missingRuns = joinToString(getRuns(Companion_getInstance_27(), missingAfterShared));
       var cvParts = Char__rangeTo_impl_tkncvp(_Char___init__impl__6a9atx(79), _Char___init__impl__6a9atx(81));
       // Inline function 'kotlin.collections.filter' call
       // Inline function 'kotlin.collections.filterTo' call
@@ -50903,7 +51334,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         }
       }
       var hasWithShared = destination_0;
-      var hasRuns = joinToString(getRuns(Companion_getInstance_26(), hasWithShared));
+      var hasRuns = joinToString(getRuns(Companion_getInstance_27(), hasWithShared));
       // Inline function 'kotlin.apply' call
       var tmp4_safe_receiver = element.querySelector('.has-text');
       var tmp_4;
@@ -50954,7 +51385,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         tmp_6 = tmp6_safe_receiver;
       }
       var tmp7_elvis_lhs = tmp_6;
-      var this_2 = tmp7_elvis_lhs == null ? Companion_getInstance_26().missingLabel_3e5jew_k$(element) : tmp7_elvis_lhs;
+      var this_2 = tmp7_elvis_lhs == null ? Companion_getInstance_27().missingLabel_3e5jew_k$(element) : tmp7_elvis_lhs;
       // Inline function 'kotlin.contracts.contract' call
       // Inline function 'com.creaturesforge.application.ui.VerifyRow.missing.<anonymous>' call
       unhide(this_2);
@@ -50973,7 +51404,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var tmp;
       if (tmp1_elvis_lhs == null) {
         // Inline function 'kotlin.apply' call
-        var tmp_0 = Companion_getInstance_26();
+        var tmp_0 = Companion_getInstance_27();
         var tmp0_elvis_lhs = parentElement.getAttribute('data-values-for');
         var this_0 = tmp_0.okayImage_kk0t59_k$(tmp0_elvis_lhs == null ? 'parts' : tmp0_elvis_lhs);
         // Inline function 'kotlin.contracts.contract' call
@@ -51007,7 +51438,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var tmp;
       if (tmp1_elvis_lhs == null) {
         // Inline function 'kotlin.apply' call
-        var tmp_0 = Companion_getInstance_26();
+        var tmp_0 = Companion_getInstance_27();
         var tmp0_elvis_lhs = parentElement.getAttribute('data-values-for');
         var this_0 = tmp_0.sharedImage_b0c6o4_k$(tmp0_elvis_lhs == null ? 'parts' : tmp0_elvis_lhs);
         // Inline function 'kotlin.contracts.contract' call
@@ -51067,10 +51498,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     setStats($this, femaleStats, _get_femaleSpritesElement__uk0azz($this), _get_femaleAttsElement__3no2p9($this));
     $this.setDisabled_75xwmh_k$(false);
   }
-  function Companion_18() {
-    Companion_instance_18 = this;
+  function Companion_19() {
+    Companion_instance_19 = this;
   }
-  protoOf(Companion_18).missingLabel_3e5jew_k$ = function (parentElement) {
+  protoOf(Companion_19).missingLabel_3e5jew_k$ = function (parentElement) {
     // Inline function 'com.creaturesforge.application.ui.html.element' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -51080,7 +51511,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     parentElement.appendChild(t);
     return t;
   };
-  protoOf(Companion_18).okayImage_kk0t59_k$ = function (kind) {
+  protoOf(Companion_19).okayImage_kk0t59_k$ = function (kind) {
     // Inline function 'com.creaturesforge.application.ui.html.element' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -51093,7 +51524,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     t.classList.add('complete-icon');
     return t;
   };
-  protoOf(Companion_18).sharedImage_b0c6o4_k$ = function (kind) {
+  protoOf(Companion_19).sharedImage_b0c6o4_k$ = function (kind) {
     // Inline function 'com.creaturesforge.application.ui.html.element' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -51106,7 +51537,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     t.classList.add('shared-icon');
     return t;
   };
-  protoOf(Companion_18).formatRun_qe7da3_k$ = function (start, end) {
+  protoOf(Companion_19).formatRun_qe7da3_k$ = function (start, end) {
     var tmp;
     if (typeof end === 'number') {
       tmp = numberToChar(end);
@@ -51120,11 +51551,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
     return toString_0(startUpper) + '-' + toString_0(endUpper);
   };
-  var Companion_instance_18;
-  function Companion_getInstance_26() {
-    if (Companion_instance_18 == null)
-      new Companion_18();
-    return Companion_instance_18;
+  var Companion_instance_19;
+  function Companion_getInstance_27() {
+    if (Companion_instance_19 == null)
+      new Companion_19();
+    return Companion_instance_19;
   }
   function VerifyRow$root$delegate$lambda(this$0, $parent) {
     return function () {
@@ -51321,7 +51752,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     };
   }
   function VerifyRow(parent, parentId, age) {
-    Companion_getInstance_26();
+    Companion_getInstance_27();
     this.parentId_1 = parentId;
     this.age_1 = age;
     var tmp = this;
@@ -51532,12 +51963,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return $this$alterProjectConfig.copy$default_eda1l5_k$(VOID, VOID, $attRoot);
     };
   }
-  function $getLastRootFromConfigCOROUTINE$105(_this__u8e3s4, projectRoot, resultContinuation) {
+  function $getLastRootFromConfigCOROUTINE$108(_this__u8e3s4, projectRoot, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.projectRoot_1 = projectRoot;
   }
-  protoOf($getLastRootFromConfigCOROUTINE$105).doResume_5yljmg_k$ = function () {
+  protoOf($getLastRootFromConfigCOROUTINE$108).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -51925,13 +52356,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $onRootSetCOROUTINE$106(_this__u8e3s4, projectRoot, directory, resultContinuation) {
+  function $onRootSetCOROUTINE$109(_this__u8e3s4, projectRoot, directory, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.projectRoot_1 = projectRoot;
     this.directory_1 = directory;
   }
-  protoOf($onRootSetCOROUTINE$106).doResume_5yljmg_k$ = function () {
+  protoOf($onRootSetCOROUTINE$109).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -52332,13 +52763,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return state.attRoot_1;
   };
   protoOf(AttRootInput).getLastRootFromConfig_4ms1ax_k$ = function (projectRoot, $completion) {
-    var tmp = new $getLastRootFromConfigCOROUTINE$105(this, projectRoot, $completion);
+    var tmp = new $getLastRootFromConfigCOROUTINE$108(this, projectRoot, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   };
   protoOf(AttRootInput).onRootSet_a2xziv_k$ = function (projectRoot, directory, $completion) {
-    var tmp = new $onRootSetCOROUTINE$106(this, projectRoot, directory, $completion);
+    var tmp = new $onRootSetCOROUTINE$109(this, projectRoot, directory, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -52556,7 +52987,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     if (options.get_size_woubt6_k$() > 1) {
       // Inline function 'kotlin.comparisons.compareBy' call
       var tmp = BreedSlot$ensureHasSlots$lambda;
-      var tmp$ret$10 = new sam$kotlin_Comparator$0(tmp);
+      var tmp$ret$10 = new sam$kotlin_Comparator$0_0(tmp);
       sortWith(options, tmp$ret$10);
     }
     $this.select_1.innerHTML = '';
@@ -52604,25 +53035,25 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       $this.noBreedsOption_1.hidden = true;
     }
   }
-  function Companion_19() {
-    Companion_instance_19 = this;
+  function Companion_20() {
+    Companion_instance_20 = this;
     this.SELECT_SLOT_TEXT_1 = 'Select sprite breed slot';
     this.NO_PROJECT_TEXT_1 = 'Select project root first ^^^^^';
     this.NO_BREED_SLOTS_IN_PROJECT_TEXT_1 = 'No breed C16 files in sprites folder';
   }
-  var Companion_instance_19;
-  function Companion_getInstance_27() {
-    if (Companion_instance_19 == null)
-      new Companion_19();
-    return Companion_instance_19;
+  var Companion_instance_20;
+  function Companion_getInstance_28() {
+    if (Companion_instance_20 == null)
+      new Companion_20();
+    return Companion_instance_20;
   }
-  function sam$kotlin_Comparator$0(function_0) {
+  function sam$kotlin_Comparator$0_0(function_0) {
     this.function_1 = function_0;
   }
-  protoOf(sam$kotlin_Comparator$0).compare_bczr_k$ = function (a, b) {
+  protoOf(sam$kotlin_Comparator$0_0).compare_bczr_k$ = function (a, b) {
     return this.function_1(a, b);
   };
-  protoOf(sam$kotlin_Comparator$0).compare = function (a, b) {
+  protoOf(sam$kotlin_Comparator$0_0).compare = function (a, b) {
     return this.compare_bczr_k$(a, b);
   };
   function ensureHasSlots$appendChild(receiver, p0) {
@@ -52662,7 +53093,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return compareValues(tmp_0, tmp$ret$1);
   }
   function BreedSlot_0(select) {
-    Companion_getInstance_27();
+    Companion_getInstance_28();
     this.select_1 = select;
     this.lastSlots_1 = 0;
     var tmp = this;
@@ -52893,19 +53324,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
   }
   function requestCompile_0($this, state, $completion) {
-    var tmp = new $requestCompileCOROUTINE$107($this, state, $completion);
+    var tmp = new $requestCompileCOROUTINE$110($this, state, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   }
   function getDefaultSavePath($this, platform, state, $completion) {
-    var tmp = new $getDefaultSavePathCOROUTINE$108($this, platform, state, $completion);
+    var tmp = new $getDefaultSavePathCOROUTINE$111($this, platform, state, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   }
   function getDefaultFolder($this, state, $completion) {
-    var tmp = new $getDefaultFolderCOROUTINE$109($this, state, $completion);
+    var tmp = new $getDefaultFolderCOROUTINE$112($this, state, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -53288,12 +53719,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return $this$alterProjectConfig.copy$default_eda1l5_k$(VOID, VOID, VOID, VOID, VOID, $compilePath);
     };
   }
-  function $requestCompileCOROUTINE$107(_this__u8e3s4, state, resultContinuation) {
+  function $requestCompileCOROUTINE$110(_this__u8e3s4, state, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.state_2 = state;
   }
-  protoOf($requestCompileCOROUTINE$107).doResume_5yljmg_k$ = function () {
+  protoOf($requestCompileCOROUTINE$110).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -54140,13 +54571,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $getDefaultSavePathCOROUTINE$108(_this__u8e3s4, platform, state, resultContinuation) {
+  function $getDefaultSavePathCOROUTINE$111(_this__u8e3s4, platform, state, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.platform_1 = platform;
     this.state_2 = state;
   }
-  protoOf($getDefaultSavePathCOROUTINE$108).doResume_5yljmg_k$ = function () {
+  protoOf($getDefaultSavePathCOROUTINE$111).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -54581,12 +55012,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $getDefaultFolderCOROUTINE$109(_this__u8e3s4, state, resultContinuation) {
+  function $getDefaultFolderCOROUTINE$112(_this__u8e3s4, state, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.state_2 = state;
   }
-  protoOf($getDefaultFolderCOROUTINE$109).doResume_5yljmg_k$ = function () {
+  protoOf($getDefaultFolderCOROUTINE$112).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -55371,7 +55802,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     if (options.get_size_woubt6_k$() > 1) {
       // Inline function 'kotlin.comparisons.compareBy' call
       var tmp = EggSelect$ensureHasEggs$lambda;
-      var tmp$ret$16 = new sam$kotlin_Comparator$0_0(tmp);
+      var tmp$ret$16 = new sam$kotlin_Comparator$0_1(tmp);
       sortWith(options, tmp$ret$16);
     }
     $this.select_1.innerHTML = '';
@@ -55392,13 +55823,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     option.innerText = toString(trim(isCharSequence(this_0) ? this_0 : THROW_CCE()));
     return option;
   }
-  function sam$kotlin_Comparator$0_0(function_0) {
+  function sam$kotlin_Comparator$0_1(function_0) {
     this.function_1 = function_0;
   }
-  protoOf(sam$kotlin_Comparator$0_0).compare_bczr_k$ = function (a, b) {
+  protoOf(sam$kotlin_Comparator$0_1).compare_bczr_k$ = function (a, b) {
     return this.function_1(a, b);
   };
-  protoOf(sam$kotlin_Comparator$0_0).compare = function (a, b) {
+  protoOf(sam$kotlin_Comparator$0_1).compare = function (a, b) {
     return this.compare_bczr_k$(a, b);
   };
   function ensureHasEggs$appendChild(receiver, p0) {
@@ -55809,7 +56240,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return false;
   }
   function ensureGenomeOptions($this, paths, $completion) {
-    var tmp = new $ensureGenomeOptionsCOROUTINE$110($this, paths, $completion);
+    var tmp = new $ensureGenomeOptionsCOROUTINE$113($this, paths, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -55860,7 +56291,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var this_1 = $this.groups_1.get_keys_wop4xp_k$();
     // Inline function 'kotlin.comparisons.compareBy' call
     var tmp = GenomeControl$updateGenomeList$lambda(targetGenus);
-    var tmp$ret$1 = new sam$kotlin_Comparator$0_1(tmp);
+    var tmp$ret$1 = new sam$kotlin_Comparator$0_2(tmp);
     var keys = sortedWith(this_1, tmp$ret$1);
     var tmp3_iterator = keys.iterator_jk1svi_k$();
     while (tmp3_iterator.hasNext_bitz1p_k$()) {
@@ -55870,7 +56301,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
   }
   function ensureGenomeOption($this, label, path, $completion) {
-    var tmp = new $ensureGenomeOptionCOROUTINE$111($this, label, path, $completion);
+    var tmp = new $ensureGenomeOptionCOROUTINE$114($this, label, path, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -55917,7 +56348,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return tmp;
   }
   function selectGenomeFromDisk($this, $completion) {
-    var tmp = new $selectGenomeFromDiskCOROUTINE$112($this, $completion);
+    var tmp = new $selectGenomeFromDiskCOROUTINE$115($this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -55956,7 +56387,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var this_1 = toSet(destination);
     // Inline function 'kotlin.comparisons.compareBy' call
     var tmp = GenomeControl$setInitialGenomeOptions$lambda;
-    var tmp$ret$3 = new sam$kotlin_Comparator$0_2(tmp);
+    var tmp$ret$3 = new sam$kotlin_Comparator$0_3(tmp);
     var keys = sortedWith(this_1, tmp$ret$3);
     var defaultGenomes = $this.defaultGenomes_1;
     var tmp0_iterator_0 = keys.iterator_jk1svi_k$();
@@ -56092,17 +56523,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       $this.groups_1.put_4fpzoq_k$(optgroupIndex, optgroup);
     }
   }
-  function Companion_20() {
-    Companion_instance_20 = this;
+  function Companion_21() {
+    Companion_instance_21 = this;
     this.DISK_SELECT_1 = '::$$$$DISK$$$$::';
     this.GENOME_DIRECTORY_1 = 'resource:genomes';
     this.NONE_OPTION_1 = 'None';
   }
-  var Companion_instance_20;
-  function Companion_getInstance_28() {
-    if (Companion_instance_20 == null)
-      new Companion_20();
-    return Companion_instance_20;
+  var Companion_instance_21;
+  function Companion_getInstance_29() {
+    if (Companion_instance_21 == null)
+      new Companion_21();
+    return Companion_instance_21;
   }
   function contentEquals_0($this, collection, other) {
     // Inline function 'kotlin.collections.toTypedArray' call
@@ -56113,15 +56544,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var tmp$ret$1 = copyToArray(this_1);
     return contentEquals(tmp, tmp$ret$1);
   }
-  function sam$kotlin_Comparator$0_1(function_0) {
-    this.function_1 = function_0;
-  }
-  protoOf(sam$kotlin_Comparator$0_1).compare_bczr_k$ = function (a, b) {
-    return this.function_1(a, b);
-  };
-  protoOf(sam$kotlin_Comparator$0_1).compare = function (a, b) {
-    return this.compare_bczr_k$(a, b);
-  };
   function sam$kotlin_Comparator$0_2(function_0) {
     this.function_1 = function_0;
   }
@@ -56129,6 +56551,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return this.function_1(a, b);
   };
   protoOf(sam$kotlin_Comparator$0_2).compare = function (a, b) {
+    return this.compare_bczr_k$(a, b);
+  };
+  function sam$kotlin_Comparator$0_3(function_0) {
+    this.function_1 = function_0;
+  }
+  protoOf(sam$kotlin_Comparator$0_3).compare_bczr_k$ = function (a, b) {
+    return this.function_1(a, b);
+  };
+  protoOf(sam$kotlin_Comparator$0_3).compare = function (a, b) {
     return this.compare_bczr_k$(a, b);
   };
   function GenomeControl$lambda$slambda(this$0, $state, resultContinuation) {
@@ -56628,12 +57059,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return startsWith_0(it.get_key_18j28a_k$(), '' + $key + '::');
     };
   }
-  function $ensureGenomeOptionsCOROUTINE$110(_this__u8e3s4, paths, resultContinuation) {
+  function $ensureGenomeOptionsCOROUTINE$113(_this__u8e3s4, paths, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.paths_1 = paths;
   }
-  protoOf($ensureGenomeOptionsCOROUTINE$110).doResume_5yljmg_k$ = function () {
+  protoOf($ensureGenomeOptionsCOROUTINE$113).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -56683,13 +57114,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $ensureGenomeOptionCOROUTINE$111(_this__u8e3s4, label, path, resultContinuation) {
+  function $ensureGenomeOptionCOROUTINE$114(_this__u8e3s4, label, path, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.label_1 = label;
     this.path_1 = path;
   }
-  protoOf($ensureGenomeOptionCOROUTINE$111).doResume_5yljmg_k$ = function () {
+  protoOf($ensureGenomeOptionCOROUTINE$114).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -56771,11 +57202,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $selectGenomeFromDiskCOROUTINE$112(_this__u8e3s4, resultContinuation) {
+  function $selectGenomeFromDiskCOROUTINE$115(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($selectGenomeFromDiskCOROUTINE$112).doResume_5yljmg_k$ = function () {
+  protoOf($selectGenomeFromDiskCOROUTINE$115).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -57643,7 +58074,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
      while (true);
   };
   function GenomeControl(element) {
-    Companion_getInstance_28();
+    Companion_getInstance_29();
     this.element_1 = element;
     this.showedGenomeError_1 = true;
     this.lastStateId_1 = null;
@@ -57881,6 +58312,17 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   function _get_isAuto__qrmeq($this) {
     return $this.isAuto_1;
   }
+  function _set_state__ks53v8_0($this, _set____db54di) {
+    $this.state_1 = _set____db54di;
+  }
+  function _get_state__b8zcm8_1($this) {
+    var tmp = $this.state_1;
+    if (!(tmp == null))
+      return tmp;
+    else {
+      throwUninitializedPropertyAccessException('state');
+    }
+  }
   function _get_gender__yk82om($this) {
     return $this.gender_1;
   }
@@ -57889,6 +58331,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   }
   function _get_previewContainer__s86zzi($this) {
     return $this.previewContainer_1;
+  }
+  function _get_agentFilesButton__x0k9vr($this) {
+    return $this.agentFilesButton_1;
   }
   function _get_thumbnailImage__959lwc($this) {
     return $this.thumbnailImage_1;
@@ -57983,7 +58428,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     launchBackground(VOID, true, GlyphSelect$initImage$slambda_0($this, glyph, null));
   }
   function initImageAsync($this, glyph, $completion) {
-    var tmp = new $initImageAsyncCOROUTINE$113($this, glyph, $completion);
+    var tmp = new $initImageAsyncCOROUTINE$116($this, glyph, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -58008,7 +58453,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     $this.events_1 = true;
   }
   function initFrameInput($this, newGlyph, $completion) {
-    var tmp = new $initFrameInputCOROUTINE$114($this, newGlyph, $completion);
+    var tmp = new $initFrameInputCOROUTINE$117($this, newGlyph, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -58016,11 +58461,18 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   function selectImage($this, e) {
     launchMain(VOID, true, GlyphSelect$selectImage$slambda_0($this, null));
   }
-  function selectImageAsync($this, $completion) {
-    var tmp = new $selectImageAsyncCOROUTINE$115($this, $completion);
+  function selectAgentImage($this, e) {
+    launchMain(VOID, true, GlyphSelect$selectAgentImage$slambda_0($this, null));
+  }
+  function selectImageAsync($this, agent, $completion) {
+    var tmp = new $selectImageAsyncCOROUTINE$118($this, agent, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
+  }
+  function selectImageAsync$default($this, agent, $completion, $super) {
+    agent = agent === VOID ? false : agent;
+    return selectImageAsync($this, agent, $completion);
   }
   function setSpriteGlyph($this, file) {
     var tmp = Companion_getInstance_18();
@@ -58037,7 +58489,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     $this.frameInput_1.disabled = false;
   }
   function setImageGlyph($this, file, $completion) {
-    var tmp = new $setImageGlyphCOROUTINE$116($this, file, $completion);
+    var tmp = new $setImageGlyphCOROUTINE$119($this, file, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -58118,28 +58570,40 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
     }
   }
-  function defaultOpenDirectory($this, $completion) {
-    var tmp = new $defaultOpenDirectoryCOROUTINE$117($this, $completion);
+  function defaultOpenDirectory($this, agent, $completion) {
+    var tmp = new $defaultOpenDirectoryCOROUTINE$120($this, agent, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   }
-  function Companion_21() {
-    Companion_instance_21 = this;
+  function Companion_22() {
+    Companion_instance_22 = this;
     this.lastGlyphDirectory_1 = null;
     this.DEFAULT_IMAGE_URL_1 = './src/images/icons/folder_open.svg';
   }
-  var Companion_instance_21;
-  function Companion_getInstance_29() {
-    if (Companion_instance_21 == null)
-      new Companion_21();
-    return Companion_instance_21;
+  var Companion_instance_22;
+  function Companion_getInstance_30() {
+    if (Companion_instance_22 == null)
+      new Companion_22();
+    return Companion_instance_22;
   }
   function GlyphSelect$previewContainer$lambda(this$0) {
     return function (it) {
       var tmp;
       if (this$0.events_1) {
         this$0.button_1.click();
+        tmp = Unit_getInstance();
+      }
+      return Unit_getInstance();
+    };
+  }
+  function GlyphSelect$agentFilesButton$lambda(this$0) {
+    return function (e) {
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      var tmp;
+      if (this$0.events_1) {
+        selectAgentImage(this$0, e);
         tmp = Unit_getInstance();
       }
       return Unit_getInstance();
@@ -58179,6 +58643,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   }
   function GlyphSelect$lambda(this$0) {
     return function (state, dispatch) {
+      this$0.state_1 = state;
       this$0.projectRoot_1 = state.projectFolder_1;
       this$0.dispatch_1 = dispatch;
       window.clearTimeout(this$0.updateTimeout_1);
@@ -58203,6 +58668,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var tmp_1 = this$0;
       var tmp_2 = window;
       tmp_1.updateTimeout_1 = tmp_2.setTimeout(GlyphSelect$lambda$lambda(this$0, thisGlyph), 1);
+      this$0.agentFilesButton_1.hidden = !state.virtual_1;
       return Unit_getInstance();
     };
   }
@@ -58334,7 +58800,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             this.exceptionState_1 = 3;
             this.exceptionState_1 = 2;
             this.state_1 = 1;
-            suspendResult = selectImageAsync(this.this$0__1, this);
+            suspendResult = selectImageAsync$default(this.this$0__1, VOID, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -58389,6 +58855,84 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     l.$arity = 1;
     return l;
   }
+  function GlyphSelect$selectAgentImage$slambda(this$0, resultContinuation) {
+    this.this$0__1 = this$0;
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf(GlyphSelect$selectAgentImage$slambda).invoke_d9fzmj_k$ = function (it, $completion) {
+    var tmp = this.create_rcuf4x_k$(it, $completion);
+    tmp.result_1 = Unit_getInstance();
+    tmp.exception_1 = null;
+    return tmp.doResume_5yljmg_k$();
+  };
+  protoOf(GlyphSelect$selectAgentImage$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
+    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope_0) : false) ? p1 : THROW_CCE(), $completion);
+  };
+  protoOf(GlyphSelect$selectAgentImage$slambda).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.result_1;
+    $sm: do
+      try {
+        var tmp = this.state_1;
+        switch (tmp) {
+          case 0:
+            this.exceptionState_1 = 3;
+            this.exceptionState_1 = 2;
+            this.state_1 = 1;
+            suspendResult = selectImageAsync(this.this$0__1, _get_state__b8zcm8_1(this.this$0__1).virtual_1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            this.exceptionState_1 = 3;
+            this.state_1 = 4;
+            continue $sm;
+          case 2:
+            this.exceptionState_1 = 3;
+            var tmp_0 = this.exception_1;
+            if (tmp_0 instanceof Exception) {
+              var e = this.exception_1;
+              Log_getInstance().e_y4wm5h_k$('GlyphSelect::SelectImage->selectImageAsync() failed ' + formatted(e, true));
+              this.state_1 = 4;
+              continue $sm;
+            } else {
+              throw this.exception_1;
+            }
+
+          case 3:
+            throw this.exception_1;
+          case 4:
+            this.exceptionState_1 = 3;
+            return Unit_getInstance();
+        }
+      } catch ($p) {
+        var e_0 = $p;
+        if (this.exceptionState_1 === 3) {
+          throw e_0;
+        } else {
+          this.state_1 = this.exceptionState_1;
+          this.exception_1 = e_0;
+        }
+      }
+     while (true);
+  };
+  protoOf(GlyphSelect$selectAgentImage$slambda).create_rcuf4x_k$ = function (it, completion) {
+    var i = new GlyphSelect$selectAgentImage$slambda(this.this$0__1, completion);
+    i.it_1 = it;
+    return i;
+  };
+  protoOf(GlyphSelect$selectAgentImage$slambda).create_wyq9v6_k$ = function (value, completion) {
+    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope_0) : false) ? value : THROW_CCE(), completion);
+  };
+  function GlyphSelect$selectAgentImage$slambda_0(this$0, resultContinuation) {
+    var i = new GlyphSelect$selectAgentImage$slambda(this$0, resultContinuation);
+    var l = function (it, $completion) {
+      return i.invoke_d9fzmj_k$(it, $completion);
+    };
+    l.$arity = 1;
+    return l;
+  }
   function GlyphSelect$selectImageAsync$lambda$lambda($this$jsOb) {
     $this$jsOb.name = 'Images';
     // Inline function 'kotlin.arrayOf' call
@@ -58423,12 +58967,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return $this$alterProjectConfig.copy$default_eda1l5_k$(VOID, VOID, VOID, VOID, $glyphRoot);
     };
   }
-  function $initImageAsyncCOROUTINE$113(_this__u8e3s4, glyph, resultContinuation) {
+  function $initImageAsyncCOROUTINE$116(_this__u8e3s4, glyph, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.glyph_1 = glyph;
   }
-  protoOf($initImageAsyncCOROUTINE$113).doResume_5yljmg_k$ = function () {
+  protoOf($initImageAsyncCOROUTINE$116).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -58535,12 +59079,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $initFrameInputCOROUTINE$114(_this__u8e3s4, newGlyph, resultContinuation) {
+  function $initFrameInputCOROUTINE$117(_this__u8e3s4, newGlyph, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.newGlyph_1 = newGlyph;
   }
-  protoOf($initFrameInputCOROUTINE$114).doResume_5yljmg_k$ = function () {
+  protoOf($initFrameInputCOROUTINE$117).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -58599,11 +59143,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $selectImageAsyncCOROUTINE$115(_this__u8e3s4, resultContinuation) {
+  function $selectImageAsyncCOROUTINE$118(_this__u8e3s4, agent, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
+    this.agent_1 = agent;
   }
-  protoOf($selectImageAsyncCOROUTINE$115).doResume_5yljmg_k$ = function () {
+  protoOf($selectImageAsyncCOROUTINE$118).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -58612,7 +59157,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           case 0:
             this.exceptionState_1 = 31;
             this.state_1 = 1;
-            suspendResult = defaultOpenDirectory(this._this__u8e3s4__1, this);
+            suspendResult = defaultOpenDirectory(this._this__u8e3s4__1, this.agent_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -58652,7 +59197,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             var tmp_4 = this;
             var tmp2_elvis_lhs = PathUtil_getInstance().getWithoutLastPathComponent_jp8lu2_k$(this.file3__1);
             tmp_4.lastDirectory4__1 = tmp2_elvis_lhs == null ? this.file3__1 : tmp2_elvis_lhs;
-            Companion_getInstance_29().lastGlyphDirectory_1 = this.lastDirectory4__1;
+            Companion_getInstance_30().lastGlyphDirectory_1 = this.lastDirectory4__1;
             var tmp_5 = this;
             tmp_5.this5__1 = ForgeConfig_getInstance();
             var tmp_6 = this;
@@ -59060,12 +59605,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $setImageGlyphCOROUTINE$116(_this__u8e3s4, file, resultContinuation) {
+  function $setImageGlyphCOROUTINE$119(_this__u8e3s4, file, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.file_1 = file;
   }
-  protoOf($setImageGlyphCOROUTINE$116).doResume_5yljmg_k$ = function () {
+  protoOf($setImageGlyphCOROUTINE$119).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -59127,435 +59672,555 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $defaultOpenDirectoryCOROUTINE$117(_this__u8e3s4, resultContinuation) {
+  function $defaultOpenDirectoryCOROUTINE$120(_this__u8e3s4, agent, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
+    this.agent_1 = agent;
   }
-  protoOf($defaultOpenDirectoryCOROUTINE$117).doResume_5yljmg_k$ = function () {
+  protoOf($defaultOpenDirectoryCOROUTINE$120).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
         var tmp = this.state_1;
         switch (tmp) {
           case 0:
-            this.exceptionState_1 = 30;
-            this.tmp0_elvis_lhs0__1 = Companion_getInstance_29().lastGlyphDirectory_1;
-            if (this.tmp0_elvis_lhs0__1 == null) {
-              var tmp_0 = this;
-              tmp_0.this2__1 = ForgeConfig_getInstance();
-              var tmp_1 = this;
-              tmp_1.projectRoot3__1 = this._this__u8e3s4__1.projectRoot_1;
-              var tmp_2 = this;
-              tmp_2.this4__1 = this.this2__1;
-              var tmp_3 = this;
-              tmp_3.cached5__1 = true;
-              this.state_1 = 1;
-              continue $sm;
+            this.exceptionState_1 = 38;
+            var tmp_0 = this;
+            var tmp0_elvis_lhs = this._this__u8e3s4__1.projectRoot_1;
+            tmp_0.projectRoot0__1 = tmp0_elvis_lhs == null ? _get_state__b8zcm8_1(this._this__u8e3s4__1).projectFolder_1 : tmp0_elvis_lhs;
+            if (this.agent_1 ? !(this.projectRoot0__1 == null) : false) {
+              this.vfs1__1 = get_vfs();
+              this.files2__1 = this.vfs1__1.getVirtualFileList_ojj369_k$();
+              var tmp$ret$0;
+              l$ret$1: do {
+                var this_0 = this.files2__1;
+                var tmp_1;
+                if (isInterface(this_0, Collection)) {
+                  tmp_1 = this_0.isEmpty_y1axqb_k$();
+                } else {
+                  tmp_1 = false;
+                }
+                if (tmp_1) {
+                  tmp$ret$0 = false;
+                  break l$ret$1;
+                }
+                var tmp0_iterator = this_0.iterator_jk1svi_k$();
+                while (tmp0_iterator.hasNext_bitz1p_k$()) {
+                  var element = tmp0_iterator.next_20eer_k$();
+                  if (endsWith(element.toLowerCase(), '.c16')) {
+                    tmp$ret$0 = true;
+                    break l$ret$1;
+                  }
+                }
+                tmp$ret$0 = false;
+              }
+               while (false);
+              if (tmp$ret$0) {
+                var tmp_2 = this;
+                tmp_2.this3__1 = this.files2__1;
+                var tmp_3 = this;
+                tmp_3.this4__1 = this.this3__1;
+                var tmp_4 = this;
+                tmp_4.destination5__1 = ArrayList_init_$Create$();
+                var tmp_5 = this;
+                tmp_5.this6__1 = this.this4__1;
+                this.tmp0_iterator7__1 = this.this6__1.iterator_jk1svi_k$();
+                this.state_1 = 1;
+                continue $sm;
+              } else {
+                this.state_1 = 7;
+                continue $sm;
+              }
             } else {
-              this.WHEN_RESULT1__1 = this.tmp0_elvis_lhs0__1;
-              this.state_1 = 26;
+              this.state_1 = 8;
               continue $sm;
             }
 
           case 1:
-            var tmp_4 = this;
-            tmp_4.this7__1 = ConfigLoader_getInstance();
-            var tmp_5 = this;
-            tmp_5.cached8__1 = this.cached5__1;
-            if (this.cached8__1) {
-              this.tmp0_safe_receiver9__1 = this.this7__1.config_1;
-              if (this.tmp0_safe_receiver9__1 == null) {
-                this.WHEN_RESULT10__1 = null;
-                this.state_1 = 2;
-                continue $sm;
-              } else {
-                var tmp_6 = this;
-                tmp_6.this11__1 = this.tmp0_safe_receiver9__1;
-                var tmp_7 = this;
-                tmp_7.it12__1 = this.this11__1;
-                this.tmp$ret$06__1 = this.it12__1;
-                this.state_1 = 11;
-                var tmp_8 = this;
-                continue $sm;
-              }
-            } else {
-              this.state_1 = 3;
+            if (!this.tmp0_iterator7__1.hasNext_bitz1p_k$()) {
+              this.state_1 = 5;
               continue $sm;
             }
 
+            this.element8__1 = this.tmp0_iterator7__1.next_20eer_k$();
+            var tmp_6 = this;
+            tmp_6.element9__1 = this.element8__1;
+            var tmp_7 = this;
+            tmp_7.it10__1 = this.element9__1;
+            this.exceptionState_1 = 3;
+            this.state_1 = 2;
+            suspendResult = this.vfs1__1.read_3sms9f_k$(this.it10__1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
           case 2:
-            this.state_1 = 3;
+            this.bytes12__1 = suspendResult;
+            this.TRY_RESULT11__1 = to(this.it10__1, this.bytes12__1);
+            this.exceptionState_1 = 38;
+            this.state_1 = 4;
             continue $sm;
           case 3:
+            this.exceptionState_1 = 38;
+            this._13__1 = this.exception_1;
+            var tmp_8 = this;
+            tmp_8.TRY_RESULT11__1 = null;
             this.state_1 = 4;
-            suspendResult = ensureConfigDirectory(this.this7__1, this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
             continue $sm;
           case 4:
-            this.exceptionState_1 = 8;
-            this.state_1 = 5;
-            ConfigLoader_getInstance();
-            suspendResult = await_0(exists('eggforge.config.json', this.this7__1.tauriFsOptions_1), this);
+            this.exceptionState_1 = 38;
+            this.tmp0_safe_receiver14__1 = this.TRY_RESULT11__1;
+            if (this.tmp0_safe_receiver14__1 == null)
+              null;
+            else {
+              var it = this.tmp0_safe_receiver14__1;
+              this.destination5__1.add_utx5q5_k$(it);
+            }
+
+            this.state_1 = 1;
+            continue $sm;
+          case 5:
+            this.ARGUMENT15__1 = this.destination5__1;
+            this.agentFiles16__1 = toMap(this.ARGUMENT15__1);
+            this.state_1 = 6;
+            suspendResult = writeAgentFilesToCache(this.projectRoot0__1, this.agentFiles16__1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
-          case 5:
+          case 6:
+            this.tmp1_safe_receiver17__1 = suspendResult;
+            if (this.tmp1_safe_receiver17__1 == null)
+              null;
+            else {
+              return this.tmp1_safe_receiver17__1;
+            }
+
+            this.state_1 = 7;
+            continue $sm;
+          case 7:
+            this.state_1 = 8;
+            continue $sm;
+          case 8:
+            this.tmp2_elvis_lhs18__1 = Companion_getInstance_30().lastGlyphDirectory_1;
+            if (this.tmp2_elvis_lhs18__1 == null) {
+              var tmp_9 = this;
+              tmp_9.this20__1 = ForgeConfig_getInstance();
+              var tmp_10 = this;
+              tmp_10.projectRoot21__1 = this.projectRoot0__1;
+              var tmp_11 = this;
+              tmp_11.this22__1 = this.this20__1;
+              var tmp_12 = this;
+              tmp_12.cached23__1 = true;
+              this.state_1 = 9;
+              continue $sm;
+            } else {
+              this.WHEN_RESULT19__1 = this.tmp2_elvis_lhs18__1;
+              this.state_1 = 34;
+              continue $sm;
+            }
+
+          case 9:
+            var tmp_13 = this;
+            tmp_13.this25__1 = ConfigLoader_getInstance();
+            var tmp_14 = this;
+            tmp_14.cached26__1 = this.cached23__1;
+            if (this.cached26__1) {
+              this.tmp0_safe_receiver27__1 = this.this25__1.config_1;
+              if (this.tmp0_safe_receiver27__1 == null) {
+                this.WHEN_RESULT28__1 = null;
+                this.state_1 = 10;
+                continue $sm;
+              } else {
+                var tmp_15 = this;
+                tmp_15.this29__1 = this.tmp0_safe_receiver27__1;
+                var tmp_16 = this;
+                tmp_16.it30__1 = this.this29__1;
+                this.tmp$ret$224__1 = this.it30__1;
+                this.state_1 = 19;
+                var tmp_17 = this;
+                continue $sm;
+              }
+            } else {
+              this.state_1 = 11;
+              continue $sm;
+            }
+
+          case 10:
+            this.state_1 = 11;
+            continue $sm;
+          case 11:
+            this.state_1 = 12;
+            suspendResult = ensureConfigDirectory(this.this25__1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 12:
+            this.exceptionState_1 = 16;
+            this.state_1 = 13;
+            ConfigLoader_getInstance();
+            suspendResult = await_0(exists('eggforge.config.json', this.this25__1.tauriFsOptions_1), this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 13:
             if (suspendResult) {
-              this.state_1 = 6;
+              this.state_1 = 14;
               ConfigLoader_getInstance();
-              suspendResult = await_0(readTextFile('eggforge.config.json', this.this7__1.tauriFsOptions_1), this);
+              suspendResult = await_0(readTextFile('eggforge.config.json', this.this25__1.tauriFsOptions_1), this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
               continue $sm;
             } else {
-              var tmp_9 = this;
-              tmp_9.WHEN_RESULT14__1 = null;
-              this.state_1 = 7;
-              continue $sm;
-            }
-
-          case 6:
-            this.WHEN_RESULT14__1 = suspendResult;
-            this.state_1 = 7;
-            continue $sm;
-          case 7:
-            this.TRY_RESULT13__1 = this.WHEN_RESULT14__1;
-            this.exceptionState_1 = 30;
-            this.state_1 = 9;
-            continue $sm;
-          case 8:
-            this.exceptionState_1 = 30;
-            var tmp_10 = this.exception_1;
-            if (tmp_10 instanceof Error) {
-              this.e15__1 = this.exception_1;
-              var tmp_11 = this;
-              rethrowCancellationException(this.e15__1);
-              var this_0 = Log_getInstance();
-              var mode = get_LOG_CONSOLE();
-              if (!this_0.get_silent_jhk5em_k$() ? this_0.hasMode_frur5v_k$(mode) : false) {
-                if (this_0.get_enableNamespaceLoggingInMain_h2ig9a_k$()) {
-                  this_0.e_gf61q6_k$(null, '%' + mode + '%' + ('Failed to read config; ' + formatted(this.e15__1, true)));
-                }
-                this_0.notifyNamespaceListeners_71imgk_k$(mode, 'Failed to read config; ' + formatted(this.e15__1, true), null);
-              }
-              tmp_11.TRY_RESULT13__1 = null;
-              this.state_1 = 9;
-              continue $sm;
-            } else {
-              throw this.exception_1;
-            }
-
-          case 9:
-            this.exceptionState_1 = 30;
-            this.tmp1_elvis_lhs16__1 = this.TRY_RESULT13__1;
-            if (this.tmp1_elvis_lhs16__1 == null) {
-              var tmp_12 = this;
-              var this_1 = new ForgeConfigData();
-              ConfigLoader_getInstance().mLoadedOnce_1 = true;
-              tmp_12.tmp$ret$06__1 = this_1;
-              this.state_1 = 11;
-              var tmp_13 = this;
-              continue $sm;
-            } else {
-              this.WHEN_RESULT17__1 = this.tmp1_elvis_lhs16__1;
-              this.state_1 = 10;
-              continue $sm;
-            }
-
-          case 10:
-            this.dataJson18__1 = this.WHEN_RESULT17__1;
-            var tmp_14 = this;
-            var tmp_15;
-            try {
-              var this_2 = get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_11().serializer_9w0wvi_k$(), this.dataJson18__1);
-              ConfigLoader_getInstance().mLoadedOnce_1 = true;
-              ConfigLoader_getInstance().config_1 = this_2;
-              tmp_15 = this_2;
-            } catch ($p) {
-              var tmp_16;
-              if ($p instanceof Error) {
-                var e = $p;
-                rethrowCancellationException(e);
-                var this_3 = Log_getInstance();
-                if (!this_3.get_silent_jhk5em_k$() ? this_3.get_logLevel_179ppl_k$().value_1 >= LogLevel_ERROR_getInstance().value_1 : false) {
-                  var tmp_17 = this_3.get_loggerObject_74grt4_k$();
-                  tmp_17.error(this_3.format_bqai8u_k$('ERROR', null, 'Failed to load existing config; ' + formatted(e, true)), null);
-                }
-                var this_4 = Log_getInstance();
-                var mode_0 = get_LOG_CONSOLE();
-                if (!this_4.get_silent_jhk5em_k$() ? this_4.hasMode_frur5v_k$(mode_0) : false) {
-                  if (this_4.get_enableNamespaceLoggingInMain_h2ig9a_k$()) {
-                    this_4.e_gf61q6_k$(null, '%' + mode_0 + '%' + ('Failed to load existing config; ' + formatted(e, true)));
-                  }
-                  this_4.notifyNamespaceListeners_71imgk_k$(mode_0, 'Failed to load existing config; ' + formatted(e, true), null);
-                }
-                var this_5 = new ForgeConfigData();
-                ConfigLoader_getInstance().mLoadedOnce_1 = true;
-                tmp_16 = this_5;
-              } else {
-                throw $p;
-              }
-              tmp_15 = tmp_16;
-            }
-
-            tmp_14.tmp$ret$06__1 = tmp_15;
-            if (false) {}
-
-            this.state_1 = 11;
-            continue $sm;
-          case 11:
-            this.$this$get19__1 = this.tmp$ret$06__1;
-            var tmp_18 = this;
-            tmp_18.this20__1 = ForgeConfig_getInstance();
-            var tmp_19 = this;
-            tmp_19.projectRoot21__1 = this.projectRoot3__1;
-            var tmp_20 = this;
-            tmp_20.default22__1 = this.$this$get19__1.lastGlyphDirectory_1;
-            var tmp_21 = this;
-            tmp_21.this23__1 = this.this20__1;
-            var tmp_22 = this;
-            tmp_22.cached24__1 = true;
-            this.state_1 = 12;
-            continue $sm;
-          case 12:
-            this.state_1 = 13;
-            continue $sm;
-          case 13:
-            var tmp_23 = this;
-            tmp_23.this27__1 = ConfigLoader_getInstance();
-            var tmp_24 = this;
-            tmp_24.cached28__1 = this.cached24__1;
-            if (this.cached28__1) {
-              this.tmp0_safe_receiver29__1 = this.this27__1.config_1;
-              if (this.tmp0_safe_receiver29__1 == null) {
-                this.WHEN_RESULT30__1 = null;
-                this.state_1 = 14;
-                continue $sm;
-              } else {
-                var tmp_25 = this;
-                tmp_25.this31__1 = this.tmp0_safe_receiver29__1;
-                var tmp_26 = this;
-                tmp_26.it32__1 = this.this31__1;
-                this.tmp$ret$226__1 = this.it32__1;
-                this.state_1 = 23;
-                var tmp_27 = this;
-                continue $sm;
-              }
-            } else {
+              var tmp_18 = this;
+              tmp_18.WHEN_RESULT32__1 = null;
               this.state_1 = 15;
               continue $sm;
             }
 
           case 14:
+            this.WHEN_RESULT32__1 = suspendResult;
             this.state_1 = 15;
             continue $sm;
           case 15:
-            this.state_1 = 16;
-            suspendResult = ensureConfigDirectory(this.this27__1, this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
+            this.TRY_RESULT31__1 = this.WHEN_RESULT32__1;
+            this.exceptionState_1 = 38;
+            this.state_1 = 17;
             continue $sm;
           case 16:
-            this.exceptionState_1 = 20;
-            this.state_1 = 17;
-            ConfigLoader_getInstance();
-            suspendResult = await_0(exists('eggforge.config.json', this.this27__1.tauriFsOptions_1), this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
-            continue $sm;
-          case 17:
-            if (suspendResult) {
-              this.state_1 = 18;
-              ConfigLoader_getInstance();
-              suspendResult = await_0(readTextFile('eggforge.config.json', this.this27__1.tauriFsOptions_1), this);
-              if (suspendResult === get_COROUTINE_SUSPENDED()) {
-                return suspendResult;
-              }
-              continue $sm;
-            } else {
-              var tmp_28 = this;
-              tmp_28.WHEN_RESULT34__1 = null;
-              this.state_1 = 19;
-              continue $sm;
-            }
-
-          case 18:
-            this.WHEN_RESULT34__1 = suspendResult;
-            this.state_1 = 19;
-            continue $sm;
-          case 19:
-            this.TRY_RESULT33__1 = this.WHEN_RESULT34__1;
-            this.exceptionState_1 = 30;
-            this.state_1 = 21;
-            continue $sm;
-          case 20:
-            this.exceptionState_1 = 30;
-            var tmp_29 = this.exception_1;
-            if (tmp_29 instanceof Error) {
-              this.e35__1 = this.exception_1;
-              var tmp_30 = this;
-              rethrowCancellationException(this.e35__1);
-              var this_6 = Log_getInstance();
-              var mode_1 = get_LOG_CONSOLE();
-              if (!this_6.get_silent_jhk5em_k$() ? this_6.hasMode_frur5v_k$(mode_1) : false) {
-                if (this_6.get_enableNamespaceLoggingInMain_h2ig9a_k$()) {
-                  this_6.e_gf61q6_k$(null, '%' + mode_1 + '%' + ('Failed to read config; ' + formatted(this.e35__1, true)));
+            this.exceptionState_1 = 38;
+            var tmp_19 = this.exception_1;
+            if (tmp_19 instanceof Error) {
+              this.e33__1 = this.exception_1;
+              var tmp_20 = this;
+              rethrowCancellationException(this.e33__1);
+              var this_1 = Log_getInstance();
+              var mode = get_LOG_CONSOLE();
+              if (!this_1.get_silent_jhk5em_k$() ? this_1.hasMode_frur5v_k$(mode) : false) {
+                if (this_1.get_enableNamespaceLoggingInMain_h2ig9a_k$()) {
+                  this_1.e_gf61q6_k$(null, '%' + mode + '%' + ('Failed to read config; ' + formatted(this.e33__1, true)));
                 }
-                this_6.notifyNamespaceListeners_71imgk_k$(mode_1, 'Failed to read config; ' + formatted(this.e35__1, true), null);
+                this_1.notifyNamespaceListeners_71imgk_k$(mode, 'Failed to read config; ' + formatted(this.e33__1, true), null);
               }
-              tmp_30.TRY_RESULT33__1 = null;
-              this.state_1 = 21;
+              tmp_20.TRY_RESULT31__1 = null;
+              this.state_1 = 17;
               continue $sm;
             } else {
               throw this.exception_1;
             }
 
-          case 21:
-            this.exceptionState_1 = 30;
-            this.tmp1_elvis_lhs36__1 = this.TRY_RESULT33__1;
-            if (this.tmp1_elvis_lhs36__1 == null) {
-              var tmp_31 = this;
-              var this_7 = new ForgeConfigData();
+          case 17:
+            this.exceptionState_1 = 38;
+            this.tmp1_elvis_lhs34__1 = this.TRY_RESULT31__1;
+            if (this.tmp1_elvis_lhs34__1 == null) {
+              var tmp_21 = this;
+              var this_2 = new ForgeConfigData();
               ConfigLoader_getInstance().mLoadedOnce_1 = true;
-              tmp_31.tmp$ret$226__1 = this_7;
-              this.state_1 = 23;
-              var tmp_32 = this;
+              tmp_21.tmp$ret$224__1 = this_2;
+              this.state_1 = 19;
+              var tmp_22 = this;
               continue $sm;
             } else {
-              this.WHEN_RESULT37__1 = this.tmp1_elvis_lhs36__1;
-              this.state_1 = 22;
+              this.WHEN_RESULT35__1 = this.tmp1_elvis_lhs34__1;
+              this.state_1 = 18;
+              continue $sm;
+            }
+
+          case 18:
+            this.dataJson36__1 = this.WHEN_RESULT35__1;
+            var tmp_23 = this;
+            var tmp_24;
+            try {
+              var this_3 = get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_11().serializer_9w0wvi_k$(), this.dataJson36__1);
+              ConfigLoader_getInstance().mLoadedOnce_1 = true;
+              ConfigLoader_getInstance().config_1 = this_3;
+              tmp_24 = this_3;
+            } catch ($p) {
+              var tmp_25;
+              if ($p instanceof Error) {
+                var e = $p;
+                rethrowCancellationException(e);
+                var this_4 = Log_getInstance();
+                if (!this_4.get_silent_jhk5em_k$() ? this_4.get_logLevel_179ppl_k$().value_1 >= LogLevel_ERROR_getInstance().value_1 : false) {
+                  var tmp_26 = this_4.get_loggerObject_74grt4_k$();
+                  tmp_26.error(this_4.format_bqai8u_k$('ERROR', null, 'Failed to load existing config; ' + formatted(e, true)), null);
+                }
+                var this_5 = Log_getInstance();
+                var mode_0 = get_LOG_CONSOLE();
+                if (!this_5.get_silent_jhk5em_k$() ? this_5.hasMode_frur5v_k$(mode_0) : false) {
+                  if (this_5.get_enableNamespaceLoggingInMain_h2ig9a_k$()) {
+                    this_5.e_gf61q6_k$(null, '%' + mode_0 + '%' + ('Failed to load existing config; ' + formatted(e, true)));
+                  }
+                  this_5.notifyNamespaceListeners_71imgk_k$(mode_0, 'Failed to load existing config; ' + formatted(e, true), null);
+                }
+                var this_6 = new ForgeConfigData();
+                ConfigLoader_getInstance().mLoadedOnce_1 = true;
+                tmp_25 = this_6;
+              } else {
+                throw $p;
+              }
+              tmp_24 = tmp_25;
+            }
+
+            tmp_23.tmp$ret$224__1 = tmp_24;
+            if (false) {}
+
+            this.state_1 = 19;
+            continue $sm;
+          case 19:
+            this.$this$get37__1 = this.tmp$ret$224__1;
+            var tmp_27 = this;
+            tmp_27.this38__1 = ForgeConfig_getInstance();
+            var tmp_28 = this;
+            tmp_28.projectRoot39__1 = this.projectRoot21__1;
+            var tmp_29 = this;
+            tmp_29.default40__1 = this.$this$get37__1.lastGlyphDirectory_1;
+            var tmp_30 = this;
+            tmp_30.this41__1 = this.this38__1;
+            var tmp_31 = this;
+            tmp_31.cached42__1 = true;
+            this.state_1 = 20;
+            continue $sm;
+          case 20:
+            this.state_1 = 21;
+            continue $sm;
+          case 21:
+            var tmp_32 = this;
+            tmp_32.this45__1 = ConfigLoader_getInstance();
+            var tmp_33 = this;
+            tmp_33.cached46__1 = this.cached42__1;
+            if (this.cached46__1) {
+              this.tmp0_safe_receiver47__1 = this.this45__1.config_1;
+              if (this.tmp0_safe_receiver47__1 == null) {
+                this.WHEN_RESULT48__1 = null;
+                this.state_1 = 22;
+                continue $sm;
+              } else {
+                var tmp_34 = this;
+                tmp_34.this49__1 = this.tmp0_safe_receiver47__1;
+                var tmp_35 = this;
+                tmp_35.it50__1 = this.this49__1;
+                this.tmp$ret$444__1 = this.it50__1;
+                this.state_1 = 31;
+                var tmp_36 = this;
+                continue $sm;
+              }
+            } else {
+              this.state_1 = 23;
               continue $sm;
             }
 
           case 22:
-            this.dataJson38__1 = this.WHEN_RESULT37__1;
-            var tmp_33 = this;
-            var tmp_34;
-            try {
-              var this_8 = get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_11().serializer_9w0wvi_k$(), this.dataJson38__1);
-              ConfigLoader_getInstance().mLoadedOnce_1 = true;
-              ConfigLoader_getInstance().config_1 = this_8;
-              tmp_34 = this_8;
-            } catch ($p) {
-              var tmp_35;
-              if ($p instanceof Error) {
-                var e_0 = $p;
-                rethrowCancellationException(e_0);
-                var this_9 = Log_getInstance();
-                if (!this_9.get_silent_jhk5em_k$() ? this_9.get_logLevel_179ppl_k$().value_1 >= LogLevel_ERROR_getInstance().value_1 : false) {
-                  var tmp_36 = this_9.get_loggerObject_74grt4_k$();
-                  tmp_36.error(this_9.format_bqai8u_k$('ERROR', null, 'Failed to load existing config; ' + formatted(e_0, true)), null);
-                }
-                var this_10 = Log_getInstance();
-                var mode_2 = get_LOG_CONSOLE();
-                if (!this_10.get_silent_jhk5em_k$() ? this_10.hasMode_frur5v_k$(mode_2) : false) {
-                  if (this_10.get_enableNamespaceLoggingInMain_h2ig9a_k$()) {
-                    this_10.e_gf61q6_k$(null, '%' + mode_2 + '%' + ('Failed to load existing config; ' + formatted(e_0, true)));
-                  }
-                  this_10.notifyNamespaceListeners_71imgk_k$(mode_2, 'Failed to load existing config; ' + formatted(e_0, true), null);
-                }
-                var this_11 = new ForgeConfigData();
-                ConfigLoader_getInstance().mLoadedOnce_1 = true;
-                tmp_35 = this_11;
-              } else {
-                throw $p;
-              }
-              tmp_34 = tmp_35;
-            }
-
-            tmp_33.tmp$ret$226__1 = tmp_34;
-            if (false) {}
-
             this.state_1 = 23;
             continue $sm;
           case 23:
-            this.$this$get39__1 = this.tmp$ret$226__1;
-            this.tmp0_elvis_lhs40__1 = this.projectRoot21__1;
-            if (this.tmp0_elvis_lhs40__1 == null) {
-              this.tmp$ret$425__1 = null;
-              this.state_1 = 25;
-              var tmp_37 = this;
-              continue $sm;
-            } else {
-              this.WHEN_RESULT41__1 = this.tmp0_elvis_lhs40__1;
-              this.state_1 = 24;
-              continue $sm;
+            this.state_1 = 24;
+            suspendResult = ensureConfigDirectory(this.this45__1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
             }
 
+            continue $sm;
           case 24:
-            this.root42__1 = this.WHEN_RESULT41__1;
-            this.projectKey43__1 = ForgeConfig_getInstance().getProjectDataKey_u1cll4_k$(this.root42__1);
-            var tmp_38 = this;
-            var tmp1_safe_receiver = this.$this$get39__1.projectData_1.get_wei43m_k$(this.projectKey43__1);
-            var tmp_39;
-            if (tmp1_safe_receiver == null) {
-              tmp_39 = null;
-            } else {
-              var tmp0_elvis_lhs = tmp1_safe_receiver.lastGlyphDirectory_1;
-              tmp_39 = tmp0_elvis_lhs == null ? tmp1_safe_receiver.forgeState_1.projectFolder_1 : tmp0_elvis_lhs;
+            this.exceptionState_1 = 28;
+            this.state_1 = 25;
+            ConfigLoader_getInstance();
+            suspendResult = await_0(exists('eggforge.config.json', this.this45__1.tauriFsOptions_1), this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
             }
 
-            var tmp2_elvis_lhs = tmp_39;
-            tmp_38.tmp$ret$425__1 = tmp2_elvis_lhs == null ? this.default22__1 : tmp2_elvis_lhs;
-            if (false) {}
-
-            this.state_1 = 25;
             continue $sm;
           case 25:
-            this.WHEN_RESULT1__1 = this.tmp$ret$425__1;
-            this.state_1 = 26;
-            continue $sm;
-          case 26:
-            this.tmp1_elvis_lhs44__1 = this.WHEN_RESULT1__1;
-            if (this.tmp1_elvis_lhs44__1 == null) {
+            if (suspendResult) {
+              this.state_1 = 26;
+              ConfigLoader_getInstance();
+              suspendResult = await_0(readTextFile('eggforge.config.json', this.this45__1.tauriFsOptions_1), this);
+              if (suspendResult === get_COROUTINE_SUSPENDED()) {
+                return suspendResult;
+              }
+              continue $sm;
+            } else {
+              var tmp_37 = this;
+              tmp_37.WHEN_RESULT52__1 = null;
               this.state_1 = 27;
+              continue $sm;
+            }
+
+          case 26:
+            this.WHEN_RESULT52__1 = suspendResult;
+            this.state_1 = 27;
+            continue $sm;
+          case 27:
+            this.TRY_RESULT51__1 = this.WHEN_RESULT52__1;
+            this.exceptionState_1 = 38;
+            this.state_1 = 29;
+            continue $sm;
+          case 28:
+            this.exceptionState_1 = 38;
+            var tmp_38 = this.exception_1;
+            if (tmp_38 instanceof Error) {
+              this.e53__1 = this.exception_1;
+              var tmp_39 = this;
+              rethrowCancellationException(this.e53__1);
+              var this_7 = Log_getInstance();
+              var mode_1 = get_LOG_CONSOLE();
+              if (!this_7.get_silent_jhk5em_k$() ? this_7.hasMode_frur5v_k$(mode_1) : false) {
+                if (this_7.get_enableNamespaceLoggingInMain_h2ig9a_k$()) {
+                  this_7.e_gf61q6_k$(null, '%' + mode_1 + '%' + ('Failed to read config; ' + formatted(this.e53__1, true)));
+                }
+                this_7.notifyNamespaceListeners_71imgk_k$(mode_1, 'Failed to read config; ' + formatted(this.e53__1, true), null);
+              }
+              tmp_39.TRY_RESULT51__1 = null;
+              this.state_1 = 29;
+              continue $sm;
+            } else {
+              throw this.exception_1;
+            }
+
+          case 29:
+            this.exceptionState_1 = 38;
+            this.tmp1_elvis_lhs54__1 = this.TRY_RESULT51__1;
+            if (this.tmp1_elvis_lhs54__1 == null) {
+              var tmp_40 = this;
+              var this_8 = new ForgeConfigData();
+              ConfigLoader_getInstance().mLoadedOnce_1 = true;
+              tmp_40.tmp$ret$444__1 = this_8;
+              this.state_1 = 31;
+              var tmp_41 = this;
+              continue $sm;
+            } else {
+              this.WHEN_RESULT55__1 = this.tmp1_elvis_lhs54__1;
+              this.state_1 = 30;
+              continue $sm;
+            }
+
+          case 30:
+            this.dataJson56__1 = this.WHEN_RESULT55__1;
+            var tmp_42 = this;
+            var tmp_43;
+            try {
+              var this_9 = get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_11().serializer_9w0wvi_k$(), this.dataJson56__1);
+              ConfigLoader_getInstance().mLoadedOnce_1 = true;
+              ConfigLoader_getInstance().config_1 = this_9;
+              tmp_43 = this_9;
+            } catch ($p) {
+              var tmp_44;
+              if ($p instanceof Error) {
+                var e_0 = $p;
+                rethrowCancellationException(e_0);
+                var this_10 = Log_getInstance();
+                if (!this_10.get_silent_jhk5em_k$() ? this_10.get_logLevel_179ppl_k$().value_1 >= LogLevel_ERROR_getInstance().value_1 : false) {
+                  var tmp_45 = this_10.get_loggerObject_74grt4_k$();
+                  tmp_45.error(this_10.format_bqai8u_k$('ERROR', null, 'Failed to load existing config; ' + formatted(e_0, true)), null);
+                }
+                var this_11 = Log_getInstance();
+                var mode_2 = get_LOG_CONSOLE();
+                if (!this_11.get_silent_jhk5em_k$() ? this_11.hasMode_frur5v_k$(mode_2) : false) {
+                  if (this_11.get_enableNamespaceLoggingInMain_h2ig9a_k$()) {
+                    this_11.e_gf61q6_k$(null, '%' + mode_2 + '%' + ('Failed to load existing config; ' + formatted(e_0, true)));
+                  }
+                  this_11.notifyNamespaceListeners_71imgk_k$(mode_2, 'Failed to load existing config; ' + formatted(e_0, true), null);
+                }
+                var this_12 = new ForgeConfigData();
+                ConfigLoader_getInstance().mLoadedOnce_1 = true;
+                tmp_44 = this_12;
+              } else {
+                throw $p;
+              }
+              tmp_43 = tmp_44;
+            }
+
+            tmp_42.tmp$ret$444__1 = tmp_43;
+            if (false) {}
+
+            this.state_1 = 31;
+            continue $sm;
+          case 31:
+            this.$this$get57__1 = this.tmp$ret$444__1;
+            this.tmp0_elvis_lhs58__1 = this.projectRoot39__1;
+            if (this.tmp0_elvis_lhs58__1 == null) {
+              this.tmp$ret$643__1 = null;
+              this.state_1 = 33;
+              var tmp_46 = this;
+              continue $sm;
+            } else {
+              this.WHEN_RESULT59__1 = this.tmp0_elvis_lhs58__1;
+              this.state_1 = 32;
+              continue $sm;
+            }
+
+          case 32:
+            this.root60__1 = this.WHEN_RESULT59__1;
+            this.projectKey61__1 = ForgeConfig_getInstance().getProjectDataKey_u1cll4_k$(this.root60__1);
+            var tmp_47 = this;
+            var tmp1_safe_receiver = this.$this$get57__1.projectData_1.get_wei43m_k$(this.projectKey61__1);
+            var tmp_48;
+            if (tmp1_safe_receiver == null) {
+              tmp_48 = null;
+            } else {
+              var tmp0_elvis_lhs_0 = tmp1_safe_receiver.lastGlyphDirectory_1;
+              tmp_48 = tmp0_elvis_lhs_0 == null ? tmp1_safe_receiver.forgeState_1.projectFolder_1 : tmp0_elvis_lhs_0;
+            }
+
+            var tmp2_elvis_lhs = tmp_48;
+            tmp_47.tmp$ret$643__1 = tmp2_elvis_lhs == null ? this.default40__1 : tmp2_elvis_lhs;
+            if (false) {}
+
+            this.state_1 = 33;
+            continue $sm;
+          case 33:
+            this.WHEN_RESULT19__1 = this.tmp$ret$643__1;
+            this.state_1 = 34;
+            continue $sm;
+          case 34:
+            this.tmp3_elvis_lhs62__1 = this.WHEN_RESULT19__1;
+            if (this.tmp3_elvis_lhs62__1 == null) {
+              this.state_1 = 35;
               suspendResult = await_0(platform(), this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
               continue $sm;
             } else {
-              this.WHEN_RESULT45__1 = this.tmp1_elvis_lhs44__1;
-              this.state_1 = 29;
+              this.WHEN_RESULT63__1 = this.tmp3_elvis_lhs62__1;
+              this.state_1 = 37;
               continue $sm;
             }
 
-          case 27:
+          case 35:
             var ARGUMENT = suspendResult;
             if (ARGUMENT === 'linux') {
-              var tmp_40 = this;
-              tmp_40.WHEN_RESULT46__1 = '~/';
-              this.state_1 = 28;
+              var tmp_49 = this;
+              tmp_49.WHEN_RESULT64__1 = '~/';
+              this.state_1 = 36;
               continue $sm;
             } else {
-              var tmp_41 = this;
-              tmp_41.WHEN_RESULT46__1 = null;
-              this.state_1 = 28;
+              var tmp_50 = this;
+              tmp_50.WHEN_RESULT64__1 = null;
+              this.state_1 = 36;
               continue $sm;
             }
 
-          case 28:
-            this.WHEN_RESULT45__1 = this.WHEN_RESULT46__1;
-            this.state_1 = 29;
+          case 36:
+            this.WHEN_RESULT63__1 = this.WHEN_RESULT64__1;
+            this.state_1 = 37;
             continue $sm;
-          case 29:
-            return this.WHEN_RESULT45__1;
-          case 30:
+          case 37:
+            return this.WHEN_RESULT63__1;
+          case 38:
             throw this.exception_1;
         }
       } catch ($p) {
         var e_1 = $p;
-        if (this.exceptionState_1 === 30) {
+        if (this.exceptionState_1 === 38) {
           throw e_1;
         } else {
           this.state_1 = this.exceptionState_1;
@@ -59565,7 +60230,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
      while (true);
   };
   function GlyphSelect(root) {
-    Companion_getInstance_29();
+    Companion_getInstance_30();
     this.projectRoot_1 = null;
     this.events_1 = true;
     this.isAuto_1 = true;
@@ -59593,50 +60258,59 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     tmp_2.previewContainer_1 = this_0;
     var tmp_4 = this;
     // Inline function 'kotlin.apply' call
-    var tmp_5 = this.previewContainer_1.querySelector('img');
-    var this_1 = tmp_5 instanceof HTMLImageElement ? tmp_5 : THROW_CCE();
+    var tmp_5 = root.querySelector('.glyph-agent-files-button');
+    var this_1 = tmp_5 instanceof HTMLElement ? tmp_5 : THROW_CCE();
     // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.creaturesforge.application.ui.controls.GlyphSelect.thumbnailImage.<anonymous>' call
-    this_1.addEventListener('error', GlyphSelect$thumbnailImage$lambda(this));
-    tmp_4.thumbnailImage_1 = this_1;
+    // Inline function 'com.creaturesforge.application.ui.controls.GlyphSelect.agentFilesButton.<anonymous>' call
+    this_1.addEventListener('click', GlyphSelect$agentFilesButton$lambda(this));
+    tmp_4.agentFilesButton_1 = this_1;
     var tmp_6 = this;
     // Inline function 'kotlin.apply' call
-    var tmp_7 = root.querySelector("input[type='text']");
-    var this_2 = tmp_7 instanceof HTMLInputElement ? tmp_7 : THROW_CCE();
+    var tmp_7 = this.previewContainer_1.querySelector('img.placeholder');
+    var this_2 = tmp_7 instanceof HTMLImageElement ? tmp_7 : THROW_CCE();
     // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.creaturesforge.application.ui.controls.GlyphSelect.nameInput.<anonymous>' call
-    var tmp0_elvis_lhs = this_2.getAttribute('placeholder');
-    this_2.placeholder = tmp0_elvis_lhs == null ? 'Output glyph name' : tmp0_elvis_lhs;
-    this_2.onblur = GlyphSelect$nameInput$lambda(this_2);
-    tmp_6.nameInput_1 = this_2;
+    // Inline function 'com.creaturesforge.application.ui.controls.GlyphSelect.thumbnailImage.<anonymous>' call
+    this_2.style.setProperty('pointer-events', 'none');
+    this_2.addEventListener('error', GlyphSelect$thumbnailImage$lambda(this));
+    tmp_6.thumbnailImage_1 = this_2;
     var tmp_8 = this;
     // Inline function 'kotlin.apply' call
-    var tmp_9 = root.querySelector("input[type='number']");
+    var tmp_9 = root.querySelector("input[type='text']");
     var this_3 = tmp_9 instanceof HTMLInputElement ? tmp_9 : THROW_CCE();
     // Inline function 'kotlin.contracts.contract' call
-    // Inline function 'com.creaturesforge.application.ui.controls.GlyphSelect.frameInput.<anonymous>' call
-    this_3.oninput = GlyphSelect$frameInput$lambda(this);
-    tmp_8.frameInput_1 = this_3;
+    // Inline function 'com.creaturesforge.application.ui.controls.GlyphSelect.nameInput.<anonymous>' call
+    var tmp0_elvis_lhs = this_3.getAttribute('placeholder');
+    this_3.placeholder = tmp0_elvis_lhs == null ? 'Output glyph name' : tmp0_elvis_lhs;
+    this_3.onblur = GlyphSelect$nameInput$lambda(this_3);
+    tmp_8.nameInput_1 = this_3;
     var tmp_10 = this;
-    var tmp_11 = root.querySelector('button');
-    tmp_10.button_1 = tmp_11 instanceof HTMLButtonElement ? tmp_11 : THROW_CCE();
+    // Inline function 'kotlin.apply' call
+    var tmp_11 = root.querySelector("input[type='number']");
+    var this_4 = tmp_11 instanceof HTMLInputElement ? tmp_11 : THROW_CCE();
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'com.creaturesforge.application.ui.controls.GlyphSelect.frameInput.<anonymous>' call
+    this_4.oninput = GlyphSelect$frameInput$lambda(this);
+    tmp_10.frameInput_1 = this_4;
+    var tmp_12 = this;
+    var tmp_13 = root.querySelector('button');
+    tmp_12.button_1 = tmp_13 instanceof HTMLButtonElement ? tmp_13 : THROW_CCE();
     this.mValue_1 = null;
     this.updateTimeout_1 = -1;
-    var tmp_12;
+    var tmp_14;
     // Inline function 'kotlin.text.lowercase' call
     // Inline function 'kotlin.js.asDynamic' call
     if (!(this.gender_1.toLowerCase() === 'male')) {
       // Inline function 'kotlin.text.lowercase' call
       // Inline function 'kotlin.js.asDynamic' call
-      tmp_12 = !(this.gender_1.toLowerCase() === 'female');
+      tmp_14 = !(this.gender_1.toLowerCase() === 'female');
     } else {
-      tmp_12 = false;
+      tmp_14 = false;
     }
-    if (tmp_12) {
+    if (tmp_14) {
       throw Exception_init_$Create$('Glyph gender attribute is invalid; Expected Male or Female; Actual: ' + this.gender_1);
     }
-    var tmp_13 = ForgeStore_getInstance();
-    tmp_13.subscribe_2rnem4_k$(GlyphSelect$lambda(this));
+    var tmp_15 = ForgeStore_getInstance();
+    tmp_15.subscribe_2rnem4_k$(GlyphSelect$lambda(this));
     this.nameInput_1.onkeyup = GlyphSelect$lambda_0(this);
     this.nameInput_1.onblur = GlyphSelect$lambda_1(this);
     this.button_1.addEventListener('click', GlyphSelect$lambda_2(this));
@@ -59695,12 +60369,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   protoOf(OutputBreedSlot).isValid_yafoqa_k$ = function () {
     return !(this.selected_1 == null);
   };
-  function $getLastRootFromConfigCOROUTINE$118(_this__u8e3s4, projectRoot, resultContinuation) {
+  function $getLastRootFromConfigCOROUTINE$121(_this__u8e3s4, projectRoot, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.projectRoot_1 = projectRoot;
   }
-  protoOf($getLastRootFromConfigCOROUTINE$118).doResume_5yljmg_k$ = function () {
+  protoOf($getLastRootFromConfigCOROUTINE$121).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -59884,13 +60558,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $onRootSetCOROUTINE$119(_this__u8e3s4, projectRoot, directory, resultContinuation) {
+  function $onRootSetCOROUTINE$122(_this__u8e3s4, projectRoot, directory, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
     this.projectRoot_1 = projectRoot;
     this.directory_1 = directory;
   }
-  protoOf($onRootSetCOROUTINE$119).doResume_5yljmg_k$ = function () {
+  protoOf($onRootSetCOROUTINE$122).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -60287,13 +60961,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return state.projectFolder_1;
   };
   protoOf(ProjectRootInput).getLastRootFromConfig_4ms1ax_k$ = function (projectRoot, $completion) {
-    var tmp = new $getLastRootFromConfigCOROUTINE$118(this, projectRoot, $completion);
+    var tmp = new $getLastRootFromConfigCOROUTINE$121(this, projectRoot, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   };
   protoOf(ProjectRootInput).onRootSet_a2xziv_k$ = function (projectRoot, directory, $completion) {
-    var tmp = new $onRootSetCOROUTINE$119(this, projectRoot, directory, $completion);
+    var tmp = new $onRootSetCOROUTINE$122(this, projectRoot, directory, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -60434,7 +61108,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     launch(tmp, VOID, VOID, RootInput$selectRoot$slambda_0($this, null));
   }
   function selectRootAsync($this, $completion) {
-    var tmp = new $selectRootAsyncCOROUTINE$120($this, $completion);
+    var tmp = new $selectRootAsyncCOROUTINE$123($this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -60455,22 +61129,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     fitPathToField($this, newRoot);
   }
   function fitPathToField($this, newRoot) {
-    updateShortestPaths(Companion_getInstance_30(), newRoot);
+    updateShortestPaths(Companion_getInstance_31(), newRoot);
   }
   function requestRoot($this, $completion) {
-    var tmp = new $requestRootCOROUTINE$121($this, $completion);
+    var tmp = new $requestRootCOROUTINE$124($this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   }
   function clearRootInternal($this, $completion) {
-    var tmp = new $clearRootInternalCOROUTINE$122($this, $completion);
+    var tmp = new $clearRootInternalCOROUTINE$125($this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
   }
-  function Companion_22() {
-    Companion_instance_22 = this;
+  function Companion_23() {
+    Companion_instance_23 = this;
     var tmp = this;
     // Inline function 'kotlin.text.toRegex' call
     var this_0 = '^(?:.:\\|.:/|/[^/]+?)?users[\\\\/]([^\\\\/]+)[\\\\/]';
@@ -60485,11 +61159,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     // Inline function 'kotlin.collections.mutableSetOf' call
     tmp_1.allControls_1 = LinkedHashSet_init_$Create$();
   }
-  var Companion_instance_22;
-  function Companion_getInstance_30() {
-    if (Companion_instance_22 == null)
-      new Companion_22();
-    return Companion_instance_22;
+  var Companion_instance_23;
+  function Companion_getInstance_31() {
+    if (Companion_instance_23 == null)
+      new Companion_23();
+    return Companion_instance_23;
   }
   function nullIfVirtual(_this__u8e3s4, $this) {
     var tmp;
@@ -60687,11 +61361,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       return Unit_getInstance();
     };
   }
-  function $selectRootAsyncCOROUTINE$120(_this__u8e3s4, resultContinuation) {
+  function $selectRootAsyncCOROUTINE$123(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($selectRootAsyncCOROUTINE$120).doResume_5yljmg_k$ = function () {
+  protoOf($selectRootAsyncCOROUTINE$123).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -60775,11 +61449,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $requestRootCOROUTINE$121(_this__u8e3s4, resultContinuation) {
+  function $requestRootCOROUTINE$124(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($requestRootCOROUTINE$121).doResume_5yljmg_k$ = function () {
+  protoOf($requestRootCOROUTINE$124).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -60899,11 +61573,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $clearRootInternalCOROUTINE$122(_this__u8e3s4, resultContinuation) {
+  function $clearRootInternalCOROUTINE$125(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($clearRootInternalCOROUTINE$122).doResume_5yljmg_k$ = function () {
+  protoOf($clearRootInternalCOROUTINE$125).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -60938,7 +61612,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
      while (true);
   };
   function RootInput(element, kind) {
-    Companion_getInstance_30();
+    Companion_getInstance_31();
     this.kind_1 = kind;
     this.mRoot_1 = null;
     this.mRootLabel_1 = get_0(element, "[data-id='root-path']");
@@ -60962,7 +61636,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     tmp_0.i_s0nza7_k$(tmp_1 + tmp_2);
     this.mRootLabel_1.addEventListener('click', RootInput$lambda_0(this));
     initClickHandlers(this);
-    addControl(Companion_getInstance_30(), this);
+    addControl(Companion_getInstance_31(), this);
   }
   protoOf(RootInput).requestRefresh_eshx18_k$ = function () {
     _get_dispatch__sfxlld_8(this)(RequestRefreshAllFiles_getInstance());
@@ -62715,11 +63389,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     l.$arity = 1;
     return l;
   }
-  function $initCOROUTINE$123(_this__u8e3s4, resultContinuation) {
+  function $initCOROUTINE$126(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($initCOROUTINE$123).doResume_5yljmg_k$ = function () {
+  protoOf($initCOROUTINE$126).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -63150,11 +63824,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       }
      while (true);
   };
-  function $getEggModeNotNullCOROUTINE$124(_this__u8e3s4, resultContinuation) {
+  function $getEggModeNotNullCOROUTINE$127(_this__u8e3s4, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
     this._this__u8e3s4__1 = _this__u8e3s4;
   }
-  protoOf($getEggModeNotNullCOROUTINE$124).doResume_5yljmg_k$ = function () {
+  protoOf($getEggModeNotNullCOROUTINE$127).doResume_5yljmg_k$ = function () {
     var suspendResult = this.result_1;
     $sm: do
       try {
@@ -63575,7 +64249,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return tmp;
   };
   protoOf(AppEggMode).init_59613b_k$ = function ($completion) {
-    var tmp = new $initCOROUTINE$123(this, $completion);
+    var tmp = new $initCOROUTINE$126(this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -63616,7 +64290,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return tmp;
   };
   protoOf(AppEggMode).getEggModeNotNull_d41xzq_k$ = function ($completion) {
-    var tmp = new $getEggModeNotNullCOROUTINE$124(this, $completion);
+    var tmp = new $getEggModeNotNullCOROUTINE$127(this, $completion);
     tmp.result_1 = Unit_getInstance();
     tmp.exception_1 = null;
     return tmp.doResume_5yljmg_k$();
@@ -64398,7 +65072,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   function jsOb$lambda($this$null) {
     return Unit_getInstance();
   }
-  function asThrowable(e) {
+  function asThrowable_0(e) {
     if (e instanceof Error) {
       return e;
     }
@@ -335099,17 +335773,14 @@ if (typeof Array.prototype.fill === 'undefined') {
     }});
   }
 });
-if (typeof Math.hypot === 'undefined') {
-  Math.hypot = function () {
-    var y = 0;
-    var length = arguments.length;
-    for (var i = 0; i < length; i++) {
-      if (arguments[i] === Infinity || arguments[i] === -Infinity) {
-        return Infinity;
-      }
-      y += arguments[i] * arguments[i];
-    }
-    return Math.sqrt(y);
+if (typeof Math.log10 === 'undefined') {
+  Math.log10 = function (x) {
+    return Math.log(x) * Math.LOG10E;
+  };
+}
+if (typeof Math.log2 === 'undefined') {
+  Math.log2 = function (x) {
+    return Math.log(x) * Math.LOG2E;
   };
 }
 if (typeof Math.clz32 === 'undefined') {
@@ -335123,16 +335794,6 @@ if (typeof Math.clz32 === 'undefined') {
     };
   }(Math.log, Math.LN2);
 }
-if (typeof Math.log2 === 'undefined') {
-  Math.log2 = function (x) {
-    return Math.log(x) * Math.LOG2E;
-  };
-}
-if (typeof Math.log10 === 'undefined') {
-  Math.log10 = function (x) {
-    return Math.log(x) * Math.LOG10E;
-  };
-}
 if (typeof Math.sign === 'undefined') {
   Math.sign = function (x) {
     x = +x; // convert to a number
@@ -335140,6 +335801,19 @@ if (typeof Math.sign === 'undefined') {
       return Number(x);
     }
     return x > 0 ? 1 : -1;
+  };
+}
+if (typeof Math.hypot === 'undefined') {
+  Math.hypot = function () {
+    var y = 0;
+    var length = arguments.length;
+    for (var i = 0; i < length; i++) {
+      if (arguments[i] === Infinity || arguments[i] === -Infinity) {
+        return Infinity;
+      }
+      y += arguments[i] * arguments[i];
+    }
+    return Math.sqrt(y);
   };
 }
 if (typeof String.prototype.startsWith === 'undefined') {

@@ -4,25 +4,27 @@
 )]
 #![allow(dead_code)]
 use std::borrow::Borrow;
-use std::collections::HashSet;
-use std::{env, fs, thread};
+use std::collections::{HashMap, HashSet};
 use std::fmt::format;
 use std::ops::Deref;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use std::sync::Mutex;
+use std::{env, fs, thread};
 
-use rand::distributions::Alphanumeric;
-use rand::Rng;
-use tauri::{AppHandle, LogicalSize, Manager, Size, State, Window, WindowBuilder, WindowUrl};
-use tauri::async_runtime::block_on;
+use crate::add_att_directory::add_att_directory;
+use crate::add_previous_genomes_to_scope::add_previous_genome_to_scope;
+use crate::add_previous_genomes_to_scope::add_previous_genomes_to_scope;
 use crate::import_egg::{add_agent_file_to_scope, import_egg_file_into_window};
 use crate::open_project::open_project;
-use crate::view_mode::set_egg_mode_in_tauri;
-use crate::save_dialog::save_file;
-use crate::add_att_directory::add_att_directory;
-use crate::add_previous_genomes_to_scope::add_previous_genomes_to_scope;
-use crate::add_previous_genomes_to_scope::add_previous_genome_to_scope;
 use crate::previous_settings_disabled::{set_genome_list_disabled_in_tauri, set_project_settings_cached_disabled_in_tauri};
+use crate::save_dialog::save_file;
+use crate::view_mode::set_egg_mode_in_tauri;
+use crate::write_cache_dir::{clear_agent_cache_directory, write_agent_cache_file, create_agent_cache_directory};
+use rand::distributions::Alphanumeric;
+use rand::Rng;
+use tauri::async_runtime::block_on;
+use tauri::{AppHandle, LogicalSize, Manager, Size, State, Window, WindowBuilder, WindowUrl};
+use crate::file_utils::is_creatures_file;
 
 mod menu;
 mod view_mode;
@@ -36,6 +38,9 @@ mod open_project;
 mod add_att_directory;
 mod add_previous_genomes_to_scope;
 mod previous_settings_disabled;
+mod write_cache_dir;
+mod file_utils;
+mod err;
 
 #[derive(Clone, serde::Serialize)]
 struct StringMessage {
@@ -45,6 +50,7 @@ struct StringMessage {
 pub struct AppState {
     last_window_id: Mutex<i32>,
     window_ids: Mutex<HashSet<String>>,
+    cache_dirs: Mutex<HashMap<String, Vec<PathBuf>>>,
 }
 
 /// JS callable function to find if path is Directory
@@ -119,22 +125,7 @@ async fn list_files(app_handle: AppHandle, path: &str) -> Result<Vec<String>, St
             continue;
         }
 
-        let add = match p.clone().extension().unwrap().to_str() {
-            Some(ext) => {
-                match ext.to_lowercase().as_str() {
-                    "att" => true,
-                    "c16" => true,
-                    "gno" => true,
-                    "gen" => true,
-                    "agent" => true,
-                    "agents" => true,
-                    _ => false
-                }
-            }
-            None => false
-        };
-
-        if add {
+        if !is_creatures_file(p.clone()) {
             continue;
         }
 
@@ -194,6 +185,7 @@ async fn add_gno(app_handle: AppHandle, path: &str) -> Result<bool, tauri::Error
 fn main() {
     let state = AppState {
         last_window_id: Mutex::new(0),
+        cache_dirs: Mutex::new(HashMap::new()),
         window_ids: Mutex::new(HashSet::new()),
     };
     let context = tauri::generate_context!();
@@ -214,7 +206,10 @@ fn main() {
             add_att_directory,
             add_agent_file_to_scope,
             set_genome_list_disabled_in_tauri,
-            set_project_settings_cached_disabled_in_tauri
+            set_project_settings_cached_disabled_in_tauri,
+            write_agent_cache_file,
+            create_agent_cache_directory,
+            clear_agent_cache_directory,
         ])
         .setup(move |app| {
             let handle = app.handle();
@@ -366,7 +361,7 @@ fn next_window_id(state: State<AppState>, prefix: &str) -> String {
             let window_ids_locked = state.window_ids.lock();
             match window_ids_locked {
                 Ok(mut window_ids) => {
-                    let items_for_search = window_ids.clone();
+                    let items_for_search = window_ids.to_owned();
                     let mut out = random_string(8);
                     while items_for_search.contains(&out) {
                         out = random_string(8)
