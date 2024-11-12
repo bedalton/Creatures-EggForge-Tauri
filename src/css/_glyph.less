@@ -13,11 +13,31 @@
     .flex-column-flex-fill();
   }
   & .glyph-main {
+    position: relative;
     ._flex-row();
     .flex-column-flex-fill();
 
+
+    & .glyph-agent-files-button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 2em;
+      height: 2em;
+      padding: 0.5em;
+      background: #000000;
+      border-radius: @border-radius;
+      border-radius: var(--border-radius);
+      & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
     //noinspection CssOverwrittenProperties
     & .glyph-preview-container {
+      position: relative;
       cursor: pointer;
       ._flex-column();
       .flex-column-align-middle();
